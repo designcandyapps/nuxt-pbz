@@ -17,10 +17,7 @@
           <UBadge
             variant="subtle"
             :ui="{
-              base: 'dark:data-[state=on]:bg-primary-600 cursor-pointer data-[state=on]:bg-stone-100 dark:data-[state=on]:text-white',
-              variant: {
-                subtle: 'hover:bg-primary-500 dark:hover:bg-primary-800 hover:text-white',
-              },
+              base: 'dark:data-[state=on]:bg-primary-700 cursor-pointer data-[state=on]:bg-primary-500 data-[state=on]:hover:bg-primary-800 data-[state=on]:text-white hover:bg-primary-300 dark:hover:bg-primary-800 hover:text-white',
             }"
             color="primary"
           >

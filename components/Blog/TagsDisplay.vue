@@ -1,15 +1,17 @@
 <template>
-  <h2 class="mb-2 text-2xl font-bold">
-    Tags:
-  </h2>
-  <div class="mb-5">
-    <template v-if="tagItems">
-      <BlogTagsToggler
-        :tags="tagItems.data"
-        @toggled-tags="$emit('toggledTags', $event)"
-      />
-    </template>
-  </div>
+  <section class="rounded-lg border border-gray-200 bg-white p-4 drop-shadow dark:border-gray-800 dark:bg-gray-900 dark:drop-shadow-none">
+    <h2 class="mb-2 text-2xl font-bold">
+      Tags ({{ tagItems?.meta.pagination.total }}):
+    </h2>
+    <div>
+      <template v-if="tagItems">
+        <BlogTagsToggler
+          :tags="tagItems.data"
+          @toggled-tags="$emit('toggledTags', $event)"
+        />
+      </template>
+    </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
