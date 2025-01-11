@@ -40,9 +40,10 @@ import type { StrapiBlogSlug } from '~/types/StrapiBlogSlug'
 const { locale } = useI18n()
 const { findOne } = useStrapi()
 const route: RouteLocationNormalized = useRoute()
-const { data: blogSlug } = useNuxtData<StrapiBlogSlug>('blogSlug')
+const site = useSiteConfig()
+const { data: blogSlug } = useNuxtData<StrapiBlogSlug>(`blogSlug-${route.params.slug}`)
 await useAsyncData(
-  'blogSlug',
+  `blogSlug-${route.params.slug}`,
   () =>
     findOne<StrapiBlogSlug>('blogs', route.params.slug as string, {
       fields: ['title', 'subtitle', 'publishedAt', 'slug', 'content', 'updatedAt', 'createdAt'],
@@ -90,7 +91,7 @@ useSeoMeta({
   ogImageType: 'image/png',
   ogImageAlt: `รูปภาพปกประจำโพสต์ ${() => blogSlug.value?.title}`,
   ogImageSecureUrl: blogSlug.value?.mainImage.url,
-  ogUrl: `https://konkamon.live/blog/${blogSlug.value?.slug}`,
+  ogUrl: () => `${site.url}/blog/${blogSlug.value?.slug}`,
   publisher: 'Konkamon Sion',
   robots: {
     index: true,
