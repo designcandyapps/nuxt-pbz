@@ -1,5 +1,5 @@
 <template>
-  <Html class="bg-slate-100 dark:bg-neutral-950" />
+  <Body class="bg-slate-100 dark:bg-gray-950" />
   <NuxtLoadingIndicator />
   <NuxtLayout>
     <NuxtPage />
