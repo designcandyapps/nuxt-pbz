@@ -21,10 +21,10 @@ import type { tagsItem } from '~/types/BlogTags'
 defineEmits(['toggledTags'])
 
 const { find } = useStrapi()
-const { data: tagItems } = useNuxtData<Strapi5ResponseMany<tagsItem>>('tags')
+const { data: tagItems } = useNuxtData<Strapi5ResponseMany<Category>>('tags')
 await useAsyncData(
   'tags',
-  () => find<tagsItem>('categories', { fields: ['name'], sort: 'name:asc' }),
+  () => find<Category>('categories', { fields: ['name'], sort: 'name:asc' }),
   {
     default() {
       return tagItems.value

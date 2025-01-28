@@ -31,10 +31,10 @@
 
 <script lang="ts" setup>
 import { ToggleGroupItem, ToggleGroupRoot } from 'reka-ui'
-import type { tagsItem } from '~/types/BlogTags'
+import type { Category } from '~/types/StrapiBlogs'
 
 defineProps<{
-  tags: tagsItem[]
+  tags: Category[]
 }>()
 
 defineEmits(['toggledTags'])
