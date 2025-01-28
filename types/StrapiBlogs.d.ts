@@ -1,4 +1,4 @@
-export interface StrapiBlogs {
+export interface BaseStrapiBlog {
   id: number
   documentId: string
   title: string
@@ -9,6 +9,9 @@ export interface StrapiBlogs {
   updatedAt: string
   publishedAt: string
   locale: string
+}
+
+export interface StrapiBlogs extends BaseStrapiBlog {
   blogIcon: BlogIcon
   categories: Category[]
 }

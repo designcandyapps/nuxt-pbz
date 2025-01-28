@@ -16,15 +16,15 @@
 
 <script lang="ts" setup>
 import type { Strapi5ResponseMany } from '@nuxtjs/strapi'
-import type { tagsItem } from '~/types/BlogTags'
+import type { Category } from '~/types/StrapiBlogs'
 
 defineEmits(['toggledTags'])
 
 const { find } = useStrapi()
-const { data: tagItems } = useNuxtData<Strapi5ResponseMany<tagsItem>>('tags')
+const { data: tagItems } = useNuxtData<Strapi5ResponseMany<Category>>('tags')
 await useAsyncData(
   'tags',
-  () => find<tagsItem>('categories', { fields: ['name'], sort: 'name:asc' }),
+  () => find<Category>('categories', { fields: ['name'], sort: 'name:asc' }),
   {
     default() {
       return tagItems.value
