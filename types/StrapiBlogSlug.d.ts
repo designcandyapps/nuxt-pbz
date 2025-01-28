@@ -1,14 +1,6 @@
-export interface StrapiBlogSlug {
-  id: number
-  documentId: string
-  title: string
-  subtitle: string
-  slug: string
-  content: string
-  createdAt: string
-  updatedAt: string
-  publishedAt: string
-  locale: string
+import type { BaseStrapiBlog } from './StrapiBlogs'
+
+export interface StrapiBlogSlug extends BaseStrapiBlog {
   categories: Category[]
   mainImage: MainImage
 }
