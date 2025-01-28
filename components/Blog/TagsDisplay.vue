@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 import type { Strapi5ResponseMany } from '@nuxtjs/strapi'
-import type { tagsItem } from '~/types/BlogTags'
+import type { Category } from '~/types/StrapiBlogs'
 
 defineEmits(['toggledTags'])
 
