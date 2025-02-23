@@ -21,7 +21,7 @@
           v-for="post in latestBlogs"
           :key="post.id"
         >
-          <BlogCard :post="post" />
+          <BlogCard :blog="post" />
         </div>
         <template #fallback>
           <div

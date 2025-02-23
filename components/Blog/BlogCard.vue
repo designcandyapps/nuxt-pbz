@@ -80,6 +80,5 @@
 <script lang="ts" setup>
 import type { BlogCollectionItem } from '@nuxt/content'
 
-const props = defineProps<{ post: BlogCollectionItem }>()
-const { post: blog } = toRefs(props)
+defineProps<{ blog: BlogCollectionItem }>()
 </script>
