@@ -23,7 +23,7 @@
           :icon="copied ? 'ph:check-square-duotone' : 'ph:clipboard-duotone'"
           aria-label="Copy Code"
           :label="copied ? 'Copied!' : 'Copy Code'"
-          @click="copy($props.code as string)"
+          @click="copy(code as string)"
         />
       </div>
     </div>
@@ -36,7 +36,7 @@
         :icon="copied ? 'ph:check-square-duotone' : 'ph:clipboard-duotone'"
         aria-label="Copy Code"
         :label="copied ? 'Copied!' : 'Copy Code'"
-        @click="copy($props.code as string)"
+        @click="copy(code as string)"
       />
     </div>
     <pre
@@ -50,26 +50,32 @@ defineProps({
   code: {
     type: String,
     default: '',
+    required: true,
   },
   language: {
     type: String,
     default: null,
+    required: false,
   },
   filename: {
     type: String,
     default: null,
+    required: false,
   },
   highlights: {
     type: Array as () => number[],
     default: () => [],
+    required: false,
   },
   meta: {
     type: String,
     default: null,
+    required: false,
   },
   class: {
     type: String,
     default: null,
+    required: false,
   },
 })
 const toast = useToast()
