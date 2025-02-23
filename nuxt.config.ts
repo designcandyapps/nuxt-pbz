@@ -50,34 +50,21 @@ export default defineNuxtConfig({
       anchorLinks: false,
     },
     build: {
-      pathMeta: {
-        slugifyOptions: {
-          remove: /^\d{4}-\d{2}-\d{2}-(.*)/,
-        },
-      },
       markdown: {
         highlight: {
           theme: 'one-dark-pro',
           themes: ['one-dark-pro'],
-          langs: ['vue', 'javascript', 'typescript'],
+          langs: ['vue', 'javascript', 'typescript', 'bash'],
         },
       },
     },
   },
 
-  routeRules: {
-    '/': { prerender: true },
-    '/blog': { isr: true },
-    '/blog/**': { isr: 900 },
-  },
   sourcemap: {
     server: false,
     client: true,
   },
-  experimental: {
-    externalVue: false,
-  },
-  compatibilityDate: '2024-07-04',
+  compatibilityDate: '2025-02-23',
   nitro: {
     compressPublicAssets: true,
   },
