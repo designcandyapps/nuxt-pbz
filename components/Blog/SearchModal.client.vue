@@ -80,5 +80,5 @@ const fuse = new Fuse(data.value ?? [], {
   useExtendedSearch: true,
 })
 
-const result = computed(() => fuse.search(toValue(query)).filter((item) => item.score! <= 0.7).slice(0, 10))
+const result = computed(() => fuse.search(toValue(query)).filter((item) => item.score ? item.score : 0.7 <= 0.7).slice(0, 10))
 </script>
