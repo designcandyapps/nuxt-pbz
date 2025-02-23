@@ -1,3 +1,5 @@
-/server/api/mdc.post.ts
 /pages/Bookmarks.vue
 /components/Bookmark
+/middleware/
+/pages/Bookmarks.vue
+/components/global/

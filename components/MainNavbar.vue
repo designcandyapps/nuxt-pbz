@@ -145,5 +145,10 @@ const navItems = [
     to: '/blog',
     icon: 'ph:book-duotone',
   },
+  // {
+  //   label: 'Nuxt Content Playground',
+  //   to: '/nuxt-content',
+  //   icon: 'ph:markdown-logo-duotone',
+  // },
 ]
 </script>

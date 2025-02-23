@@ -22,5 +22,11 @@
     "app",
     "Bookmark",
     "Project",
-  ]
+    "Nuxt Content"
+  ],
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "vue.inlayHints.missingProps": true,
+  "vue.inlayHints.inlineHandlerLeading": true
 }

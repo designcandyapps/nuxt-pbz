@@ -1,34 +1,89 @@
 <template>
   <div>
-    <h2 class="text-lg font-bold text-gray-500 dark:text-gray-400 mb-6">Contact Me</h2>
-
-    <div class="relative mb-4">
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Email"
-        class="w-full bg-white rounded border drop-shadow border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-      />
-    </div>
-    <div class="relative">
-      <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-        <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-          <Icon name="mdi:email" />
-        </button>
-      </span>
-      <input
-        type="search"
-        name="q"
-        class="py-2 text-sm border shadow rounded unded-md pl-10 focus:outline-none"
-        placeholder="Search..."
-        autocomplete="off"
-      />
-    </div>
-    <div class="w-2/3 flex justify-end items-center relative">
-      <input placeholder="Pesquisar" class="border rounded p-1 w-full" />
-      <!-- <img src="/icons/search.svg" class="absolute mr-2 w-10" alt="Search Icon" /> -->
-      <Icon name="mdi:email" class="absolute mr-2 w-10" />
-    </div>
+    <!-- <UModal>
+      <h2 class="mb-6 text-lg font-bold text-gray-500 dark:text-gray-400">
+        Contact Me
+      </h2>
+      <div class="relative mb-4">
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="Email"
+          class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none drop-shadow transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+        >
+      </div>
+      <div class="relative">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+          <button
+            type="submit"
+            class="focus:shadow-outline p-1 focus:outline-none"
+          >
+            <Icon name="mdi:email" />
+          </button>
+        </span>
+        <input
+          type="search"
+          name="q"
+          class="unded-md rounded border py-2 pl-10 text-sm shadow focus:outline-none"
+          placeholder="Search..."
+          autocomplete="off"
+        >
+      </div>
+      <div class="relative flex w-2/3 items-center justify-end">
+        <input
+          placeholder="Pesquisar"
+          class="w-full rounded border p-1"
+        >
+        <Icon
+          name="mdi:email"
+          class="absolute mr-2 w-10"
+        />
+      </div>
+    </UModal> -->
+    <UButton
+      label="Open First Modal"
+      @click="first = true"
+    />
+    <UModal
+      v-model="first"
+      :ui="{ footer: 'justify-end' }"
+    >
+      <UCard>
+        <!-- <UButton
+          label="Open"
+        /> -->
+        <p>test</p>
+        <template #footer>
+          <UButton
+            label="Close"
+            variant="outline"
+            @click="first = false"
+          />
+          <UModal
+            v-model="second"
+            :ui="{ footer: 'justify-end' }"
+          >
+            <UButton
+              label="Close"
+              variant="outline"
+              @click="second = false"
+            />
+            <template #footer>
+              <UButton
+                label="Close"
+                variant="outline"
+                @click="second = false"
+              />
+            </template>
+          </UModal>
+        </template>
+      </UCard>
+    </UModal>
   </div>
 </template>
+
+<script setup lang="ts">
+const first = ref(false)
+const second = ref(false)
+</script>

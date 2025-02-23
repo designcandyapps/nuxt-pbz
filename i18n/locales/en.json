@@ -40,6 +40,7 @@
     "searchPlaceholder": "Search Blog... (Type at least 3 characters)",
     "withTag": {
       "searchPlaceholder": "Search Blog in tag {tagName}"
-    }
+    },
+    "notFound": "Not found from your path: `{path}`"
   }
 }

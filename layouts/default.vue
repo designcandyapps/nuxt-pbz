@@ -12,7 +12,7 @@
           :speed="0.7"
           :particle-density="400"
           class="absolute top-0 size-full"
-          :particle-color="$colorMode.value == 'dark' ? '#6BC9AA' : '#379777'"
+          :particle-color="$colorMode.value === 'dark' ? '#6BC9AA' : '#379777'"
         />
       </div>
     </div>

@@ -40,6 +40,7 @@
     "searchPlaceholder": "ค้นหา Blog... (พิมพ์ 3 ตัวอักษรขึ้นไป)",
     "withTag": {
       "searchPlaceholder": "ค้นหา Blog ที่มี Tag {tagName}"
-    }
+    },
+    "notFound": "ไม่พบ Blog ที่คุณกำลังหา: `{path}`"
   }
 }
