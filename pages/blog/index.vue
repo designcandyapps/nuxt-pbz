@@ -22,7 +22,7 @@
         v-for="blog in blogs"
         :key="blog.id"
       >
-        <BlogCard :post="blog" />
+        <BlogCard :blog="blog" />
       </template>
     </section>
   </div>
