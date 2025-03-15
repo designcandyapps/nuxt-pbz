@@ -3,6 +3,8 @@ version = 1
 [[analyzers]]
 name = "javascript"
 
-  [analyzers.meta]
-  plugins = ["vue"]
-  environment = ["nodejs"]
+[analyzers.meta]
+plugins = ["vue"]
+environment = ["nodejs"]
+
+exclude_patterns = ["components/content/**.vue"]
