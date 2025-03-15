@@ -18,20 +18,12 @@
     >
       <ClientOnly>
         <div
-          v-for="post in latestBlogs?.data"
-          :key="post.documentId"
+          v-for="post in latestBlogs"
+          :key="post.id"
         >
-          <BlogIndexCard :post="post" />
+          <BlogCard :blog="post" />
         </div>
-        <template #fallback>
-          <div
-            v-for="fallback in 2"
-            :key="fallback"
-          >
-            <BlogSkeletonFallback />
-          </div>
-        </template>
-        <div v-if="status == 'pending' && !latestBlogs">
+        <div v-if="status === 'pending' && !latestBlogs">
           <LazyUAlert
             title="Loading"
             icon="ph:magnifying-glass-duotone"
@@ -40,7 +32,7 @@
             variant="subtle"
           />
         </div>
-        <div v-if="error && status == 'error'">
+        <div v-if="error && status === 'error'">
           <LazyUAlert
             title="Error"
             icon="ph:warning-circle-duotone"
@@ -55,41 +47,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { Strapi5ResponseMany } from '@nuxtjs/strapi'
-import type { StrapiBlogs } from '~/types/StrapiBlogs'
-
-const { locale } = useI18n()
-const { find } = useStrapi()
-
-const { data: latestBlogs } = useNuxtData<Strapi5ResponseMany<StrapiBlogs>>('latestBlogs')
-const { error, status } = await useLazyAsyncData(
-  'latestBlogs',
-  () =>
-    find<StrapiBlogs>('blogs', {
-      fields: ['title', 'subtitle', 'createdAt', 'slug', 'publishedAt', 'updatedAt'],
-      sort: 'publishedAt:desc',
-      locale: locale.value,
-      pagination: {
-        pageSize: 2,
-        page: 1,
-      },
-      populate: {
-        categories: {
-          fields: ['name'],
-        },
-        blogIcon: {
-          fields: ['url'],
-        },
-      },
-    }),
-  {
-    deep: false,
-    server: false,
-    pick: ['data'],
-    watch: [locale],
-    default() {
-      return latestBlogs.value
-    },
-  },
-)
+const { data: latestBlogs, status, error } = await useAsyncData('latestBlogs', () => {
+  return queryCollection('blog')
+    .order('dateUpdated', 'DESC')
+    .limit(2)
+    .all()
+})
 </script>
