@@ -25,6 +25,15 @@
         <BlogCard :blog="blog" />
       </template>
     </section>
+    <section class="flex justify-center">
+      <UPagination
+        v-if="blogs && blogsCount"
+        v-model="currentPage"
+        :total="blogsCount"
+        :page-count="itemPerPage"
+        class="mt-5"
+      />
+    </section>
   </div>
 </template>
 
@@ -32,8 +41,14 @@
 import { LazyBlogSearchModal } from '#components'
 
 const currentPage = ref(1)
+const itemPerPage = 6
+
+const { data: blogsCount } = await useAsyncData(() => {
+  return queryCollection('blog').count()
+})
+
 const { data: blogs } = await useAsyncData(() => {
-  return queryCollection('blog').order('dateUpdated', 'DESC').skip(currentPage.value).all()
+  return queryCollection('blog').order('dateUpdated', 'DESC').skip(Math.round(currentPage.value * itemPerPage) - itemPerPage).limit(itemPerPage).all()
 }, {
   watch: [currentPage],
 })
