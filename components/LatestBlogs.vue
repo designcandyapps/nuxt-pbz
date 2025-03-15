@@ -23,14 +23,6 @@
         >
           <BlogCard :blog="post" />
         </div>
-        <template #fallback>
-          <div
-            v-for="fallback in 2"
-            :key="fallback"
-          >
-            <BlogSkeletonFallback />
-          </div>
-        </template>
         <div v-if="status === 'pending' && !latestBlogs">
           <LazyUAlert
             title="Loading"
@@ -57,6 +49,7 @@
 <script lang="ts" setup>
 const { data: latestBlogs, status, error } = await useAsyncData('latestBlogs', () => {
   return queryCollection('blog')
+    .order('dateUpdated', 'DESC')
     .limit(2)
     .all()
 })
