@@ -1,11 +1,11 @@
 <template>
   <main>
-    <div class="flex flex-col flex-nowrap gap-10">
+    <!-- <div class="flex flex-col flex-nowrap gap-10">
       <Hero />
       <AboutMe />
       <HomeTabs />
       <LatestBlogs />
-    </div>
+    </div> -->
   </main>
 </template>
 

@@ -1,11 +1,11 @@
 <template>
   <Body class="bg-slate-100 dark:bg-gray-950" />
   <NuxtLoadingIndicator />
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
-  <UModals />
-  <UNotifications />
+  <UApp>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </UApp>
 </template>
 
 <script setup lang="ts">
