@@ -1,13 +1,13 @@
 export default defineAppConfig({
   ui: {
-    primary: 'ocean-green',
-    gray: 'neutral',
-
-    pagination: {
+    colors: {
+      primary: 'myblue',
+      neutral: 'mydark',
+    },
+    card: {
       slots: {
-        next: 'ph:arrow-right',
-        prev: 'ph:arrow-left',
-      }
+        root: 'rounded shadow-md dark:shadow-none',
+      },
     },
   },
 })
