@@ -4,17 +4,14 @@
   >
     <UContainer :ui="{}">
       <header class="flex items-center">
-        <div class="flex-1">
+        <div class="flex-1 font-mono tracking-tighter">
           <ULink
             id="myName"
             to="/"
-            class="flex items-center text-highlighted"
+            class="flex items-center"
             aria-label="logo"
           >
-            <UIcon
-              name="my-icon:konkamon"
-              size="22px"
-            />
+            <h1 class="font-bold text-lg">bkozii<span class="font-normal text-sm">.com</span></h1>
           </ULink>
         </div>
         <div class="flex flex-1 justify-center">
