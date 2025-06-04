@@ -1,19 +1,38 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@plugin "@tailwindcss/typography";
 
 @theme static {
-  --font-sans: 'Albert Sans', 'Anuphan', sans-serif;
+  --font-sans: 'Inter', 'Noto Sans Thai', sans-serif;
   --font-mono: 'Fira Code', 'Anuphan';
 
-  --color-green-50: #C8EBE0;
-  --color-green-100: #B6E4D5;
-  --color-green-200: #90D7BF;
-  --color-green-300: #6BC9AA;
-  --color-green-400: #46BB94;
-  --color-green-500: #379777;
-  --color-green-600: #2C795F;
-  --color-green-700: #215B48;
-  --color-green-800: #163D30;
-  --color-green-900: #0B1F19;
-  --color-green-950: #06100D;
+  --color-myblue-50: #f1fafa;
+  --color-myblue-100: #dbf0f2;
+  --color-myblue-200: #bae2e7;
+  --color-myblue-300: #8accd5;
+  --color-myblue-400: #54aebc;
+  --color-myblue-500: #3892a2;
+  --color-myblue-600: #327888;
+  --color-myblue-700: #2e6270;
+  --color-myblue-800: #2c525e;
+  --color-myblue-900: #294550;
+  --color-myblue-950: #172d35;
+
+
+ --color-mydark: oklch(22.892% 0.014 229.74);
+  --color-mydark-50: oklch(100% 0 none);
+  --color-mydark-100: oklch(99.329% 0.00106 197.14);
+  --color-mydark-200: oklch(90.815% 0.01102 234.83);
+  --color-mydark-300: oklch(82.376% 0.01991 230.76);
+  --color-mydark-400: oklch(73.498% 0.03088 233.78);
+  --color-mydark-500: oklch(64.601% 0.04134 231.48);
+  --color-mydark-600: oklch(55.269% 0.04174 232.63);
+  --color-mydark-700: oklch(45.065% 0.03322 232.29);
+  --color-mydark-800: oklch(34.318% 0.02314 233.38);
+  --color-mydark-900: oklch(22.892% 0.014 229.74);
+  --color-mydark-950: oklch(16.496% 0.00768 229.46);
+}
+
+:root {
+  --ui-container: var(--container-4xl);
 }
