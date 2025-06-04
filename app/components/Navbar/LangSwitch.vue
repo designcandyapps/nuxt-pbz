@@ -5,7 +5,7 @@
       disable-closing-trigger
     >
       <UButton
-        :icon="currentLocale === 'en' ? 'circle-flags:us' : 'circle-flags:th'"
+        :icon="locale === 'en' ? 'circle-flags:us' : 'circle-flags:th'"
         variant="ghost"
         color="neutral"
         @click="toggleLocale"
@@ -21,15 +21,12 @@
   </ClientOnly>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
-const { locale, setLocale } = useI18n()
-const currentLocale = ref(locale.value)
+const { locale } = useI18n()
 
 const toggleLocale = () => {
-  const newLocale = currentLocale.value === 'en' ? 'th' : 'en'
-  setLocale(newLocale)
-  currentLocale.value = newLocale
+  locale.value = locale.value === 'en' ? 'th' : 'en'
 }
 </script>
