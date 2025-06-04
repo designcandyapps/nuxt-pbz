@@ -1,6 +1,5 @@
 <template>
-  <div class="hidden dark:block top-[10vh] right-[14vw] -z-10 absolute blur-[200px] border-[250px] border-t-primary-500/70 border-r-blue-400/70 border-b-primary-800/70 border-l-emerald-700/70 rounded-full" />
-  <div class="hidden dark:block top-[12vh] left-[6vw] -z-10 absolute blur-[200px] border-[250px_180px] border-t-primary-500/80 border-r-green-300/80 border-b-primary-300/80 border-l-emerald-600/80 rounded-full rotate-45" />
+  <div class="hidden dark:block top-[12vh] left-[5vw] -z-10 absolute blur-[200px] border-[180px] border-t-primary-500/50 border-r-blue-400/50 border-b-primary-800/50 border-l-emerald-500/70 rounded-full" />
   <section
     class="flex lg:flex-row flex-col-reverse justify-between items-center gap-5 pt-4"
     :ui="{ padding: 'px-0 lg:px-0', base: 'mx-auto' }"
@@ -14,7 +13,7 @@
         variant="subtle"
         class="mb-1 md:mb-3 font-bold"
       />
-      <h1 class="font-bold text-primary text-3xl lg:text-5xl">
+      <h1 class="font-black text-primary text-3xl lg:text-5xl">
         {{ $t('home.hero.myName') }}
       </h1>
       <p class="text-muted lg:text-left text-center text-balance">
