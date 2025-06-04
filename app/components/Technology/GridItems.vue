@@ -16,7 +16,7 @@
           >
             <UIcon
               :name="item.icon"
-              class="size-7 md:size-5 text-dimmed hover:text-primary"
+              class="size-7 md:size-5 text-muted hover:text-primary"
               title="item.name"
             />
           </UTooltip>
