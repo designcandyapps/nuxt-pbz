@@ -6,6 +6,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxtjs/i18n',
+    'dayjs-nuxt',
+    '@nuxtjs/google-fonts',
   ],
   devtools: { enabled: true },
   app: {
@@ -37,6 +39,11 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-06-03',
+  dayjs: {
+    locales: ['th', 'en'],
+    defaultLocale: 'th',
+    plugins: ['timezone', 'localeData'],
+  },
   eslint: {
     config: {
       stylistic: {
@@ -46,7 +53,23 @@ export default defineNuxtConfig({
       },
     },
   },
+  googleFonts: {
+    families: {
+      'Inter': {
+        wght: [400, 500, 600, 700, 800],
+      },
+      'Noto Sans Thai': {
+        wght: [400, 600, 700, 800],
+      },
+      'Fira Code': {
+        wght: [400, 600, 700, 800],
+      },
+    },
+  },
   i18n: {
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
     baseUrl: 'https://www.bkozii.com',
     strategy: 'no_prefix',
     defaultLocale: 'en',
@@ -72,5 +95,14 @@ export default defineNuxtConfig({
       fallbackLocale: 'en',
     },
     vueI18n: 'i18n.config.ts',
+  },
+  icon: {
+    customCollections: [
+      {
+        prefix: 'my-icon',
+        dir: './app/assets/icons',
+      },
+    ],
+    provider: 'iconify',
   },
 })
