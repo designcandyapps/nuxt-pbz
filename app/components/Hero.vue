@@ -1,72 +1,47 @@
 <template>
-  <section class="body-font mb-0 text-gray-600 lg:mb-5">
-    <UContainer
-      class="flex flex-col-reverse items-center justify-between gap-5 pt-4 lg:flex-row"
-      :ui="{ padding: 'px-0 lg:px-0', base: 'mx-auto' }"
+  <div class="hidden dark:block top-[10vh] right-[14vw] -z-10 absolute blur-[200px] border-[250px] border-t-primary-500/70 border-r-blue-400/70 border-b-primary-800/70 border-l-emerald-700/70 rounded-full" />
+  <div class="hidden dark:block top-[12vh] left-[6vw] -z-10 absolute blur-[200px] border-[250px_180px] border-t-primary-500/80 border-r-green-300/80 border-b-primary-300/80 border-l-emerald-600/80 rounded-full rotate-45" />
+  <section
+    class="flex lg:flex-row flex-col-reverse justify-between items-center gap-5 pt-4"
+    :ui="{ padding: 'px-0 lg:px-0', base: 'mx-auto' }"
+  >
+    <div
+      class="flex flex-col justify-center items-center lg:items-start dark:prose-invert prose-p:mt-2 prose-h1:mb-0 max-w-none prose prose-sm sm:prose-base grow basis-full"
     >
-      <div
-        class="prose prose-sm sm:prose-base dark:prose-invert prose-h1:mb-0 flex max-w-none grow basis-full flex-col items-center justify-center lg:items-start"
-      >
-        <h1 class="text-3xl font-bold sm:text-4xl">
-          {{ $t('home.hero.myName') }}
-        </h1>
-        <p class="text-balance text-center lg:text-left">
-          {{ $t('home.hero.intro') }}
-        </p>
-        <div class="flex w-full flex-row items-center justify-center gap-2 lg:justify-start">
+      <UBadge
+        :label="$t('home.hero.badgeContent')"
+        icon="ph:suitcase-duotone"
+        variant="subtle"
+        class="mb-1 md:mb-3 font-bold"
+      />
+      <h1 class="font-bold text-primary text-3xl lg:text-5xl">
+        {{ $t('home.hero.myName') }}
+      </h1>
+      <p class="text-muted lg:text-left text-center text-balance">
+        {{ $t('home.hero.intro') }}
+      </p>
+      <div class="flex flex-row justify-center lg:justify-start items-center gap-2 w-full">
+        <UTooltip text="Undergoing...">
           <UButton
-            icon="ph:file-text-fill"
-            :loading="loading"
+            icon="lucide:external-link"
             color="primary"
             size="lg"
-            @click="downloadCV()"
+            disabled
           >
-            Download CV - Thai
+            Open CV - Thai
           </UButton>
-        </div>
+        </UTooltip>
       </div>
-      <div class="basis-1/3">
-        <NuxtImg
-          src="https://res.cloudinary.com/dqx4sss9s/image/upload/v1724321379/me-rmutsv-square_hhiarv.webp"
-          class="aspect-square size-40 rounded-lg shadow-md md:size-48 lg:size-full dark:shadow-none"
-          width="100%"
-          height="100%"
-          alt="Picture of Me, Konkamon Sion"
-          aria-label="Picture of Me, Konkamon Sion"
-        />
-      </div>
-    </UContainer>
+    </div>
+    <div class="basis-1/3">
+      <NuxtImg
+        src="https://res.cloudinary.com/dqx4sss9s/image/upload/v1724321379/me-rmutsv-square_hhiarv.webp"
+        class="shadow-md dark:shadow-none rounded-lg size-52 md:size-40 lg:size-full object-cover aspect-square"
+        width="100%"
+        height="100%"
+        alt="Picture of Me, Konkamon Sion"
+        aria-label="Picture of Me, Konkamon Sion"
+      />
+    </div>
   </section>
 </template>
-
-<script lang="ts" setup>
-const loading = ref(false)
-const downloadCV = async () => {
-  try {
-    loading.value = true
-
-    const response = await fetch('/Resume_กรกมล_ศรีอ่อน.pdf', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/pdf',
-      },
-    })
-
-    const blob = await response.blob()
-    const url = URL.createObjectURL(blob)
-
-    const link = document.createElement('a')
-    link.href = url
-    link.download = 'Resume_กรกมล_ศรีอ่อน.pdf'
-
-    link.addEventListener('click', () => {
-      loading.value = false
-    })
-    link.dispatchEvent(new MouseEvent('click'))
-  } catch (error) {
-    console.error(error)
-  } finally {
-    loading.value = false
-  }
-}
-</script>

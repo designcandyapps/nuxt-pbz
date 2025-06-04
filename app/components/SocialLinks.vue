@@ -1,50 +1,39 @@
 <template>
   <div>
-    <div class="flex flex-col gap-4 text-black sm:gap-3 dark:text-white">
-      <div
-        v-for="data in socialList"
-        :key="data.name"
+    <template
+      v-for="social in socialList"
+      :key="social.icon"
+    >
+      <NuxtLink
+        :to="social.link"
+        target="_blank"
+        class="flex items-center gap-2 hover:bg-accented p-2 rounded transition-colors"
       >
-        <div class="flex items-center justify-between space-x-2">
-          <div v-if="data.link">
-            <a
-              ref="noopener noreferrer"
-              :href="data.link"
-              target="_blank"
-              class="hover:text-primary flex shrink-0 gap-2 text-base sm:text-lg"
-            >{{ data.name }}
-              <Icon
-                class="shrink-0"
-                name="ic:baseline-launch"
-              />
-            </a>
-          </div>
-          <span class="grow border-b border-dashed border-gray-300 dark:border-neutral-700" />
-          <span class="shrink-0 text-gray-800 dark:text-white">
-            <Icon
-              :name="data.icon"
-              size="28px"
-              mode="svg"
-            />
-          </span>
-        </div>
-      </div>
-    </div>
+        <UIcon
+          :name="social.icon"
+          class="size-6"
+        />
+        <span class="text-sm">{{ social.name }} <UIcon
+          name="lucide:external-link"
+          class="size-3"
+        /></span>
+      </NuxtLink>
+    </template>
   </div>
 </template>
 
 <script lang="ts" setup>
-import type { ItemWithIcon } from '~/types/ItemInterface'
+import type { ItemWithIcon } from '~/../types/ItemInterface'
 
 const socialList: ItemWithIcon[] = [
   {
     name: 'Instagram',
-    icon: 'ph:instagram-logo-fill',
+    icon: 'simple-icons:instagram',
     link: 'https://www.instagram.com/bkoziii/',
   },
   {
     name: 'GitHub',
-    icon: 'ph:github-logo-fill',
+    icon: 'simple-icons:github',
     link: 'https://github.com/bKoZii',
   },
 ]

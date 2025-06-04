@@ -2,17 +2,13 @@
   <div class="inline-flex">
     <ClientOnly>
       <UTooltip
-        text="Switch Theme"
-        :popper="{ strategy: 'absolute' }"
+        text="Switch Color Mode"
+        disable-closing-trigger
       >
         <UButton
-          square
-          :padded="false"
-          size="xl"
-          color="black"
-          variant="soft"
+          color="neutral"
+          variant="ghost"
           :icon="iconName"
-          class="group"
           @click="switchColorMode"
         />
       </UTooltip>
@@ -36,16 +32,16 @@ type ColorMode = (typeof ColorModeList)[number]
 const switchColorMode = () => {
   const currentIndex = ColorModeList.indexOf(colorMode.preference as ColorMode)
   const nextIndex = (currentIndex + 1) % ColorModeList.length
-  colorMode.preference = ColorModeList[nextIndex]
+  colorMode.preference = ColorModeList[nextIndex] as ColorMode
 }
 
 const iconName = computed(() => {
   const iconNameMap: Record<ColorMode, string> = {
-    system: 'monitor-duotone',
-    light: 'sun-duotone',
-    dark: 'moon-duotone',
+    system: 'monitor-linear',
+    light: 'sun-linear',
+    dark: 'moon-linear',
   }
   const iconName = colorMode.preference as ColorMode
-  return `ph:${iconNameMap[iconName]}`
+  return `solar:${iconNameMap[iconName]}`
 })
 </script>

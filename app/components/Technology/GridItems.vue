@@ -1,25 +1,25 @@
 <template>
   <div>
-    <div class="flex w-full flex-col dark:text-gray-200">
+    <div class="flex flex-col w-full overflow-auto dark:text-gray-200">
       <h3 class="mb-2 font-bold">
         {{ title }}
       </h3>
-      <div class="flex flex-row flex-wrap justify-center gap-1 sm:justify-start">
+      <div class="flex flex-row flex-wrap justify-center sm:justify-start gap-3">
         <div
           v-for="item in technologyData"
           :key="item.name"
         >
-          <UBadge
-            class="flex flex-row gap-1 font-bold drop-shadow-md dark:drop-shadow-none"
-            variant="subtle"
-            size="sm"
+          <UTooltip
+            :text="item.name"
+            :arrow="true"
+            :content="{ side: 'top' }"
           >
             <UIcon
               :name="item.icon"
-              class="m-0.5 size-4"
+              class="size-7 md:size-5 text-dimmed hover:text-primary"
+              title="item.name"
             />
-            {{ item.name }}
-          </UBadge>
+          </UTooltip>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts" setup>
-import type FrameworkListInterface from '../../types/FrameworkListInterface'
+import type FrameworkListInterface from '~/../types/FrameworkListInterface'
 
 defineProps({
   technologyData: {

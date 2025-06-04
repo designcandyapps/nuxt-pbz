@@ -1,30 +1,32 @@
 <template>
   <footer
-    class="flex flex-col flex-nowrap items-center justify-between gap-5 rounded-none border-t bg-white px-8 py-4 text-gray-600 drop-shadow-md sm:flex-row sm:rounded-lg md:border dark:border-neutral-800 dark:bg-neutral-950 dark:text-gray-300 dark:drop-shadow-none"
+    class="flex sm:flex-row flex-col flex-nowrap justify-between items-center gap-5 bg-default drop-shadow-md dark:drop-shadow-none mb-5 p-4 md:border border-default border-t sm:rounded rounded-none text-toned"
   >
-    <div class="flex flex-col items-center text-sm sm:items-start">
-      <span>© 2024 {{ $t('home.hero.myName') }}</span>
+    <div class="flex flex-col items-center sm:items-start text-xs">
+      <span>© <NuxtTime
+        :datetime="Date.now()"
+        year="numeric"
+      /> {{ $t('home.hero.myName') }}</span>
       <span>{{ $t('home.footer.copyrightText') }}</span>
     </div>
     <div class="flex flex-row gap-5">
       <UTooltip
         text="Source Code"
-        :popper="{ placement: 'top' }"
+        :content="{ side: 'top' }"
       >
-        <a
-          ref="noopener noreferrer"
-          href="https://github.com/bKoZii/konkamon-portfolio-nuxt"
+        <NuxtLink
+          to="https://github.com/bKoZii/nuxt-portfolio-blog"
           target="_blank"
           aria-label="Go to GitHub Repo Page"
         >
-          <div class="hover:text-black active:scale-95 dark:hover:text-white">
+          <div class="hover:text-black dark:hover:text-white active:scale-95">
             <Icon
-              name="ph:github-logo-duotone"
-              size="28px"
+              name="simple-icons:github"
+              size="20px"
               mode="svg"
             />
           </div>
-        </a>
+        </NuxtLink>
       </UTooltip>
     </div>
   </footer>

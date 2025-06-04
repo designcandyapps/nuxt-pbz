@@ -1,7 +1,9 @@
 <template>
-  <Body class="bg-slate-100 dark:bg-gray-950" />
   <NuxtLoadingIndicator />
-  <UApp>
+  <UApp
+    :tooltip="{ delayDuration: 0 }"
+    :locale="locales[locale]"
+  >
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -9,9 +11,15 @@
 </template>
 
 <script setup lang="ts">
+import { en, th } from '@nuxt/ui/locale'
+
+const locales = { en, th }
+const { locale } = useI18n()
+const lang = computed(() => locales[locale.value].code)
+
 useHead({
   htmlAttrs: {
-    lang: 'th',
+    lang,
   },
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - Konkamon Sion` : 'Konkamon Sion'
