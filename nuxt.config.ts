@@ -55,7 +55,7 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Inter': {
+      'Nunito Sans': {
         wght: [400, 500, 600, 700, 800],
       },
       'Noto Sans Thai': {
