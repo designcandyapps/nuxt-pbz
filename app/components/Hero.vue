@@ -1,19 +1,31 @@
 <template>
-  <div class="hidden dark:block top-[12vh] left-[5vw] -z-10 absolute blur-[200px] border-[180px] border-t-primary-500/50 border-r-blue-400/50 border-b-primary-800/50 border-l-emerald-500/70 rounded-full" />
+  <div class="top-[8vh] left-[10vw] -z-10 absolute blur-[200px] border-[180px] border-t-primary-500/50 border-r-blue-400/50 border-b-primary-800/50 border-l-emerald-500/70 rounded-full" />
   <section
-    class="flex lg:flex-row flex-col-reverse justify-between items-center gap-5 pt-4"
+    class="flex lg:flex-row flex-col-reverse justify-between items-center gap-5 py-12"
     :ui="{ padding: 'px-0 lg:px-0', base: 'mx-auto' }"
   >
     <div
       class="flex flex-col justify-center items-center lg:items-start dark:prose-invert prose-p:mt-2 prose-h1:mb-0 max-w-none prose prose-sm sm:prose-base grow basis-full"
     >
-      <UBadge
-        :label="$t('home.hero.badgeContent')"
-        icon="ph:suitcase-duotone"
-        variant="subtle"
-        class="mb-1 md:mb-3 font-bold"
-      />
-      <h1 class="font-black text-primary text-3xl lg:text-5xl">
+      <UChip
+        size="lg"
+        class="relative"
+        color="secondary"
+      >
+        <UChip
+          size="lg"
+          color="secondary"
+          class="top-0 right-0 absolute animate-ping"
+        />
+        <UBadge
+          :label="$t('home.hero.badgeContent')"
+          icon="ph:suitcase-duotone"
+          variant="subtle"
+          class="mb-1 md:mb-3 font-bold"
+          color="secondary"
+        />
+      </UChip>
+      <h1 class="font-black text-primary text-3xl lg:text-5xl tracking-tight">
         {{ $t('home.hero.myName') }}
       </h1>
       <p class="text-muted lg:text-left text-center text-balance">
