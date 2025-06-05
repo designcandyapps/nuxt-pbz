@@ -3,6 +3,7 @@ export default defineAppConfig({
     colors: {
       primary: 'myblue',
       neutral: 'zinc',
+      secondary: 'mygreen',
     },
     card: {
       slots: {

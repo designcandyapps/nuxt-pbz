@@ -18,6 +18,18 @@
   --color-myblue-900: #294550;
   --color-myblue-950: #172d35;
 
+  /* My custom green */
+  --color-mygreen-50: #f0f9f5;
+  --color-mygreen-100: #daf1e5;
+  --color-mygreen-200: #b8e2cf;
+  --color-mygreen-300: #89ccb1;
+  --color-mygreen-400: #57b08f;
+  --color-mygreen-500: #379777;
+  --color-mygreen-600: #25765d;
+  --color-mygreen-700: #1e5e4c;
+  --color-mygreen-800: #1a4b3d;
+  --color-mygreen-900: #163e33;
+  --color-mygreen-950: #0b231d;
 }
 
 :root {
