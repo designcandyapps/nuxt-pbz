@@ -1,14 +1,14 @@
 <template>
   <div
-    class="top-0 z-10 sticky bg-default/80 drop-shadow-sm backdrop-blur-xl py-1 border border-default border-t-0"
+    class="top-0 z-10 sticky bg-default/80 drop-shadow-sm backdrop-blur-xl border border-default border-t-0"
   >
-    <UContainer :ui="{}">
+    <UContainer class="py-1 border-default border-x">
       <header class="flex items-center">
         <div class="flex-1 font-mono tracking-tighter">
           <ULink
             id="myName"
             to="/"
-            class="flex items-center"
+            class="flex items-center text-highlighted"
             aria-label="logo"
           >
             <h1 class="font-bold text-lg">bkozii<span class="font-normal text-sm">.com</span></h1>
