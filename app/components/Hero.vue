@@ -1,7 +1,6 @@
 <template>
-  <div class="top-[8vh] left-[10vw] -z-10 absolute blur-[200px] border-[180px] border-t-primary-500/50 border-r-blue-400/50 border-b-primary-800/50 border-l-emerald-500/70 rounded-full" />
   <section
-    class="flex lg:flex-row flex-col-reverse justify-between items-center gap-5 py-12"
+    class="flex lg:flex-row flex-col-reverse justify-between items-center gap-8 lg:gap-0 py-12"
     :ui="{ padding: 'px-0 lg:px-0', base: 'mx-auto' }"
   >
     <div
@@ -42,6 +41,28 @@
             Open CV - Thai
           </UButton>
         </UTooltip>
+        <UButtonGroup size="lg">
+          <UTooltip text="Copy my email">
+            <UButton
+              icon="lucide:mail"
+              variant="subtle"
+              class="cursor-pointer"
+              @click="copyEmail"
+            />
+          </UTooltip>
+          <UButton
+            icon="lucide:instagram"
+            variant="subtle"
+            to="https://www.instagram.com/bkoziii/"
+            target="_blank"
+          />
+          <UButton
+            icon="lucide:github"
+            variant="subtle"
+            to="https://github.com/bkozii"
+            target="_blank"
+          />
+        </UButtonGroup>
       </div>
     </div>
     <div class="basis-1/3">
@@ -56,3 +77,20 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const toast = useToast()
+const copyEmail = () => {
+  const email = 'konkamon.work@gmail.com'
+  try {
+    navigator.clipboard.writeText(email)
+  } finally {
+    toast.add({
+      title: 'Copied Email',
+      description: `Email "${email}" has been copied to clipboard.`,
+      color: 'success',
+      icon: 'solar:check-circle-linear',
+    })
+  }
+}
+</script>
