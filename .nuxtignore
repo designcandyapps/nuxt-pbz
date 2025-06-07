@@ -1,7 +1,7 @@
 /app/pages/Bookmarks.vue
 /app/pages/blog/*
 /app/pages/blog.vue
-/app/pages/Projects.vue
+# /app/pages/Projects.vue
 /app/pages/WhatIsInMyBag.vue
 
 /app/components/Bookmark
@@ -10,7 +10,7 @@
 /app/components/LatestBlogs.vue
 /app/components/Blog/
 /app/components/content/
-/app/components/PageHeader.vue
+# /app/components/PageHeader.vue
 /app/components/ParticleBackground.vue
 /app/components/SparkleBackground.vue
 /app/utils/

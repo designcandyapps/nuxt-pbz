@@ -1,18 +1,19 @@
 <template>
   <div>
-    <article
-      class="prose prose-sm md:prose-base dark:prose-invert prose-h1:m-0 max-w-none text-center lg:text-left"
+    <section
+      class="dark:prose-invert prose-h1:m-0 py-8 sm:py-12 max-w-none lg:text-left text-center prose prose-sm md:prose-base"
     >
-      <h1>{{ data.title }}</h1>
-      <p>{{ data.description }}</p>
-    </article>
+      <h1>{{ $props.title }}</h1>
+      <p class="text-balance">
+        {{ $props.description }}
+      </p>
+    </section>
   </div>
 </template>
 
 <script lang="ts" setup>
-const pageHeader = defineProps({
+defineProps({
   title: String,
   description: String,
 })
-const data = markRaw(pageHeader)
 </script>

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     'dayjs-nuxt',
     '@nuxtjs/google-fonts',
+    '@nuxt/content',
   ],
   devtools: { enabled: true },
   app: {

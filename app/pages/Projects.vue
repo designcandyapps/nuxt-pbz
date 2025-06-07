@@ -1,58 +1,39 @@
 <template>
   <div>
-    <div class="flex flex-col flex-nowrap gap-10">
-      <PageHeader
-        :title="$t('project.title')"
-        :description="$t('project.subtitle')"
-      />
-      <section class="flex flex-col gap-3 space-y-3 rounded-lg text-black dark:text-white">
-        <div
-          v-for="work in workList"
-          :key="work.name"
-          class="flex items-end justify-between space-x-2"
+    <PageHeader
+      :title="$t('project.title')"
+      :description="$t('project.subtitle')"
+    />
+    <section class="space-y-18">
+      <template
+        v-for="(project, index) in projects"
+        :key="project.id"
+      >
+        <ProjectListItem
+          :project="project"
+          :reverse="index % 2 === 1"
         >
-          <ProjectListItem :work-data="work" />
-        </div>
-      </section>
-    </div>
+          <template #image>
+            <NuxtImg
+              :src="project.image || '/ogImage-projects.webp'"
+              alt="Project Image"
+              class="shadow-lg dark:shadow-none rounded-lg w-full max-w-sm h-auto object-cover"
+            />
+          </template>
+        </ProjectListItem>
+      </template>
+    </section>
   </div>
 </template>
 
 <script lang="ts" setup>
-import type workListInterface from '~/types/workListInterface'
-
-const workList: workListInterface[] = [
-  {
-    name: 'Ionic + Angular - Firebase CRUD ',
-    description: 'ชิ้นงาน Ionic ประจำรายวิชา การพัฒนาคลาวด์แอปพลิเคชัน',
-    icon: 'ph:device-mobile-camera-duotone',
-    link: 'https://github.com/bKoZii/cloud-konkamon-ionic-angular',
-  },
-
-  {
-    name: 'Ionic + Vue - Firebase CRUD',
-    description: 'ชิ้นงาน Ionic ประจำรายวิชา การพัฒนาคลาวด์แอปพลิเคชัน',
-    icon: 'ph:device-mobile-camera-duotone',
-    link: 'https://github.com/bKoZii/cloud-konkamon-ionic-vue',
-  },
-  {
-    name: 'Dashboard from Mock Up',
-    description: 'ฝึกการสร้าง Dashboard โดยลอกจากงาน Design ด้วย Vue / Quasar',
-    icon: 'ic:twotone-dashboard',
-  },
-  {
-    name: 'Angular Website',
-    description: 'Angular + Bootstrap - ชิ้นงานประจำรายวิชา การพัฒนาคลาวด์แอปพลิเคชัน',
-    icon: 'ph:globe-simple-duotone',
-    link: 'https://github.com/bKoZii/cloud-konkamon-bootstrap',
-  },
-  {
-    name: 'Vue + Vuetify - Firestore CRUD',
-    description: 'ศึกษาการใช้งาน Vuetify ในการสร้างแอพ CRUD',
-    icon: 'simple-icons:vuetify',
-    link: 'https://github.com/bKoZii/vuetify-firestore-crud',
-  },
-]
+const { locale } = useI18n()
+const { data: projects } = await useAsyncData(`projects-${locale.value}`, () => {
+  return queryCollection(`projects`)
+    .where('stem', 'LIKE', '%.' + locale.value)
+    .order('date', 'DESC')
+    .all()
+}, { watch: [locale] })
 
 useSeoMeta({
   title: 'รวมโปรเจค',

@@ -29,8 +29,9 @@
     }
   },
   "project": {
-    "title": "Project",
-    "subtitle": "Collection of my Works"
+    "title": "Side Project / School Project",
+    "subtitle": "Collection of my Works",
+    "wip": "Work in Progress"
   },
   "whatsInMyBag": {
     "title": "What's In My Bag?",
