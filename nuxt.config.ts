@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxtjs/i18n',
-    'dayjs-nuxt',
     '@nuxtjs/google-fonts',
     '@nuxt/content',
   ],
@@ -40,11 +39,6 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-06-03',
-  dayjs: {
-    locales: ['th', 'en'],
-    defaultLocale: 'th',
-    plugins: ['timezone', 'localeData'],
-  },
   eslint: {
     config: {
       stylistic: {
