@@ -102,7 +102,7 @@ export default defineNuxtConfig({
   },
   image: {
     cloudinary: {
-      token: 'dqx4sss9s',
+      baseURL: 'https://res.cloudinary.com/dqx4sss9s/image/upload',
     },
   },
 })
