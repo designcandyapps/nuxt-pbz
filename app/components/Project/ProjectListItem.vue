@@ -6,11 +6,16 @@
     <div
       class="flex flex-1 justify-center"
     >
-      <slot name="image" />
+      <NuxtImg
+        :src="$props.project.image || '/ogImage-projects.webp'"
+        alt="Image of project"
+        class="shadow-lg dark:shadow-none rounded-lg w-full max-w-sm h-auto object-cover"
+      />
     </div>
 
     <div class="flex-1 text-sm md:text-base">
       <NuxtTime
+        v-if="$props.project.date"
         :datetime="$props.project.date"
         year="numeric"
         month="long"

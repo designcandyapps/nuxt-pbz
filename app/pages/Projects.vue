@@ -4,25 +4,19 @@
       :title="$t('project.title')"
       :description="$t('project.subtitle')"
     />
-    <section class="space-y-18">
-      <template
-        v-for="(project, index) in projects"
-        :key="project.id"
-      >
-        <ProjectListItem
-          :project="project"
-          :reverse="index % 2 === 1"
+    <ClientOnly>
+      <section class="space-y-18">
+        <template
+          v-for="(project, index) in projects"
+          :key="project.id"
         >
-          <template #image>
-            <NuxtImg
-              :src="project.image || '/ogImage-projects.webp'"
-              alt="Project Image"
-              class="shadow-lg dark:shadow-none rounded-lg w-full max-w-sm h-auto object-cover"
-            />
-          </template>
-        </ProjectListItem>
-      </template>
-    </section>
+          <ProjectListItem
+            :project="project"
+            :reverse="index % 2 === 1"
+          />
+        </template>
+      </section>
+    </ClientOnly>
   </div>
 </template>
 
