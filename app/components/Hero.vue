@@ -67,7 +67,8 @@
     </div>
     <div class="basis-1/3">
       <NuxtImg
-        src="https://res.cloudinary.com/dqx4sss9s/image/upload/v1724321379/me-rmutsv-square_hhiarv.webp"
+        src="me-rmutsv-square_hhiarv"
+        provider="cloudinary"
         class="shadow-md dark:shadow-none rounded-lg size-52 md:size-40 lg:size-full object-cover aspect-square"
         width="100%"
         height="100%"

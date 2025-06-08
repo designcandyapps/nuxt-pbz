@@ -100,4 +100,9 @@ export default defineNuxtConfig({
     ],
     provider: 'iconify',
   },
+  image: {
+    cloudinary: {
+      token: 'dqx4sss9s',
+    },
+  },
 })
