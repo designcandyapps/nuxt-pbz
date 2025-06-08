@@ -7,7 +7,8 @@
       class="flex flex-1 justify-center"
     >
       <NuxtImg
-        :src="$props.project.image || '/ogImage-projects.webp'"
+        v-if="$props.project.image"
+        :src="$props.project.image"
         alt="Image of project"
         class="shadow-lg dark:shadow-none rounded-lg w-full max-w-sm h-auto object-cover"
       />
