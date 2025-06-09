@@ -9,7 +9,7 @@
           color="neutral"
           variant="ghost"
           size="sm"
-          :icon="iconName"
+          :icon="isDark ? 'solar:moon-linear' : 'solar:sun-linear'"
           @click="startViewTransition"
         />
       </UTooltip>
@@ -27,34 +27,17 @@
 <script lang="ts" setup>
 const colorMode = useColorMode()
 
-const ColorModeList = ['light', 'dark', 'system'] as const
-type ColorMode = (typeof ColorModeList)[number]
-
-const getNextColorMode = (currentMode: ColorMode): ColorMode => {
-  const currentIndex = ColorModeList.indexOf(currentMode)
-  const nextIndex = (currentIndex + 1) % ColorModeList.length
-  return ColorModeList[nextIndex] as ColorMode
-}
-
-const switchColorMode = () => {
-  colorMode.preference = getNextColorMode(colorMode.preference as ColorMode)
-}
-
-const iconName = computed(() => {
-  const iconNameMap: Record<ColorMode, string> = {
-    system: 'monitor-linear',
-    light: 'sun-linear',
-    dark: 'moon-linear',
-  }
-  const iconName = colorMode.preference as ColorMode
-  return `solar:${iconNameMap[iconName]}`
+const isDark = computed({
+  get() {
+    return colorMode.value === 'dark'
+  },
+  set(_isDark) {
+    colorMode.preference = _isDark ? 'dark' : 'light'
+  },
 })
-
 const startViewTransition = (event: MouseEvent) => {
-  const nextMode = getNextColorMode(colorMode.preference as ColorMode)
-
-  if (nextMode === 'system' || !document.startViewTransition) {
-    switchColorMode()
+  if (!document.startViewTransition) {
+    isDark.value = !isDark.value
     return
   }
 
@@ -66,7 +49,7 @@ const startViewTransition = (event: MouseEvent) => {
   )
 
   const transition = document.startViewTransition(() => {
-    switchColorMode()
+    isDark.value = !isDark.value
   })
 
   transition.ready.then(() => {
