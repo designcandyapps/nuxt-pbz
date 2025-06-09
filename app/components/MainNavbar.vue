@@ -15,25 +15,24 @@
           </ULink>
         </div>
         <div class="flex flex-1 justify-center">
-          <nav class="flex space-x-2">
-            <ul
-              v-for="item in navItems"
-              :key="item.to"
-              class="list-none"
-            >
-              <li>
+          <nav>
+            <ul class="flex space-x-2 list-none">
+              <li
+                v-for="item in navItems"
+                :key="item.to"
+              >
                 <UTooltip
                   :text="item.label"
                   :content="{ sideOffset: 10 }"
                 >
                   <UButton
                     :icon="item.icon"
-                    :to="item.to"
+                    :to="item.to? item.to : undefined"
                     active-color="primary"
                     active-variant="link"
                     variant="link"
                     color="neutral"
-                    :disabled="item.to !== '/'"
+                    :disabled="!item.to"
                   />
                 </UTooltip>
               </li>
@@ -63,17 +62,15 @@ const navItems = [
   },
   {
     label: 'What\'s In My Bag?',
-    to: '/WhatIsInMyBag',
     icon: 'solar:backpack-linear',
   },
-  /* {
+  /*   {
     label: 'Bookmarks',
     to: '/Bookmarks',
     icon: 'ph:bookmark-duotone',
   }, */
   {
     label: 'Blog',
-    to: '/blog',
     icon: 'solar:book-2-linear',
   },
 ]
