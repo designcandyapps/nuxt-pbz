@@ -2,7 +2,8 @@
   <main class="space-y-12">
     <Hero />
     <AboutMe />
-    <HomeCards />
+    <HomeTechStack />
+    <FeaturedWork />
   </main>
 </template>
 
