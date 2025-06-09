@@ -10,11 +10,11 @@
         v-if="$props.project.image"
         :src="$props.project.image"
         alt="Image of project"
-        class="shadow-lg dark:shadow-none rounded-lg w-full max-w-sm h-auto object-cover"
+        class="shadow-md dark:shadow-none rounded-lg ring-primary light:ring-2 w-full max-w-sm h-auto object-cover"
       />
     </div>
 
-    <div class="flex-1 text-sm md:text-base">
+    <div class="flex-1/4 lg:flex-1 text-sm md:text-base">
       <NuxtTime
         v-if="$props.project.date"
         :datetime="$props.project.date"
