@@ -9,21 +9,12 @@
           v-for="item in technologyData"
           :key="item.name"
         >
-          <UTooltip
-            :text="item.name"
-            :arrow="true"
-            class="group"
-            :content="{ side: 'top' }"
-          >
-            <UAvatar
-              :icon="item.icon"
-              size="lg"
-              :ui="{
-                icon: 'text-highlighted group-hover:text-muted',
-                root: 'rounded',
-              }"
-            />
-          </UTooltip>
+          <UBadge
+            :label="item.name"
+            :icon="item.icon"
+            variant="subtle"
+            color="primary"
+          />
         </div>
       </div>
     </div>

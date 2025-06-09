@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col space-y-3">
+  <div class="flex md:flex-row flex-col space-y-3">
     <TechnologyGridItems
       title="Languages"
       :technology-data="languageList"
@@ -21,65 +21,61 @@ import type FrameworkListInterface from '~/../types/FrameworkListInterface'
 const languageList: FrameworkListInterface[] = [
   {
     name: 'TypeScript',
-    icon: 'simple-icons:typescript',
+    icon: 'logos:typescript-icon',
   },
   {
     name: 'JavaScript',
-    icon: 'simple-icons:javascript',
+    icon: 'logos:javascript',
   },
   {
     name: 'Python',
-    icon: 'simple-icons:python',
+    icon: 'logos:python',
   },
   {
     name: 'HTML',
-    icon: 'simple-icons:html5',
+    icon: 'logos:html-5',
   },
   {
     name: 'CSS',
-    icon: 'simple-icons:css3',
+    icon: 'logos:css-3',
   },
 ]
 
 const frameworkList: FrameworkListInterface[] = [
   {
     name: 'VueJS',
-    icon: 'simple-icons:vuedotjs',
+    icon: 'logos:vue',
   },
   {
     name: 'Angular',
-    icon: 'simple-icons:angular',
+    icon: 'logos:angular-icon',
   },
   {
     name: 'Nuxt',
-    icon: 'simple-icons:nuxtdotjs',
+    icon: 'logos:nuxt-icon',
   },
   {
     name: 'TailwindCSS',
-    icon: 'simple-icons:tailwindcss',
-  },
-  {
-    name: 'Quasar',
-    icon: 'simple-icons:quasar',
+    icon: 'logos:tailwindcss-icon',
   },
   {
     name: 'Ionic',
-    icon: 'simple-icons:ionic',
+    icon: 'logos:ionic-icon',
   },
 ]
 
 const softwareList: FrameworkListInterface[] = [
   {
     name: 'Visual Studio Code',
-    icon: 'simple-icons:visualstudiocode',
+    icon: 'logos:visual-studio-code',
   },
   {
     name: 'GitHub',
-    icon: 'simple-icons:github',
+    icon: 'logos:github-icon',
   },
   {
     name: 'Firebase',
-    icon: 'simple-icons:firebase',
+    icon: 'logos:firebase',
   },
 ]
 </script>
