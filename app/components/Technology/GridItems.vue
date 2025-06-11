@@ -14,6 +14,7 @@
             :icon="item.icon"
             variant="subtle"
             color="primary"
+            class="font-bold"
           />
         </div>
       </div>
