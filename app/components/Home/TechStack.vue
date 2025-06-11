@@ -6,10 +6,13 @@
     <p class="!m-0 text-muted">
       {{ $t('home.techStacks.subtitle') }}
     </p>
-    <USeparator
-      color="primary"
-      size="md"
-    />
-    <Technology />
+    <div class="not-prose">
+      <USeparator
+        color="primary"
+        size="md"
+        class="mb-4"
+      />
+      <Technology />
+    </div>
   </section>
 </template>
