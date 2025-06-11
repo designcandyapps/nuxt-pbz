@@ -36,7 +36,7 @@ const isDark = computed({
   },
 })
 const startViewTransition = (event: MouseEvent) => {
-  if (!document.startViewTransition) {
+  if (!document.startViewTransition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     isDark.value = !isDark.value
     return
   }
