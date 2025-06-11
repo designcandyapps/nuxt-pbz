@@ -1,65 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loading...</title>
-    <style>
-      .spinner {
-        width: 40px;
-        height: 40px;
 
-        position: relative;
-        margin: 100px auto;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konkamon Sion</title>
+</head>
 
-      .double-bounce1,
-      .double-bounce2 {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-color: #333;
-        opacity: 0.6;
-        position: absolute;
-        top: 0;
-        left: 0;
+<body>
+  <section class="flex justify-center items-center min-h-dvh light:text-primary">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+      <!-- Icon from SVG Spinners by Utkarsh Verma - https://github.com/n3r4zzurr0/svg-spinners/blob/main/LICENSE -->
+      <rect width="10" height="10" x="1" y="1" fill="currentColor" rx="1">
+        <animate id="svgSpinnersBlocksShuffle30" fill="freeze" attributeName="x"
+          begin="0;svgSpinnersBlocksShuffle3b.end" dur="0.2s" values="1;13" />
+        <animate id="svgSpinnersBlocksShuffle31" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle38.end"
+          dur="0.2s" values="1;13" />
+        <animate id="svgSpinnersBlocksShuffle32" fill="freeze" attributeName="x" begin="svgSpinnersBlocksShuffle39.end"
+          dur="0.2s" values="13;1" />
+        <animate id="svgSpinnersBlocksShuffle33" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle3a.end"
+          dur="0.2s" values="13;1" />
+      </rect>
+      <rect width="10" height="10" x="1" y="13" fill="currentColor" rx="1">
+        <animate id="svgSpinnersBlocksShuffle34" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle30.end"
+          dur="0.2s" values="13;1" />
+        <animate id="svgSpinnersBlocksShuffle35" fill="freeze" attributeName="x" begin="svgSpinnersBlocksShuffle31.end"
+          dur="0.2s" values="1;13" />
+        <animate id="svgSpinnersBlocksShuffle36" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle32.end"
+          dur="0.2s" values="1;13" />
+        <animate id="svgSpinnersBlocksShuffle37" fill="freeze" attributeName="x" begin="svgSpinnersBlocksShuffle33.end"
+          dur="0.2s" values="13;1" />
+      </rect>
+      <rect width="10" height="10" x="13" y="13" fill="currentColor" rx="1">
+        <animate id="svgSpinnersBlocksShuffle38" fill="freeze" attributeName="x" begin="svgSpinnersBlocksShuffle34.end"
+          dur="0.2s" values="13;1" />
+        <animate id="svgSpinnersBlocksShuffle39" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle35.end"
+          dur="0.2s" values="13;1" />
+        <animate id="svgSpinnersBlocksShuffle3a" fill="freeze" attributeName="x" begin="svgSpinnersBlocksShuffle36.end"
+          dur="0.2s" values="1;13" />
+        <animate id="svgSpinnersBlocksShuffle3b" fill="freeze" attributeName="y" begin="svgSpinnersBlocksShuffle37.end"
+          dur="0.2s" values="1;13" />
+      </rect>
+    </svg>
+  </section>
+</body>
 
-        -webkit-animation: sk-bounce 2s infinite ease-in-out;
-        animation: sk-bounce 2s infinite ease-in-out;
-      }
-
-      .double-bounce2 {
-        -webkit-animation-delay: -1s;
-        animation-delay: -1s;
-      }
-
-      @-webkit-keyframes sk-bounce {
-        0%,
-        100% {
-          -webkit-transform: scale(0);
-        }
-        50% {
-          -webkit-transform: scale(1);
-        }
-      }
-
-      @keyframes sk-bounce {
-        0%,
-        100% {
-          transform: scale(0);
-          -webkit-transform: scale(0);
-        }
-        50% {
-          transform: scale(1);
-          -webkit-transform: scale(1);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="spinner">
-      <div class="double-bounce1"></div>
-      <div class="double-bounce2"></div>
-    </div>
-  </body>
 </html>
