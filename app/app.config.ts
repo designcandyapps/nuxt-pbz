@@ -1,9 +1,9 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: 'myblue',
-      neutral: 'zinc',
-      secondary: 'mygreen',
+      primary: 'aqua',
+      neutral: 'gruvbox-bg',
+      secondary: 'green',
     },
     card: {
       slots: {
