@@ -8,7 +8,6 @@
         <UButton
           color="neutral"
           variant="ghost"
-          size="sm"
           :icon="isDark ? 'solar:moon-linear' : 'solar:sun-linear'"
           @click="startViewTransition"
         />
