@@ -70,7 +70,7 @@ export default defineNuxtConfig({
       optimizeTranslationDirective: false,
     },
     baseUrl: 'https://www.bkozii.com',
-    strategy: 'prefix',
+    strategy: 'prefix_and_default',
     defaultLocale: 'en',
     lazy: true,
     skipSettingLocaleOnNavigate: true,
