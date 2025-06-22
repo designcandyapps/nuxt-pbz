@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/google-fonts',
     '@nuxt/content',
+    'motion-v/nuxt',
   ],
   ssr: false,
   devtools: { enabled: true },
