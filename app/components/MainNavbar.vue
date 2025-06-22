@@ -35,7 +35,7 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 
 const localePath = useLocalePath()
 
-const navItems: NavigationMenuItem[] = [
+const navItems = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Home',
     to: localePath('/'),
@@ -43,7 +43,7 @@ const navItems: NavigationMenuItem[] = [
   },
   {
     label: 'Projects',
-    to: localePath('/Projects'),
+    to: localePath('/projects'),
     icon: 'ph:folder-open-duotone',
   },
   {
@@ -61,5 +61,5 @@ const navItems: NavigationMenuItem[] = [
     icon: 'solar:book-2-linear',
     disabled: true,
   },
-]
+])
 </script>
