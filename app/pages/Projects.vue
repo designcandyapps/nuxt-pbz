@@ -10,10 +10,15 @@
           v-for="(project, index) in projects"
           :key="project.id"
         >
-          <ProjectListItem
-            :project="project"
-            :reverse="index % 2 === 1"
-          />
+          <MotionSlideBlur
+            :direction="index % 2 === 0 ? 'left' : 'right'"
+            :delay="0.4"
+          >
+            <ProjectListItem
+              :project="project"
+              :reverse="index % 2 === 1"
+            />
+          </MotionSlideBlur>
         </template>
       </section>
     </ClientOnly>

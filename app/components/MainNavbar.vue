@@ -1,9 +1,9 @@
 <template>
   <div
-    class="top-0 z-10 sticky bg-default/80 drop-shadow-sm backdrop-blur-xl border border-default border-t-0"
+    class="top-0 z-10 sticky bg-default/80 drop-shadow-sm backdrop-blur-xl border-default border-b"
   >
-    <UContainer class="py-1 border-default border-x">
-      <header class="flex items-center">
+    <UContainer class="items-center border-default border-x w-full">
+      <header class="flex items-center h-(--header-height)">
         <div class="flex-1 font-mono tracking-tighter">
           <ULink
             id="myName"
@@ -15,29 +15,11 @@
           </ULink>
         </div>
         <div class="flex flex-1 justify-center">
-          <nav>
-            <ul class="flex space-x-2 list-none">
-              <li
-                v-for="item in navItems"
-                :key="item.to"
-              >
-                <UTooltip
-                  :text="item.label"
-                  :content="{ sideOffset: 10 }"
-                >
-                  <UButton
-                    :icon="item.icon"
-                    :to="item.to? item.to : undefined"
-                    active-color="primary"
-                    active-variant="link"
-                    variant="link"
-                    color="neutral"
-                    :disabled="!item.to"
-                  />
-                </UTooltip>
-              </li>
-            </ul>
-          </nav>
+          <UNavigationMenu
+            :items="navItems"
+            variant="link"
+            highlight
+          />
         </div>
         <div class="flex flex-row flex-1 justify-end shrink-0">
           <LazyNavbarLangSwitch />
@@ -49,20 +31,25 @@
 </template>
 
 <script lang="ts" setup>
-const navItems = [
+import type { NavigationMenuItem } from '@nuxt/ui'
+
+const localePath = useLocalePath()
+
+const navItems = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Home',
-    to: '/',
+    to: localePath('/'),
     icon: 'solar:home-2-linear',
   },
   {
     label: 'Projects',
-    to: '/Projects',
+    to: localePath('/projects'),
     icon: 'ph:folder-open-duotone',
   },
   {
     label: 'What\'s In My Bag?',
     icon: 'solar:backpack-linear',
+    disabled: true,
   },
   /*   {
     label: 'Bookmarks',
@@ -72,6 +59,7 @@ const navItems = [
   {
     label: 'Blog',
     icon: 'solar:book-2-linear',
+    disabled: true,
   },
-]
+])
 </script>

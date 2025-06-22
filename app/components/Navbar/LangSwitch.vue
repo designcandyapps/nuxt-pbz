@@ -8,8 +8,8 @@
         :icon="locale === 'en' ? 'circle-flags:us' : 'circle-flags:th'"
         variant="ghost"
         color="neutral"
-        size="sm"
-        @click="toggleLocale"
+        :to="$switchLocalePath(locale === 'en' ? 'th' : 'en')"
+        replace
       />
     </UTooltip>
 
@@ -23,11 +23,5 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-
-const { locale, setLocale } = useI18n()
-
-const toggleLocale = async () => {
-  await setLocale(locale.value === 'en' ? 'th' : 'en')
-}
+const { locale } = useI18n()
 </script>

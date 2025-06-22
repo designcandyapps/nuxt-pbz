@@ -1,9 +1,15 @@
 <template>
   <main class="space-y-12">
     <Hero />
-    <AboutMe />
-    <HomeTechStack />
-    <FeaturedWork />
+    <MotionSlideBlur :delay="1">
+      <AboutMe />
+    </MotionSlideBlur>
+    <MotionSlideBlur>
+      <HomeTechStack />
+    </MotionSlideBlur>
+    <MotionSlideBlur>
+      <FeaturedWork />
+    </MotionSlideBlur>
   </main>
 </template>
 

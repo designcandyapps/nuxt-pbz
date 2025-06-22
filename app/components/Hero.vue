@@ -6,75 +6,96 @@
     <div
       class="flex flex-col justify-center items-center lg:items-start dark:prose-invert prose-p:mt-2 prose-h1:mb-0 max-w-none prose prose-sm sm:prose-base grow basis-full"
     >
-      <UChip
-        size="lg"
-        class="relative"
-        color="secondary"
+      <MotionSlideBlur
+        direction="left"
+        :delay="0.8"
       >
         <UChip
           size="lg"
+          class="relative"
           color="secondary"
-          class="top-0 right-0 absolute animate-ping"
-        />
-        <UBadge
-          :label="$t('home.hero.badgeContent')"
-          icon="ph:suitcase-duotone"
-          variant="subtle"
-          class="mb-1 md:mb-3 font-bold"
-          color="secondary"
-        />
-      </UChip>
-      <h1 class="font-black text-primary text-3xl lg:text-5xl tracking-tight">
-        {{ $t('home.hero.myName') }}
-      </h1>
-      <p class="text-muted lg:text-left text-center text-balance">
-        {{ $t('home.hero.intro') }}
-      </p>
-      <div class="flex flex-row justify-center lg:justify-start items-center gap-2 w-full">
-        <UTooltip text="Undergoing...">
-          <UButton
-            icon="lucide:external-link"
-            color="primary"
+        >
+          <UChip
             size="lg"
-            disabled
-          >
-            Open CV - Thai
-          </UButton>
-        </UTooltip>
-        <UButtonGroup size="lg">
-          <UTooltip text="Copy my email">
+            color="secondary"
+            class="top-0 right-0 absolute animate-ping"
+          />
+          <UBadge
+            :label="$t('home.hero.badgeContent')"
+            icon="ph:suitcase-duotone"
+            variant="subtle"
+            class="mb-1 md:mb-3 font-bold"
+            color="secondary"
+          />
+        </UChip>
+      </MotionSlideBlur>
+      <MotionSlideBlur
+        direction="left"
+      >
+        <h1 class="font-black text-primary text-3xl lg:text-5xl tracking-tight">
+          {{ $t('home.hero.myName') }}
+        </h1>
+      </MotionSlideBlur>
+      <MotionSlideBlur
+        :delay="0.2"
+        direction="left"
+      >
+        <p class="text-muted lg:text-left text-center text-balance">
+          {{ $t('home.hero.intro') }}
+        </p>
+      </MotionSlideBlur>
+      <MotionSlideBlur
+        direction="up"
+        :delay="0.5"
+      >
+        <div class="flex flex-row justify-center lg:justify-start items-center gap-2 w-full">
+          <UTooltip text="Undergoing...">
             <UButton
-              icon="lucide:mail"
-              variant="subtle"
-              class="cursor-pointer"
-              @click="copyEmail"
-            />
+              icon="lucide:external-link"
+              color="primary"
+              size="lg"
+              disabled
+            >
+              Open CV - Thai
+            </UButton>
           </UTooltip>
-          <UButton
-            icon="lucide:instagram"
-            variant="subtle"
-            to="https://www.instagram.com/bkoziii/"
-            target="_blank"
-          />
-          <UButton
-            icon="lucide:github"
-            variant="subtle"
-            to="https://github.com/bkozii"
-            target="_blank"
-          />
-        </UButtonGroup>
-      </div>
+          <UButtonGroup size="lg">
+            <UTooltip text="Copy my email">
+              <UButton
+                icon="lucide:mail"
+                variant="subtle"
+                class="cursor-pointer"
+                @click="copyEmail"
+              />
+            </UTooltip>
+            <UButton
+              icon="lucide:instagram"
+              variant="subtle"
+              to="https://www.instagram.com/bkoziii/"
+              target="_blank"
+            />
+            <UButton
+              icon="lucide:github"
+              variant="subtle"
+              to="https://github.com/bkozii"
+              target="_blank"
+            />
+          </UButtonGroup>
+        </div>
+      </MotionSlideBlur>
     </div>
     <div class="basis-1/3">
-      <NuxtImg
-        src="me-rmutsv-square_hhiarv"
-        provider="cloudinary"
-        class="shadow-md dark:shadow-none rounded-lg size-52 md:size-40 lg:size-full object-cover aspect-square"
-        width="100%"
-        height="100%"
-        alt="Picture of Me, Konkamon Sion"
-        aria-label="Picture of Me, Konkamon Sion"
-      />
+      <MotionSlideBlur direction="right">
+        <NuxtImg
+          src="me-rmutsv-square_hhiarv"
+          provider="cloudinary"
+          class="shadow-md dark:shadow-none rounded-lg size-52 md:size-40 lg:size-full object-cover aspect-square"
+          width="100%"
+          height="100%"
+          alt="Picture of Me, Konkamon Sion"
+          aria-label="Picture of Me, Konkamon Sion"
+        />
+      </MotionSlideBlur>
     </div>
   </section>
 </template>

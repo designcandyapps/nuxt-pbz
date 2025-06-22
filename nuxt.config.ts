@@ -6,8 +6,9 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@nuxtjs/google-fonts',
+    '@nuxt/fonts',
     '@nuxt/content',
+    'motion-v/nuxt',
   ],
   ssr: false,
   devtools: { enabled: true },
@@ -49,17 +50,19 @@ export default defineNuxtConfig({
       },
     },
   },
-  googleFonts: {
-    families: {
-      'Nunito Sans': {
-        wght: [400, 500, 600, 700, 800],
+  fonts: {
+    provider: 'google',
+    families: [
+      {
+        name: 'Nunito Sans', display: 'swap', global: true, subsets: ['latin', 'latin-ext'], styles: ['normal'],
       },
-      'Noto Sans Thai': {
-        wght: [400, 600, 700, 800],
+      {
+        name: 'Noto Sans Thai', display: 'swap', global: true, subsets: ['thai'], styles: ['normal'],
       },
-      'Fira Code': {
-        wght: [400, 600, 700, 800],
-      },
+    ],
+    defaults: {
+      weights: [300, 400, 500, 700, 800],
+      styles: ['normal'],
     },
   },
   i18n: {
@@ -67,9 +70,10 @@ export default defineNuxtConfig({
       optimizeTranslationDirective: false,
     },
     baseUrl: 'https://www.bkozii.com',
-    strategy: 'no_prefix',
+    strategy: 'prefix_and_default',
     defaultLocale: 'en',
     lazy: true,
+    skipSettingLocaleOnNavigate: true,
     locales: [
       {
         code: 'th',
