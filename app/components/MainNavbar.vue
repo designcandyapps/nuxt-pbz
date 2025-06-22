@@ -3,7 +3,7 @@
     class="top-0 z-10 sticky bg-default/80 drop-shadow-sm backdrop-blur-xl border border-default border-t-0"
   >
     <UContainer class="py-1 border-default border-x">
-      <header class="flex items-center">
+      <header class="flex items-center h-(--header-height)">
         <div class="flex-1 font-mono tracking-tighter">
           <ULink
             id="myName"
