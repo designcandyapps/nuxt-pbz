@@ -12,7 +12,7 @@
       <UButton
         color="primary"
         variant="ghost"
-        to="/projects"
+        :to="$localePath('/projects')"
         trailing-icon="lucide:arrow-right"
         label="All Projects"
         class="not-prose"
