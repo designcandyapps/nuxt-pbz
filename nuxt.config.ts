@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'motion-v/nuxt',
   ],
-  ssr: false,
   devtools: { enabled: true },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
