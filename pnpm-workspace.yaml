@@ -13,3 +13,5 @@ onlyBuiltDependencies:
   - sharp
   - unrs-resolver
   - vue-demi
+
+strictPeerDependencies: false
