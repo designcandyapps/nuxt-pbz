@@ -1,35 +1,52 @@
 <template>
   <div
-    class="flex md:flex-row flex-col md:items-center gap-4 md:gap-8 mx-auto px-4"
-    :class="{ 'md:flex-row-reverse': $props.reverse }"
+    class="group flex flex-col items-center bg-default shadow-sm border border-default hover:border-primary rounded-lg overflow-hidden"
+    :class="$props.reverse ? 'md:flex-row' : 'md:flex-row-reverse'"
   >
-    <div
-      class="flex flex-1 justify-center"
-    >
-      <NuxtImg
-        v-if="$props.project.image"
+    <div class="relative w-full lg:w-2/3 overflow-hidden">
+      <div
+        id="bottomMenu"
+        class="right-0 bottom-2 sm:-bottom-3 sm:group-hover:bottom-2 left-0 absolute flex justify-center items-center mx-auto w-fit sm:group-hover:scale-100 sm:scale-90 transition-all"
+      >
+        <UButton
+          v-if="!project.wip && project.githubURL"
+          trailing-icon="lucide:external-link"
+          :to="project.githubURL"
+          target="_blank"
+          external
+          label="View Source Code"
+          color="primary"
+        />
+        <UAlert
+          v-else-if="$props.project.wip"
+          color="warning"
+          icon="solar:code-square-linear"
+          :title="$t('project.wip')"
+          class="py-1"
+        />
+      </div>
+      <img
+        class="md:rounded-none md:rounded-s-lg rounded-t-lg w-full md:w-md h-fit md:h-auto object-cover"
         :src="$props.project.image"
-        alt="Image of project"
-        class="shadow-md dark:shadow-none rounded-lg ring-primary light:ring-2 w-full max-w-sm h-auto object-cover"
-      />
+        alt=""
+      >
     </div>
-
-    <div class="flex-1/4 lg:flex-1 text-sm md:text-base">
+    <div class="flex flex-col justify-between p-4 w-full leading-normal">
       <NuxtTime
         v-if="$props.project.date"
         :datetime="$props.project.date"
         year="numeric"
         month="long"
         :locale="$i18n.locale"
-        class="inline-block mb-3 text-muted text-sm"
+        class="inline-block mb-2 text-muted text-sm"
       />
-      <h2 class="font-bold text-highlighted text-xl md:text-2xl">
+      <h5 class="mb-2 font-bold text-gray-900 dark:text-white group-hover:text-primary text-2xl tracking-tight">
         {{ $props.project.title }}
-      </h2>
-      <p class="text-muted">
+      </h5>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
         {{ $props.project.description }}
       </p>
-      <section class="space-x-1 my-4">
+      <section class="space-x-1 mt-2">
         <template
           v-for="tech in $props.project.technologies"
           :key="tech"
@@ -40,37 +57,16 @@
           />
         </template>
       </section>
-      <ULink
-        v-if="!$props.project.wip"
-        class="inline-block mt-1"
-        inactive-class="text-primary"
-        :to="$props.project.githubURL"
-        target="_blank"
-        external
-      >
-        View Source Code
-        <UIcon
-          name="lucide:external-link"
-          class="inline-block size-4"
-        />
-      </ULink>
-      <UAlert
-        v-else-if="$props.project.wip"
-        variant="subtle"
-        color="warning"
-        icon="solar:code-square-linear"
-        :title="$t('project.wip')"
-        class="mt-4"
-      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { ProjectsCollectionItem } from '@nuxt/content'
+import type { ProjectsEnCollectionItem } from '@nuxt/content'
 
 defineProps<{
-  project: ProjectsCollectionItem
+  project: ProjectsEnCollectionItem
   reverse?: boolean
+  class?: string
 }>()
 </script>
