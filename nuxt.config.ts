@@ -26,6 +26,11 @@ export default defineNuxtConfig({
     },
   },
 
+  vite: {
+    vue: {
+      features: { optionsAPI: false },
+    },
+  },
   eslint: {
     config: {
       stylistic: {
