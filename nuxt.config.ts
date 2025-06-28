@@ -64,7 +64,6 @@ export default defineNuxtConfig({
         language: 'th-TH',
         name: 'ภาษาไทย',
         file: 'th.json',
-        isCatchallLocale: true,
       },
       {
         code: 'en',
