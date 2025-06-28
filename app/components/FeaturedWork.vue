@@ -42,7 +42,7 @@
 import type { Collections } from '@nuxt/content'
 
 const { locale } = useI18n()
-const { data: fProjects } = await useAsyncData('projects', async () => {
+const { data: fProjects } = await useAsyncData(`projects-${locale.value}`, async () => {
   const collection = ('projects_' + locale.value) as keyof Omit<Collections, 'blog'>
   return await queryCollection(collection).where('featured', '=', true).order('date', 'DESC').limit(3).all() as Collections['projects_en'][] | Collections['projects_th'][]
 }, {
