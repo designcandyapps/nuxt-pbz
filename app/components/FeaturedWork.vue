@@ -29,7 +29,7 @@
         v-for="(f, index) in fProjects"
         :key="f.id"
       >
-        <ProjectListItem
+        <ProjectCard
           :project="f"
           :reverse="index % 2 === 1"
         />

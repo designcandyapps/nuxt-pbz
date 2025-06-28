@@ -14,7 +14,7 @@
             :direction="index % 2 === 0 ? 'left' : 'right'"
             :delay="0.4"
           >
-            <ProjectListItem
+          <ProjectCard
               :project="project"
               :reverse="index % 2 === 1"
             />
