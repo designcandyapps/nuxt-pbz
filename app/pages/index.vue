@@ -17,14 +17,13 @@
 const { t } = useI18n()
 useSeoMeta({
   title: () => t('home.hero.myName'),
-  description: 'เว็บไซต์ Portfolio & Blogs ของนาย กรกมล ศรีอ่อน - สร้างด้วย Nuxt 3 + TailwindCSS.',
+  description: () => t('seo.description'),
   author: 'Konkamon Sion',
-  ogTitle: '%s - Portfolio & Blogs Website',
-  ogDescription: 'เว็บไซต์ Portfolio & Blogs ของนาย กรกมล ศรีอ่อน - สร้างด้วย Nuxt 3 + TailwindCSS.',
+  ogTitle: () => `${t('home.hero.myName')} - Portfolio & Blogs Website`,
+  ogDescription: () => t('seo.description'),
   creator: 'Konkamon Sion',
   ogImage: '/ogImage-index.webp',
-  ogUrl: 'https://konkamon.vercel.app/',
-  ogLocale: 'th_TH',
+  ogUrl: 'https://www.bkozii.com/',
   ogSiteName: 'Konkamon Sion',
   titleTemplate: '%s - Portfolio & Blogs Website',
 })

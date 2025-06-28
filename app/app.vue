@@ -1,5 +1,5 @@
 <template>
-  <NuxtLoadingIndicator />
+  <NuxtLoadingIndicator color="#3892a2" />
   <UApp
     :tooltip="{ delayDuration: 0 }"
     :locale="locales[locale]"
@@ -14,9 +14,9 @@
 import { en, th } from '@nuxt/ui/locale'
 
 const locales = { en, th }
-const { locale } = useI18n()
-const lang = computed(() => locales[locale.value as keyof typeof locales].code)
-
+const { locale, localeProperties } = useI18n()
+const lang = computed(() => locales[locale.value].code)
+const langCode = computed(() => localeProperties.value.language)
 useHead({
   htmlAttrs: {
     lang,
@@ -35,12 +35,14 @@ useHead({
     { name: 'author', content: 'Konkamon Sion' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'charset', content: 'utf-8' },
-    { name: 'theme-color', content: '#379777' },
+    { name: 'theme-color', content: '#3892a2' },
   ],
 })
 
 useSeoMeta({
-  ogLocale: 'th_TH',
-  themeColor: '#379777',
+  ogLocale: langCode,
+  themeColor: '#3892a2',
+  charset: 'utf-8',
+  ogType: 'website',
 })
 </script>
