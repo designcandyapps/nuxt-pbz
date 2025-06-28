@@ -20,7 +20,11 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-06-03',
   nitro: {
+    future: {
+      nativeSWR: true,
+    },
     prerender: {
+      autoSubfolderIndex: false,
       crawlLinks: true,
       routes: ['/en', '/th'],
     },
