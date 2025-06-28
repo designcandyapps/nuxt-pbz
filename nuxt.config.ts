@@ -57,7 +57,6 @@ export default defineNuxtConfig({
     baseUrl: 'https://www.bkozii.com',
     strategy: 'prefix',
     defaultLocale: 'en',
-    lazy: true,
     locales: [
       {
         code: 'th',
