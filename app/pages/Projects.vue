@@ -4,42 +4,43 @@
       :title="$t('project.title')"
       :description="$t('project.subtitle')"
     />
-    <ClientOnly>
-      <section class="space-y-18">
-        <template
-          v-for="(project, index) in projects"
-          :key="project.id"
+    <section
+      class="items-start gap-4 grid grid-cols-1"
+    >
+      <template
+        v-for="(project, index) in projects"
+        :key="project.id"
+      >
+        <MotionSlideBlur
+          :direction="index % 2 === 0 ? 'left' : 'right'"
         >
-          <MotionSlideBlur
-            :direction="index % 2 === 0 ? 'left' : 'right'"
-            :delay="0.4"
-          >
-            <ProjectListItem
-              :project="project"
-              :reverse="index % 2 === 1"
-            />
-          </MotionSlideBlur>
-        </template>
-      </section>
-    </ClientOnly>
+          <ProjectCard
+            :project="project"
+            :reverse="index % 2 === 1"
+          />
+        </MotionSlideBlur>
+      </template>
+    </section>
   </div>
 </template>
 
 <script lang="ts" setup>
-const { locale } = useI18n()
-const { data: projects } = await useAsyncData(`projects-${locale.value}`, () => {
-  return queryCollection(`projects`)
-    .where('stem', 'LIKE', '%.' + locale.value)
-    .order('date', 'DESC')
-    .all()
-}, { watch: [locale] })
+import type { Collections } from '@nuxt/content'
+
+const { locale, t } = useI18n()
+const { data: projects } = await useAsyncData(`allProjects-${locale.value}`, async () => {
+  const collection = ('projects_' + locale.value) as keyof Omit<Collections, 'blog'>
+  return await queryCollection(collection).order('date', 'DESC').all() as Collections['projects_en'][] | Collections['projects_th'][]
+}, {
+  watch: [locale],
+})
 
 useSeoMeta({
-  title: 'รวมโปรเจค',
-  ogTitle: '%s - Konkamon Sion',
-  description: 'รวมโปรเจค / ชิ้นงาน ต่างๆ ผมเป็นคนที่ชอบทำงาน / โปรเจคอะไรเล็กๆ น้อยๆ โดย List ต่อไปนี้จะเลือกเฉพาะงานที่พอจะนำมาเสนอได้',
-  ogDescription: 'รวมโปรเจค / ชิ้นงาน ต่างๆ ผมเป็นคนที่ชอบทำงาน / โปรเจคอะไรเล็กๆ น้อยๆ โดย List ต่อไปนี้จะเลือกเฉพาะงานที่พอจะนำมาเสนอได้',
+  title: () => t('project.subtitle'),
+  ogTitle: () => t('project.subtitle'),
+  description: () => t('project.subtitle'),
+  ogDescription: () => t('project.subtitle'),
   ogImage: '/ogImage-projects.webp',
-  ogUrl: 'https://konkamon.vercel.app/Projects',
+  ogUrl: 'https://www.bkozii.com/Projects',
 })
 </script>

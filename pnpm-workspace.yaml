@@ -1,0 +1,12 @@
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - "@swc/core"
+  - "@tailwindcss/oxide"
+  - better-sqlite3
+  - core-js-pure
+  - esbuild
+  - sharp
+  - unrs-resolver
+  - vue-demi
+
+strictPeerDependencies: false

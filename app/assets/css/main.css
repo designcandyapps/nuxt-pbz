@@ -4,7 +4,7 @@
 
 @theme static {
   --font-sans: 'Nunito Sans', 'Noto Sans Thai', sans-serif;
-  --font-mono: 'Fira Code', 'Anuphan';
+  --font-mono: 'Fira Code', 'Noto Sans Thai';
 
   --color-myblue-50: #f1fafa;
   --color-myblue-100: #dbf0f2;
@@ -33,6 +33,6 @@
 }
 
 :root {
-  --ui-container: var(--container-4xl);
-  --header-height: --spacing(13);
+  --ui-container: var(--container-6xl);
+  --header-height: --spacing(10);
 }

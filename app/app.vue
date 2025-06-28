@@ -1,11 +1,11 @@
 <template>
-  <NuxtLoadingIndicator />
+  <NuxtLoadingIndicator color="#3892a2" />
   <UApp
     :tooltip="{ delayDuration: 0 }"
     :locale="locales[locale]"
   >
     <NuxtLayout>
-      <NuxtPage :transition="{ onBeforeEnter }" />
+      <NuxtPage keepalive />
     </NuxtLayout>
   </UApp>
 </template>
@@ -14,9 +14,9 @@
 import { en, th } from '@nuxt/ui/locale'
 
 const locales = { en, th }
-const { locale } = useI18n()
-const lang = computed(() => locales[locale.value as keyof typeof locales].code)
-
+const { locale, localeProperties } = useI18n()
+const lang = computed(() => locales[locale.value].code)
+const langCode = computed(() => localeProperties.value.language)
 useHead({
   htmlAttrs: {
     lang,
@@ -31,44 +31,18 @@ useHead({
       href: '/favicon.ico',
     },
   ],
+  meta: [
+    { name: 'author', content: 'Konkamon Sion' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'charset', content: 'utf-8' },
+    { name: 'theme-color', content: '#3892a2' },
+  ],
 })
 
 useSeoMeta({
-  ogLocale: 'th_TH',
-  themeColor: '#379777',
+  ogLocale: langCode,
+  themeColor: '#3892a2',
+  charset: 'utf-8',
+  ogType: 'website',
 })
-
-const { finalizePendingLocaleChange } = useI18n()
-
-const onBeforeEnter = async () => {
-  await finalizePendingLocaleChange()
-}
 </script>
-
-<style>
-@media (min-width: 400px) and (prefers-reduced-motion: no-preference) {
-  .page-enter-active {
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.25, 1);
-  }
-  .page-leave-active {
-    transition: all 0.3s cubic-bezier(0.75, 0, 0.75, 0);
-  }
-  .page-enter-from,
-  .page-leave-to {
-    opacity: 0;
-    filter: blur(4px);
-    transform: translateY(-20px);
-  }
-  .layout-enter-active {
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.25, 1);
-  }
-  .layout-leave-active {
-    transition: all 0.3s cubic-bezier(0.75, 0, 0.75, 0);
-  }
-  .layout-enter-from,
-  .layout-leave-to {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-}
-</style>

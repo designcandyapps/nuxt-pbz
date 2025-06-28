@@ -24,12 +24,12 @@
       class="mb-6"
     />
 
-    <div class="flex flex-col gap-5 rounded-lg">
+    <div class="flex flex-col gap-4">
       <div
         v-for="(f, index) in fProjects"
         :key="f.id"
       >
-        <ProjectListItem
+        <ProjectCard
           :project="f"
           :reverse="index % 2 === 1"
         />
@@ -39,12 +39,12 @@
 </template>
 
 <script lang="ts" setup>
+import type { Collections } from '@nuxt/content'
+
 const { locale } = useI18n()
-const { data: fProjects } = await useAsyncData('featuredWork', () => {
-  return queryCollection('projects')
-    .where('stem', 'LIKE', '%.' + locale.value)
-    .where('featured', '=', true)
-    .limit(3).all()
+const { data: fProjects } = await useAsyncData(`projects-${locale.value}`, async () => {
+  const collection = ('projects_' + locale.value) as keyof Omit<Collections, 'blog'>
+  return await queryCollection(collection).where('featured', '=', true).order('date', 'DESC').limit(3).all() as Collections['projects_en'][] | Collections['projects_th'][]
 }, {
   watch: [locale],
 })

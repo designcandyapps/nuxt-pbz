@@ -1,4 +1,7 @@
 {
+  "seo": {
+    "description": "Portfolio website of Konkamon Sion - Built with Nuxt 3 + TailwindCSS."
+  },
   "langSwitcher": "Switch Language",
   "home": {
     "hero": {

@@ -1,4 +1,7 @@
 {
+  "seo": {
+    "description": "เว็บไซต์ Portfolio & Blogs ของนาย กรกมล ศรีอ่อน - สร้างด้วย Nuxt 3 + TailwindCSS."
+  },
   "langSwitcher": "เปลี่ยนภาษา",
   "home": {
     "hero": {

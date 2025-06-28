@@ -3,8 +3,8 @@ import th from '~/../i18n/locales/th.json'
 
 export default defineI18nConfig(() => ({
   legacy: false,
-  locale: 'th',
-  fallbackLocale: 'en',
+  locale: 'en',
+  fallbackLocale: 'th',
   messages: {
     en,
     th,

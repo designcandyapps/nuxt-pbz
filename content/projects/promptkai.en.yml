@@ -1,9 +1,0 @@
-title: 'Prompt Kai: POS System for Mobile'
-description: Startup Project for a mobile point-of-sale (POS) system
-technologies:
-  - Python
-  - Frappe
-  - Flutter
-wip: true
-date: 2025-05
-image: /ogImage-projects.webp
