@@ -69,7 +69,7 @@ export default defineNuxtConfig({
       optimizeTranslationDirective: false,
     },
     baseUrl: 'https://www.bkozii.com',
-    strategy: 'prefix_and_default',
+    strategy: 'prefix',
     defaultLocale: 'en',
     lazy: true,
     skipSettingLocaleOnNavigate: true,
@@ -86,6 +86,7 @@ export default defineNuxtConfig({
         language: 'en-US',
         name: 'English',
         file: 'en.json',
+        isCatchallLocale: true,
       },
     ],
     detectBrowserLanguage: {
