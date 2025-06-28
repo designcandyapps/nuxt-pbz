@@ -11,27 +11,6 @@ export default defineNuxtConfig({
     'motion-v/nuxt',
   ],
   devtools: { enabled: true },
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-    layoutTransition: { name: 'layout', mode: 'out-in' },
-    head: {
-      titleTemplate: '%s - Konkamon Sion',
-      meta: [
-        { name: 'author', content: 'Konkamon Sion' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'charset', content: 'utf-8' },
-        { name: 'theme-color', content: '#379777' },
-      ],
-      htmlAttrs: {
-        lang: 'th',
-      },
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
-      link: [
-        { rel: 'icon', type: 'image/vnd.microsoft.icon', href: '/favicon.ico' },
-      ],
-    },
-  },
 
   css: ['~/assets/css/main.css'],
 

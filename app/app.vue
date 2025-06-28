@@ -31,6 +31,12 @@ useHead({
       href: '/favicon.ico',
     },
   ],
+  meta: [
+    { name: 'author', content: 'Konkamon Sion' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'charset', content: 'utf-8' },
+    { name: 'theme-color', content: '#379777' },
+  ],
 })
 
 useSeoMeta({
