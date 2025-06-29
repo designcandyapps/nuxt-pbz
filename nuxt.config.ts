@@ -54,6 +54,9 @@ export default defineNuxtConfig({
       {
         name: 'Noto Sans Thai', display: 'swap', global: true, subsets: ['thai'], styles: ['normal'],
       },
+      {
+        name: 'Fira Code', display: 'swap', global: true, subsets: ['latin'], styles: ['normal'], weights: [400, 600, 700],
+      },
     ],
     defaults: {
       weights: [300, 400, 500, 700, 800],
