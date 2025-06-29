@@ -8,5 +8,6 @@ onlyBuiltDependencies:
   - sharp
   - unrs-resolver
   - vue-demi
+  - workerd
 
 strictPeerDependencies: false

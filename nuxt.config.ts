@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/content',
     'motion-v/nuxt',
+    '@nuxthub/core',
   ],
   devtools: { enabled: true },
 
