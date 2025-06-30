@@ -18,6 +18,9 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  experimental: {
+    noVueServer: true,
+  },
 
   compatibilityDate: '2025-06-03',
   nitro: {
@@ -28,6 +31,7 @@ export default defineNuxtConfig({
       autoSubfolderIndex: false,
       crawlLinks: true,
       routes: ['/en', '/th'],
+      ignore: ['/__nuxt_content'],
     },
   },
 
