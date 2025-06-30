@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@nuxt/fonts',
     '@nuxt/content',
     'motion-v/nuxt',
     '@nuxthub/core',
