@@ -1,10 +1,9 @@
 <template>
   <section
     class="flex lg:flex-row flex-col-reverse justify-between items-center gap-8 lg:gap-0 py-12"
-    :ui="{ padding: 'px-0 lg:px-0', base: 'mx-auto' }"
   >
     <div
-      class="flex flex-col justify-center items-center lg:items-start dark:prose-invert prose-p:mt-2 prose-h1:mb-0 max-w-none prose prose-sm sm:prose-base grow basis-full"
+      class="flex flex-col justify-center items-center lg:items-start"
     >
       <MotionSlideBlur
         direction="left"
@@ -26,13 +25,14 @@
             variant="subtle"
             class="mb-1 md:mb-3 font-bold"
             color="secondary"
+            size="lg"
           />
         </UChip>
       </MotionSlideBlur>
       <MotionSlideBlur
         direction="left"
       >
-        <h1 class="font-black text-primary text-3xl lg:text-5xl tracking-tight">
+        <h1 class="font-black text-primary text-4xl lg:text-5xl tracking-tight">
           {{ $t('home.hero.myName') }}
         </h1>
       </MotionSlideBlur>
@@ -40,7 +40,7 @@
         :delay="0.2"
         direction="left"
       >
-        <p class="text-muted lg:text-left text-center text-balance">
+        <p class="my-2 md:my-4 text-muted lg:text-left text-center text-balance">
           {{ $t('home.hero.intro') }}
         </p>
       </MotionSlideBlur>
@@ -84,14 +84,14 @@
         </div>
       </MotionSlideBlur>
     </div>
-    <div class="basis-1/3">
+    <div>
       <MotionSlideBlur direction="right">
         <NuxtImg
           src="me-rmutsv-square_hhiarv"
           provider="cloudinary"
-          class="shadow-md dark:shadow-none rounded-lg size-52 md:size-40 lg:size-full object-cover aspect-square"
-          width="100%"
-          height="100%"
+          class="shadow-md dark:shadow-none rounded-lg size-52 md:size-40 lg:size-64 object-cover aspect-square"
+          width="256"
+          height="256"
           alt="Picture of Me, Konkamon Sion"
           aria-label="Picture of Me, Konkamon Sion"
         />
