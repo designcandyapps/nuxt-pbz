@@ -46,3 +46,19 @@ useSeoMeta({
   ogType: 'website',
 })
 </script>
+
+<style>
+@media (min-width: 400px) and (prefers-reduced-motion: no-preference) {
+  .page-enter-active {
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.25, 1);
+  }
+  .page-leave-active {
+    transition: all 0.3s cubic-bezier(0.75, 0, 0.75, 0);
+  }
+  .page-enter-from,
+  .page-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+</style>
