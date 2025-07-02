@@ -1,12 +1,15 @@
 <template>
-  <main class="space-y-12">
+  <main>
     <Hero />
+    <FullBleedBorder />
     <MotionSlideBlur :delay="1">
       <AboutMe />
     </MotionSlideBlur>
+    <FullBleedBorder />
     <MotionSlideBlur>
       <HomeTechStack />
     </MotionSlideBlur>
+    <FullBleedBorder />
     <MotionSlideBlur>
       <FeaturedWork />
     </MotionSlideBlur>
