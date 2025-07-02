@@ -17,7 +17,7 @@
             </h1>
           </NuxtLinkLocale>
           <UNavigationMenu
-            class="hidden sm:block"
+            class="hidden md:block"
             :ui="{ link: 'after:-bottom-1 after:h-0.5' }"
             :items="navItems"
             variant="link"
@@ -29,7 +29,7 @@
           <LazyNavbarThemeSwitch />
           <LazyUButton
             variant="ghost"
-            class="sm:hidden inline-flex"
+            class="md:hidden inline-flex"
             icon="solar:hamburger-menu-linear"
             color="neutral"
             @click="openModal"
@@ -46,32 +46,29 @@ import { LazyNavbarMobileNav } from '#components'
 
 const localePath = useLocalePath()
 const overlay = useOverlay()
+const { t } = useI18n()
 
 const navItems = computed<NavigationMenuItem[]>(() => [
   {
-    label: 'Projects',
+    label: t('navbar.projects'),
     to: localePath('/projects'),
     icon: 'solar:inbox-archive-line-duotone',
   },
   {
-    label: 'What\'s In My Bag?',
+    label: t('navbar.bag'),
     icon: 'solar:backpack-line-duotone',
     disabled: true,
   },
   {
-    label: 'Blog',
+    label: t('navbar.blog'),
     icon: 'solar:notebook-line-duotone',
     disabled: true,
   },
 ])
 
-const modal = overlay.create(LazyNavbarMobileNav, {
-  props: {
-    menu: navItems.value,
-  },
-})
+const modal = overlay.create(LazyNavbarMobileNav)
 
-async function openModal() {
-  modal.open()
+const openModal = () => {
+  modal.open({ menu: navItems.value })
 }
 </script>

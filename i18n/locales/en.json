@@ -47,5 +47,10 @@
     "withTag": {
       "searchPlaceholder": "Search Blog in tag {tagName}"
     }
+  },
+  "navbar": {
+    "projects": "Projects",
+    "bag": "What's in my bag",
+    "blog": "Blogs"
   }
 }

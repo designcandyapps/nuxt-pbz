@@ -47,5 +47,10 @@
     "withTag": {
       "searchPlaceholder": "ค้นหา Blog ที่มี Tag {tagName}"
     }
+  },
+  "navbar": {
+    "projects": "โปรเจค",
+    "bag": "อะไรอยู่ในกระเป๋า",
+    "blog": "บทความ"
   }
 }
