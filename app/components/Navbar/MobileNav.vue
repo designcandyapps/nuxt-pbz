@@ -21,6 +21,7 @@
         orientation="vertical"
         :ui="{
           link: 'py-3',
+          linkLabel: 'uppercase',
         }"
       />
     </template>

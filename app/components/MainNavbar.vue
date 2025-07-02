@@ -18,7 +18,7 @@
           </NuxtLinkLocale>
           <UNavigationMenu
             class="hidden md:block"
-            :ui="{ link: 'after:-bottom-1 after:h-0.5' }"
+            :ui="{ link: 'after:-bottom-1 after:h-0.5', linkLabel: 'uppercase' }"
             :items="navItems"
             variant="link"
             highlight
