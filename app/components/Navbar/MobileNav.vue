@@ -10,8 +10,8 @@
         class="inline-block items-center text-highlighted"
         aria-label="logo"
       >
-        <h1 class="font-mono font-bold text-lg">
-          bkozii<span class="font-normal text-sm">.com</span>
+        <h1 class="font-black text-lg">
+          BKOZII<span class="font-normal text-sm">.com</span>
         </h1>
       </NuxtLinkLocale>
     </template>
