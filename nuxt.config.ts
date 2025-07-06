@@ -75,29 +75,32 @@ export default defineNuxtConfig({
       optimizeTranslationDirective: false,
     },
     baseUrl: 'https://www.bkozii.com',
-    strategy: 'prefix_and_default',
-    defaultLocale: 'en',
+    strategy: 'prefix',
+    defaultLocale: 'th',
+    lazy: true,
     locales: [
       {
         code: 'th',
         language: 'th-TH',
         name: 'ภาษาไทย',
         file: 'th.json',
+        isCatchallLocale: true,
       },
       {
         code: 'en',
         language: 'en-US',
         name: 'English',
         file: 'en.json',
-        isCatchallLocale: true,
       },
     ],
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_language',
       redirectOn: 'no prefix',
+      fallbackLocale: 'th',
     },
     vueI18n: 'i18n.config.ts',
+    skipSettingLocaleOnNavigate: true,
   },
   icon: {
     customCollections: [
