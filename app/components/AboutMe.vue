@@ -1,13 +1,18 @@
 <template>
-  <article class="dark:prose-invert max-w-none prose prose-sm sm:prose-base">
-    <h2 class="font-bold text-lg">
-      {{ $t('home.aboutMe.title') }}
-    </h2>
-    <p>
-      {{ $t('home.aboutMe.introduction') }}
-    </p>
-    <p>
-      {{ $t('home.aboutMe.passion') }}
-    </p>
-  </article>
+  <section class="text-toned leading-7">
+    <MotionSlideBlur
+      direction="up"
+      :delay="0.2"
+    >
+      <h2 class="mb-4 font-bold text-highlighted text-2xl">
+        {{ $t('home.aboutMe.title') }}
+      </h2>
+      <p class="mb-4">
+        {{ $t('home.aboutMe.introduction') }}
+      </p>
+      <p>
+        {{ $t('home.aboutMe.passion') }}
+      </p>
+    </MotionSlideBlur>
+  </section>
 </template>

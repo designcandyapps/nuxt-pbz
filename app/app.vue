@@ -5,7 +5,9 @@
     :locale="locales[locale]"
   >
     <NuxtLayout>
-      <NuxtPage keepalive />
+      <NuxtPage
+        :transition="{ onBeforeEnter }"
+      />
     </NuxtLayout>
   </UApp>
 </template>
@@ -14,7 +16,7 @@
 import { en, th } from '@nuxt/ui/locale'
 
 const locales = { en, th }
-const { locale, localeProperties } = useI18n()
+const { locale, localeProperties, finalizePendingLocaleChange } = useI18n()
 const lang = computed(() => locales[locale.value].code)
 const langCode = computed(() => localeProperties.value.language)
 useHead({
@@ -45,6 +47,9 @@ useSeoMeta({
   charset: 'utf-8',
   ogType: 'website',
 })
+const onBeforeEnter = async () => {
+  await finalizePendingLocaleChange()
+}
 </script>
 
 <style>

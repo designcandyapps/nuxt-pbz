@@ -3,7 +3,7 @@ on: push
 
 jobs:
   deploy:
-    name: "Deploy to NuxtHub"
+    name: "Lint, Build & Deploy"
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -23,6 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Run ESLint
+        run: pnpm run lint
 
       - name: Build & Deploy to NuxtHub
         uses: nuxt-hub/action@v2

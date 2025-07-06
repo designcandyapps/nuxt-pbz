@@ -1,34 +1,72 @@
 <template>
-  <LazyMotion
-    :features="domAnimation"
+  <div
+    ref="container"
+    :class="props.class"
   >
+    <!-- When used inside v-for, animate as a single element -->
     <Motion
-      :initial="initialState"
-      :while-in-view="inViewState"
-      :in-view-options="{ once: true, margin: '0px 0px -20% 0px' }"
+      v-if="singleMode"
+      :initial="initialState()"
+      :while-in-view="inViewState()"
+      :in-view-options="{ once: true }"
       :transition="{
-        duration: $props.duration,
-        delay: $props.delay,
+        duration: props.duration,
+        delay: props.index ? props.delay * props.index : props.delay,
         ease: 'easeOut',
         type: 'tween',
       }"
     >
       <slot />
     </Motion>
-  </LazyMotion>
+    <!-- When used normally, animate each child separately -->
+    <Motion
+      v-for="(child, childIndex) in children"
+      v-else
+      :key="childIndex"
+      ref="childElements"
+      :initial="initialState()"
+      :while-in-view="inViewState()"
+      :in-view-options="{ once: true }"
+      :transition="{
+        duration: props.duration,
+        delay: props.delay * childIndex,
+        ease: 'easeOut',
+        type: 'tween',
+      }"
+    >
+      <component :is="child" />
+    </Motion>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { domAnimation } from 'motion-v'
-
 const props = withDefaults(defineProps<{
   duration?: number
   delay?: number
   direction?: 'up' | 'down' | 'left' | 'right'
+  class?: string
+  index?: number
 }>(), {
   duration: 0.5,
-  delay: 0,
-  direction: 'up',
+  delay: 0.1,
+  direction: 'down',
+})
+
+const container = ref(null)
+const childElements = ref([])
+const slots = useSlots()
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const children = ref<any>([])
+
+const singleMode = computed(() => {
+  return props.index !== undefined || (slots.default && slots.default().length === 1)
+})
+
+onMounted(() => {
+  watchEffect(() => {
+    children.value = slots.default ? slots.default() : []
+  })
 })
 
 const transformMap = {
@@ -38,15 +76,17 @@ const transformMap = {
   right: { initial: 'translateX(50px)', final: 'translateX(0px)' },
 }
 
-const initialState = computed(() => ({
-  opacity: 0,
-  filter: 'blur(10px)',
-  transform: transformMap[props.direction].initial,
-}))
+function initialState() {
+  return {
+    opacity: 0,
+    transform: transformMap[props.direction].initial,
+  }
+}
 
-const inViewState = computed(() => ({
-  opacity: 1,
-  filter: 'blur(0px)',
-  transform: transformMap[props.direction].final,
-}))
+function inViewState() {
+  return {
+    opacity: 1,
+    transform: transformMap[props.direction].final,
+  }
+}
 </script>
