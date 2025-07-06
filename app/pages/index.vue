@@ -2,17 +2,11 @@
   <main>
     <Hero />
     <FullBleedBorder />
-    <MotionSlideBlur :delay="1">
-      <AboutMe />
-    </MotionSlideBlur>
+    <AboutMe />
     <FullBleedBorder />
-    <MotionSlideBlur>
-      <HomeTechStack />
-    </MotionSlideBlur>
+    <HomeTechStack />
     <FullBleedBorder />
-    <MotionSlideBlur>
-      <FeaturedWork />
-    </MotionSlideBlur>
+    <FeaturedWork />
   </main>
 </template>
 
