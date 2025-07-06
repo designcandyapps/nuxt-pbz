@@ -8,13 +8,13 @@
           <NuxtLinkLocale
             id="myName"
             to="/"
-            active-class="decoration-primary decoration-2 underline underline-offset-[12px]"
-            class="font-mono font-bold text-highlighted"
+                        class="font-mono font-bold text-highlighted"
             aria-label="logo"
           >
-            <h1>
-              bkozii<span class="font-normal text-sm">.com</span>
-            </h1>
+            <UIcon
+              name="my-icon:konkamon"
+              class="align-middle"
+            />
           </NuxtLinkLocale>
           <UNavigationMenu
             class="hidden md:block"
