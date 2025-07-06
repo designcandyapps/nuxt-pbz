@@ -8,7 +8,7 @@
           <NuxtLinkLocale
             id="myName"
             to="/"
-                        class="font-mono font-bold text-highlighted"
+            class="font-mono font-bold text-highlighted"
             aria-label="logo"
           >
             <UIcon
@@ -57,11 +57,6 @@ const navItems = computed<NavigationMenuItem[]>(() => [
   {
     label: t('navbar.bag'),
     icon: 'solar:backpack-line-duotone',
-    disabled: true,
-  },
-  {
-    label: t('navbar.blog'),
-    icon: 'solar:notebook-line-duotone',
     disabled: true,
   },
 ])
