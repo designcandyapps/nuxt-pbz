@@ -100,7 +100,6 @@ export default defineNuxtConfig({
       fallbackLocale: 'th',
     },
     vueI18n: 'i18n.config.ts',
-    skipSettingLocaleOnNavigate: true,
   },
   icon: {
     customCollections: [
