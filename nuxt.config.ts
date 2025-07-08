@@ -13,10 +13,6 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
 
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-  },
-
   css: ['~/assets/css/main.css'],
 
   future: {
