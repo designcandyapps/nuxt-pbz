@@ -3,7 +3,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme static {
-  --font-sans: 'Nunito Sans', 'Noto Sans Thai', sans-serif;
+  --font-sans: 'Roboto Flex', 'Noto Sans Thai', sans-serif;
   --font-mono: 'Fira Code', 'Noto Sans Thai';
 
   --color-myblue-50: #f1fafa;

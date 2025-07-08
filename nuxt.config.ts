@@ -56,20 +56,16 @@ export default defineNuxtConfig({
     provider: 'google',
     families: [
       {
-        name: 'Nunito Sans', display: 'swap', global: true, subsets: ['latin', 'latin-ext'], styles: ['normal'],
+        name: 'Roboto Flex', display: 'swap', global: true, subsets: ['latin', 'latin-ext'], styles: ['normal'], weights: ['300 900'],
       },
       {
-        name: 'Noto Sans Thai', display: 'swap', global: true, subsets: ['thai'], styles: ['normal'],
+        name: 'Noto Sans Thai', display: 'swap', global: true, subsets: ['thai'], styles: ['normal'], weights: ['400 900'],
       },
       {
-        name: 'Fira Code', display: 'swap', global: true, subsets: ['latin'], styles: ['normal'], weights: [400, 600, 700],
+        name: 'Fira Code', display: 'swap', subsets: ['latin'], styles: ['normal'], weights: [400, 600, 700],
       },
     ],
-    defaults: {
-      weights: [300, 400, 500, 700, 800],
-      styles: ['normal'],
-    },
-  },
+      },
   i18n: {
     bundle: {
       optimizeTranslationDirective: false,
