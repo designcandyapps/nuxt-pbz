@@ -59,7 +59,7 @@ export default defineNuxtConfig({
         name: 'Fira Code', display: 'swap', subsets: ['latin'], styles: ['normal'], weights: [400, 600, 700],
       },
     ],
-      },
+  },
   i18n: {
     bundle: {
       optimizeTranslationDirective: false,
