@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     'motion-v/nuxt',
     '@nuxthub/core',
   ],
+  ssr: false,
   devtools: { enabled: true },
 
   app: {
@@ -27,13 +28,10 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-06-03',
   nitro: {
-    future: {
-      nativeSWR: true,
-    },
     prerender: {
       autoSubfolderIndex: false,
       crawlLinks: true,
-      routes: ['/en', '/th'],
+      routes: ['/'],
       ignore: ['/__nuxt_content'],
     },
   },
