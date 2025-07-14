@@ -1,5 +1,6 @@
 <template>
-  <div
+  <component
+    :is="props.as"
     ref="container"
     :class="props.class"
   >
@@ -36,7 +37,7 @@
     >
       <component :is="child" />
     </Motion>
-  </div>
+  </component>
 </template>
 
 <script lang="ts" setup>
@@ -46,10 +47,12 @@ const props = withDefaults(defineProps<{
   direction?: 'up' | 'down' | 'left' | 'right'
   class?: string
   index?: number
+  as?: string | undefined
 }>(), {
   duration: 0.5,
   delay: 0.1,
   direction: 'down',
+  as: 'div',
 })
 
 const container = ref(null)
