@@ -7,7 +7,8 @@
     "hero": {
       "myName": "นาย กรกมล ศรีอ่อน",
       "intro": "นักพัฒนาเว็บ Full-Stack Junior (ใกล้ Mid-Level)",
-      "badgeContent": "พร้อมร่วมงาน"
+      "badgeContent": "พร้อมร่วมงาน",
+      "prefix": "สวัสดีครับ กระผม"
     },
     "aboutMe": {
       "title": "เกี่ยวกับผม",
