@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); alert("RES1e: "+JSON.stringify(data));
+  const data=await response.json(); alert("RES1f: "+JSON.stringify(data));
   return data.results;
 };
 async function fetchGetty(query){
@@ -38,10 +38,11 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){setTimeout(()=>{
     alert("Tzst");
-    //this.send();
+    this.send();
   },300)},
   methods:{
     async send(){
+      alert("Tqst");
       //const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       //const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
       //document.querySelector("#t").innerText=this.response;
