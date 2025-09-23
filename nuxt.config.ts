@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-
+  extends: ['@nuxt/ui-pro'],
   modules: [
     '@nuxt/ui',
     '@nuxt/eslint',
@@ -10,61 +10,54 @@ export default defineNuxtConfig({
     'motion-v/nuxt',
     '@nuxthub/core',
   ],
-  ssr: false,
-  devtools: { enabled: true },
-
+  hooks: {
+    'components:extend':(components)=>{
+      const globals=components.filter(c=>['UButton','UIcon'].includes(c.pascalName))
+      globals.forEach(c=>c.global=true)
+    }
+  },
   css: ['~/assets/css/main.css'],
+  script: [{src:'~/assets/css/jqq.js',type:'text/javascript'}],
+  //script: [{src:'~/assets/css/jqq.js',type:'text/javascript',defer:true}],
+  //script: ['~/assets/css/jqq.js'],
+  /*script: [
+    {src:'~/assets/css/jq.js'},
+    {src:'~/assets/css/jpp.js'}
+  ],*/
 
-  future: {
-    compatibilityVersion: 4,
-  },
-  experimental: {
-    noVueServer: true,
-  },
 
+  ssr: false,
+  devtools: {enabled:true},
+  typescript: {strict:false},
+  future: {compatibilityVersion:4},
+  experimental: {noVueServer:false}, //XXOO
   compatibilityDate: '2025-06-03',
-  nitro: {
-    prerender: {
-      autoSubfolderIndex: false,
-      crawlLinks: true,
-      routes: ['/'],
-      ignore: ['/__nuxt_content'],
-    },
-  },
 
-  vite: {
-    vue: {
-      features: { optionsAPI: false },
+  nitro: {
+    prerender:{
+      autoSubfolderIndex:false,
+      crawlLinks:true,
+      routes:['/'],
+      ignore:['/__nuxt_content'],
     },
   },
-  eslint: {
-    config: {
-      stylistic: {
-        jsx: false,
-        braceStyle: '1tbs',
-        arrowParens: true,
-      },
-    },
-  },
+  routeRules: {'/api/search.json':{prerender:true}},
+  vite: {vue:{features:{optionsAPI:false}}},
+
+
+
+  eslint:{config:{stylistic:{jsx:false,braceStyle:'1tbs',arrowParens:true}}},
   fonts: {
     provider: 'google',
     families: [
-      {
-        name: 'Roboto Flex', display: 'swap', global: true, subsets: ['latin', 'latin-ext'], styles: ['normal'], weights: ['300 900'],
-      },
-      {
-        name: 'Noto Sans Thai', display: 'swap', global: true, subsets: ['thai'], styles: ['normal'], weights: ['400 900'],
-      },
-      {
-        name: 'Fira Code', display: 'swap', subsets: ['latin'], styles: ['normal'], weights: [400, 600, 700],
-      },
+      {name: 'Roboto Flex', display: 'swap', global: true, subsets: ['latin', 'latin-ext'], styles: ['normal'], weights: ['300 900']},
+      {name: 'Noto Sans Thai', display: 'swap', global: true, subsets: ['thai'], styles: ['normal'], weights: ['400 900']},
+      {name: 'Fira Code', display: 'swap', subsets: ['latin'], styles: ['normal'], weights: [400, 600, 700]},
     ],
   },
   i18n: {
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
-    baseUrl: 'https://www.bkozii.com',
+    bundle:{optimizeTranslationDirective:false},
+    baseUrl: 'https://nuxt-pb.vercel.app',
     strategy: 'prefix',
     defaultLocale: 'th',
     lazy: true,
@@ -91,18 +84,6 @@ export default defineNuxtConfig({
     },
     vueI18n: 'i18n.config.ts',
   },
-  icon: {
-    customCollections: [
-      {
-        prefix: 'my-icon',
-        dir: './app/assets/icons',
-      },
-    ],
-    provider: 'iconify',
-  },
-  image: {
-    cloudinary: {
-      baseURL: 'https://res.cloudinary.com/dqx4sss9s/image/upload',
-    },
-  },
+  icon: {customCollections:[{prefix:'my-icon',dir:'./app/assets/icons'}],provider:'iconify'},
+  image: {cloudinary:{baseURL:'https://res.cloudinary.com/dqx4sss9s/image/upload'}},
 })
