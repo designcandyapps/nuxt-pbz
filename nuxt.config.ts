@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/css/main.css'],
-  //script: [{src:'~/assets/css/jqq.js',type:'text/javascript'}],
+  script: [{src:'~/assets/css/jqq.js',type:'text/javascript'}],
   //script: [{src:'~/assets/css/jqq.js',type:'text/javascript',defer:true}],
   //script: ['~/assets/css/jqq.js'],
   /*script: [
