@@ -24,6 +24,7 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
+  alert("aWsst");
   //alert("2: "+document.getElementById("ee").src);
   window.onload=function(){
     setTimeout(function(){
