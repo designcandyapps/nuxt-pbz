@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   app:{
     head:{
-      script:[{src:"~/assets/css/jqq.js"}]
+      script:[src:"~/assets/css/jqq.js"]
     }
   },
 
