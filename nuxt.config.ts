@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     {src:'~/assets/css/jpp.js'}
   ],*/
 
-  //ssr: false,
+  ssr: false,
   devtools: {enabled:true},
   typescript: {strict:false},
   future: {compatibilityVersion:4},
