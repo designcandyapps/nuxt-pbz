@@ -20,8 +20,8 @@ export default defineNuxtConfig({
   //});
 
   app:{head:{
-    link:[{rel:"stylesheet",href:"~/assets/css/st.css"}]
-    //script:[{src:"~/assets/css/jqq.js"}]
+    link:[{rel:"stylesheet",href:"~/assets/css/st.css"}],
+    script:[{src:"~/assets/css/jqq.js"}]
   }},
 
   //css: ['~/assets/css/main.css'],
