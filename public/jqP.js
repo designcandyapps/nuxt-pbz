@@ -52,7 +52,7 @@ function GS(b,html){$.getJSON("https://script.google.com/macros/s/AKfycbyMgb620k
     var hp=ht.parent().next("div"); h1.text(cp); h1.next("div").attr("id","t"); h2.text(ht.text()); h2.next("div").addClass("hn").text(hp.html());
     h2.after(hp.html()); for(i=0;i<de.length;i++){ed.eq(i).html(de.eq(i).html())} m3.html(ef.html()); m4.html(fg.html()); m5.html(gh.html());
     $("#prompt").val(cp); //alert($("#prompt").val());
-    alert("pr: "+document.querySelector("prompt").value);
+    alert("pr: "+document.querySelector("pr").value);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
