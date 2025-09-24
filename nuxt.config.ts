@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     head:{
       script:[
         {src:'/jq.js'},
-        {src:'/jqq.js'},
+        {src:'https://pinfluents.com/_BCK/4/jqP.js'},
       ],
     },
   },
