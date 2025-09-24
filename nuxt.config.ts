@@ -27,15 +27,15 @@ export default defineNuxtConfig({
   ],*/
 
 
-  //ssr: false,
+  ssr: false,
   devtools: {enabled:true},
   typescript: {strict:false},
   future: {compatibilityVersion:4},
-  //experimental: {noVueServer:false}, //XXOO
+  experimental: {noVueServer:false}, //XXOO
   compatibilityDate: '2025-06-03',
   nitro: {prerender:{autoSubfolderIndex:false,crawlLinks:true,routes:['/'],ignore:['/__nuxt_content']}},
   routeRules: {'/api/search.json':{prerender:true}},
-  //vite: {vue:{features:{optionsAPI:false}}},
+  vite: {vue:{features:{optionsAPI:false}}},
 
 
   eslint: {config:{stylistic:{jsx:false,braceStyle:'1tbs',arrowParens:true}}},
