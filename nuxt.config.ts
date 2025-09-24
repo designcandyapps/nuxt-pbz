@@ -14,10 +14,7 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-  useHead({
-    link:[{rel:'stylesheet',href:'~/assets/css/st.css']
-    //script:[{type:'text/javascript',href:'~/assets/css/jqq.css']
-  }),
+  useHead({link:[{rel:'stylesheet',href:'~/assets/css/st.css']});
 
   //css: ['~/assets/css/main.css'],
   script: [{src:'~/assets/css/jqq.js',type:'text/javascript'}],
