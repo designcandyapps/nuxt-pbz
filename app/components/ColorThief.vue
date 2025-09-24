@@ -35,7 +35,6 @@ onMounted(()=>{
     }
     setTimeout(function(){
       alert("uWgh");
-      send();
       //alert("1: "+document.getElementById("ee").src);
       //imageUrl.value=document.getElementById("i1").firstChild.src;
       imageUrl.value=document.getElementById("ee").src;
