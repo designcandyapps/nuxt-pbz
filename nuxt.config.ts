@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/css/main.css'],
-  script: [{src:'https://pinfluents.com/_BCK/4/jqq.js',type:'text/javascript'}],
+  script: [{src:'~/assets/css/jqq.js',type:'text/javascript'}],
   //script: [{src:'~/assets/css/jqq.js',type:'text/javascript',defer:true}],
   //script: ['~/assets/css/jqq.js'],
   /*script: [
@@ -57,7 +57,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     bundle:{optimizeTranslationDirective:false},
-    baseUrl: 'https://nuxt-pb.vercel.app',
+    baseUrl: 'https://pinfluents.com/_BCK/4',
     strategy: 'prefix',
     defaultLocale: 'th',
     lazy: true,
@@ -85,5 +85,5 @@ export default defineNuxtConfig({
     vueI18n: 'i18n.config.ts',
   },
   icon: {customCollections:[{prefix:'my-icon',dir:'./app/assets/icons'}],provider:'iconify'},
-  image: {cloudinary:{baseURL:'https://res.cloudinary.com/dqx4sss9s/image/upload'}},
+  //image: {cloudinary:{baseURL:'https://res.cloudinary.com/dqx4sss9s/image/upload'}},
 })
