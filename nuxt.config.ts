@@ -18,15 +18,6 @@ export default defineNuxtConfig({
     script:[{type:"text/javascript",src:"~/assets/css/jqq.js"}]
   }},
 
-  //css: ['~/assets/css/main.css'],
-  //script: [{src:'~/assets/css/jqq.js',type:'text/javascript'}],
-  //script: [{src:'~/assets/css/jqq.js',type:'text/javascript',defer:true}],
-  //script: ['~/assets/css/jqq.js'],
-  /*script: [
-    {src:'~/assets/css/jq.js'},
-    {src:'~/assets/css/jpp.js'}
-  ],*/
-
   ssr: false,
   devtools: {enabled:true},
   typescript: {strict:false},
