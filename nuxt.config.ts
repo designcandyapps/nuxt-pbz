@@ -16,6 +16,7 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
+
   //css: ['~/assets/css/main.css'],
   script: [{src:'~/assets/css/jqq.js',type:'text/javascript'}],
   //script: [{src:'~/assets/css/jqq.js',type:'text/javascript',defer:true}],
