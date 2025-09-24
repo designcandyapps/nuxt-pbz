@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     link:[{rel:"stylesheet",href:"~/assets/css/main.css"}],
     script:[{type:"text/javascript",src:"~/assets/css/jqq.js"}]
   }},*/
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/st.css'],
 
   ssr: false,
   devtools: {enabled:true},
