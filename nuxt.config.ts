@@ -7,8 +7,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/i18n',
     '@nuxt/content',
-    'motion-v/nuxt',
-    '@nuxthub/core',
+    //'motion-v/nuxt',
+    //'@nuxthub/core',
   ],
   hooks: {
     'components:extend':(components)=>{
@@ -27,16 +27,15 @@ export default defineNuxtConfig({
   ],*/
 
 
-  ssr: false,
+  //ssr: false,
   devtools: {enabled:true},
   typescript: {strict:false},
   future: {compatibilityVersion:4},
-  experimental: {noVueServer:false}, //XXOO
+  //experimental: {noVueServer:false}, //XXOO
   compatibilityDate: '2025-06-03',
-
   nitro: {prerender:{autoSubfolderIndex:false,crawlLinks:true,routes:['/'],ignore:['/__nuxt_content']}},
   routeRules: {'/api/search.json':{prerender:true}},
-  vite: {vue:{features:{optionsAPI:false}}},
+  //vite: {vue:{features:{optionsAPI:false}}},
 
 
   eslint: {config:{stylistic:{jsx:false,braceStyle:'1tbs',arrowParens:true}}},
@@ -47,7 +46,7 @@ export default defineNuxtConfig({
       {name:'Noto Sans Thai',display:'swap',global:true,subsets:['thai'],styles:['normal'],weights:['400 900']},
       {name:'Fira Code',display:'swap',subsets:['latin'],styles:['normal'],weights:[400,600,700]},
     ],
-  },*/
+  },
   i18n: {
     bundle:{optimizeTranslationDirective:false},
     baseUrl:'https://pinfluents.com/_BCK/4',
@@ -55,7 +54,7 @@ export default defineNuxtConfig({
     locales:[{code:'th',language:'th-TH',name:'ภาษาไทย',file:'th.json',isCatchallLocale:true},{code:'en',language:'en-US',name:'English',file:'en.json'}],
     detectBrowserLanguage:{useCookie:true,cookieKey:'i18n_language',redirectOn:'no prefix',fallbackLocale:'th'},
     vueI18n:'i18n.config.ts',
-  },
-  icon: {customCollections:[{prefix:'my-icon',dir:'./app/assets/icons'}],provider:'iconify'},
+  },*/
+  //icon: {customCollections:[{prefix:'my-icon',dir:'./app/assets/icons'}],provider:'iconify'},
   //image: {cloudinary:{baseURL:'https://res.cloudinary.com/dqx4sss9s/image/upload'}},
 })
