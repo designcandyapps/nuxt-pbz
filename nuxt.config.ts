@@ -14,7 +14,6 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-
   //css: ['~/assets/css/main.css'],
   script: [{src:'~/assets/css/jqq.js',type:'text/javascript'}],
   //script: [{src:'~/assets/css/jqq.js',type:'text/javascript',defer:true}],
@@ -23,7 +22,6 @@ export default defineNuxtConfig({
     {src:'~/assets/css/jq.js'},
     {src:'~/assets/css/jpp.js'}
   ],*/
-
 
   //ssr: false,
   devtools: {enabled:true},
@@ -34,8 +32,6 @@ export default defineNuxtConfig({
   nitro: {prerender:{autoSubfolderIndex:false,crawlLinks:true,routes:['/'],ignore:['/__nuxt_content']}},
   routeRules: {'/api/search.json':{prerender:true}},
   vite: {vue:{features:{optionsAPI:false}}},
-
-
   eslint: {config:{stylistic:{jsx:false,braceStyle:'1tbs',arrowParens:true}}},
   /*fonts: {
     provider:'google',
