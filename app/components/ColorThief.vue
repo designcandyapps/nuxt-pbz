@@ -27,12 +27,6 @@ onMounted(()=>{
   alert("aWsst");
   //alert("2: "+document.getElementById("ee").src);
   window.onload=function(){
-    async send(){
-      alert("eTqst");
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
-      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
-      document.querySelector("#t").innerText=this.response;
-    }
     setTimeout(function(){
       alert("uWgh");
       //alert("1: "+document.getElementById("ee").src);
