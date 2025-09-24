@@ -15,16 +15,11 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/css/main.css'],
-  /*app:{
-    head:{
-      script:[src:"~/assets/css/jqq.js"]
-    }
-  },*/
   app: {
-    head: {
-      script: [
-        //{src:'https://pinfluents.com/_BCK/4/jqq.js'},
-        {src:'/jqq.js'},
+    head:{
+      script:[
+        {src:'https://pinfluents.com/_BCK/4/jqq.js'},
+        //{src:'/jqq.js'},
       ],
     },
   },
