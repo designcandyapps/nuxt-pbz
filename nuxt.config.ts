@@ -15,7 +15,11 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/css/main.css'],
-  script: ['~/assets/css/jqq.js'],
+  app:{
+    head:{
+      script:[{src:"~/assets/css/jqq.js"}]
+    }
+  },
 
   ssr: false,
   devtools: {enabled:true},
