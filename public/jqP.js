@@ -1,5 +1,4 @@
 $(function(){
-alert("Yfp");
 b={
   blk:"0,0,0",
   dgy:"86,87,88",
@@ -28,7 +27,8 @@ b={
   lpr:"202,134,255",
   dpr:"170,65,230"
 }
-  var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?$("#ui").val():"https://www."+u; var s=new URLSearchParams(location.search).get("s"); var t=new URLSearchParams(location.search).get("t"); var c=new URLSearchParams(location.search).get("c"); var d=new URLSearchParams(location.search).get("d"); var e=new URLSearchParams(location.search).get("e"); var f; if(new URLSearchParams(location.search).get("f")==null){f=1}else{f=.35} c=!c||c==null?"":c; var r="rgba("+b[c]+",1)"; d=!d||d==null?c:d; var k="rgba("+b[d]+","+f+")"; e=!e||e==null?c:e; var m="rgba("+b[e]+",1)";
+var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?$("#ui").val():"https://www."+u; var s=new URLSearchParams(location.search).get("s"); var t=new URLSearchParams(location.search).get("t"); var c=new URLSearchParams(location.search).get("c"); var d=new URLSearchParams(location.search).get("d"); var e=new URLSearchParams(location.search).get("e"); var f; if(new URLSearchParams(location.search).get("f")==null){f=1}else{f=.35} c=!c||c==null?"":c; var r="rgba("+b[c]+",1)"; d=!d||d==null?c:d; var k="rgba("+b[d]+","+f+")"; e=!e||e==null?c:e; var m="rgba("+b[e]+",1)";
+alert("Yfp3");
 
 var ygrab=function(h,callback){var j=[]; if(Object.prototype.toString.call(h)==='[object Array]'){$.each(h,function(i,a){GS(a.url,function(e){if(a.loop){$.each($(e).find(a.selector),function(){var c=$(this); var d={}; $.each(a.result,function(x,v){var a=c.find(v.find); var b=''; if(v.grab.by=='text'){b=a.text()}else if(v.grab.by=='html'){b=a.html()}else if (v.grab.by=='attr'){b=a.attr(v.grab.value)}else if(v.grab.by=='data'){b=a.data(v.grab.value)} d[v.name]=b}); j.push(d)})}else{var f=$(e).find(a.selector+':eq(0)'); var g={}; $.each(a.result,function(x,v){var a=f.find(v.find); var b=''; if(v.grab.by=='text'){b=a.text()}else if(v.grab.by=='html'){b=a.html()}else if(v.grab.by=='attr'){b=a.attr(v.grab.value)}else if(v.grab.by=='data'){b=a.data(v.grab.value)} g[v.name]=b}); j.push(g)} callback(j)})})}else{var a=h; GS(a.url,function(k){if(a.loop){$.each($(k).find(a.selector),function(){var c=$(this); var d={}; $.each(a.result,function(x,v){var a=c.find(v.find); var b=''; if(v.grab.by=='text'){b=a.text()}else if(v.grab.by=='html'){b=a.html()}else if(v.grab.by=='attr'){b=a.attr(v.grab.value)}else if(v.grab.by=='data'){b=a.data(v.grab.value)} d[v.name]=b}); j.push(d)})}else{var l=$(k).find(a.selector+':eq(0)'); var m={}; $.each(a.result,function(x,v){var a=l.find(v.find); var b=''; if(v.grab.by=='text'){b=a.text()}else if(v.grab.by=='html'){b=a.html()}else if(v.grab.by=='attr'){b=a.attr(v.grab.value)}else if(v.grab.by=='data'){b=a.data(v.grab.value)} m[v.name]=b}); j.push(m)} callback(j)})}
 function GS(b,html){$.getJSON("https://script.google.com/macros/s/AKfycbyMgb620k8sJr3FrESNboqRaVeMTVR-ZikslQeg2xLUoRnOeLAL/exec?url="+b+"&callback=?",
