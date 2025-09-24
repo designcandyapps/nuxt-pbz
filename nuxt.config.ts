@@ -7,8 +7,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/i18n',
     '@nuxt/content',
-    //'motion-v/nuxt',
-    //'@nuxthub/core',
   ],
   hooks: {
     'components:extend':(components)=>{
@@ -27,7 +25,7 @@ export default defineNuxtConfig({
   ],*/
 
 
-  ssr: false,
+  //ssr: false,
   devtools: {enabled:true},
   typescript: {strict:false},
   future: {compatibilityVersion:4},
