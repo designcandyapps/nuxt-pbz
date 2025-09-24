@@ -15,9 +15,9 @@ export default defineNuxtConfig({
     }
   },
   useHead({
-    link:[{rel:'stylesheet',href:'~/assets/css/st.css'],
+    link:[{rel:'stylesheet',href:'~/assets/css/st.css']
     //script:[{type:'text/javascript',href:'~/assets/css/jqq.css']
-  });
+  }),
 
   //css: ['~/assets/css/main.css'],
   script: [{src:'~/assets/css/jqq.js',type:'text/javascript'}],
