@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     }
   },
   app:{head:{
+    link:[{rel:"stylesheet",href:"~/assets/css/main.css"}],
     script:[{type:"text/javascript",src:"~/assets/css/jqq.js"}]
   }},
 
