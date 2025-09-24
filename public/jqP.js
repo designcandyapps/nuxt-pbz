@@ -1,4 +1,5 @@
 $(function(){
+alert("Yfp");
 b={
   blk:"0,0,0",
   dgy:"86,87,88",
