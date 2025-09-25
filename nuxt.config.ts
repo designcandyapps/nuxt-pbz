@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-  css:['~/assets/css/main.css'],
+  //css:['~/assets/css/main.css'],
   app: {
     head:{
       link:[
@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         {rel:'stylesheet',href:'/ct.css'},
       ],
       script:[
-        {src:'/jq.js'},
+        {src:'https://pinfluents.com/inc/jq.js'},
         {src:'/colorthief.js'},
         {src:'https://pinfluents.com/_BCK/4/jqP2.js'},
       ],
