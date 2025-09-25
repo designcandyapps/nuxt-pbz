@@ -19,12 +19,10 @@ export default defineNuxtConfig({
     head:{
       link:[
         {rel:'stylesheet',href:'/fo.css'},
-            //{rel:'stylesheet',href:'/sl.css'},
         {rel:'stylesheet',href:'/ct.css'},
       ],
       script:[
         {src:'/jq.js'},
-        //{src:'/sl.js'},
         {src:'/ct.js'},
         {src:'https://pinfluents.com/_BCK/4/jqP.js'},
       ],
