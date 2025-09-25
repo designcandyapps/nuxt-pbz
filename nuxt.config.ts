@@ -26,7 +26,7 @@ export default defineNuxtConfig({
         {src:'/jq.js'},
         //{src:'/sl.js'},
         {src:'/ct.js'},
-        {src:'/jqP.js'},
+        {src:'https://pinfluents.com/_BCK/4/jqP.js'},
       ],
     },
   },
