@@ -23,7 +23,7 @@ onMounted(()=>{
 
 <template>
   <main>
-    <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60" style="border:1px solid green;">
+    <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">
     <div class="g" style="border:3px solid blue;">
       <div id="t" style="border:3px solid red;"></div>
       <div id="z"><ColorThief /></div>
