@@ -4,7 +4,6 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 
 const generatePalette=async()=>{
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  alert("Wsst");
   alert("PR-URL: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
@@ -24,11 +23,9 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
-  //--alert("aWsst");
   //alert("2: "+document.getElementById("ee").src);
   window.onload=function(){
     setTimeout(function(){
-      alert("uWgh");
       //alert("1: "+document.getElementById("ee").src);
       //imageUrl.value=document.getElementById("i1").firstChild.src;
       imageUrl.value=document.getElementById("ee").src;
