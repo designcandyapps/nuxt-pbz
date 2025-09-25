@@ -14,11 +14,11 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-  //css:['~/assets/css/main.css'],
+  css:['~/assets/css/fo.css'],
   app: {
     head:{
       link:[
-        {rel:'stylesheet',href:'/fo.css'},
+        {rel:'stylesheet',href:'/sc.css'},
         {rel:'stylesheet',href:'/ct.css'},
       ],
       script:[
