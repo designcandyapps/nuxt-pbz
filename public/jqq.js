@@ -1,1 +1,0 @@
-alert("Tzl1n");
