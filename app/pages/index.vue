@@ -16,7 +16,7 @@ onMounted(()=>{
   setTimeout(function(){
     const pr=document.querySelector("#pr").value; //alert("PR: "+pr);
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-    fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
+    //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
   },600)
 });
 </script>
@@ -38,7 +38,7 @@ onMounted(()=>{
 <script lang="ts">
 export default{
   data(){return{pr:"",response:null}},
-  mounted(){setTimeout(()=>{this.send()},300)},
+  //mounted(){setTimeout(()=>{this.send()},300)},
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
