@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     head:{
       link:[
         {rel:'stylesheet',href:'/fo.css'},
-      //{rel:'stylesheet',href:'/sl.css'},
+        //{rel:'stylesheet',href:'/sl.css'},
         {rel:'stylesheet',href:'/ct.css'},
       ],
       script:[
