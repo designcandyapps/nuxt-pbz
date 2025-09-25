@@ -17,7 +17,11 @@ export default defineNuxtConfig({
   css:['~/assets/css/main.css'],
   app: {
     head:{
-      //link:[{rel:'stylesheet',href:'/ct.css'}],
+      link:[
+        {rel:'stylesheet',href:'/fo.css'},
+        {rel:'stylesheet',href:'/st.css'},
+        {rel:'stylesheet',href:'/ct.css'},
+      ],
       script:[
         {src:'/jq.js'},
         //{src:'/sl.js'},
