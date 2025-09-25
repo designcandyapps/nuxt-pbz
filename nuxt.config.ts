@@ -18,11 +18,7 @@ export default defineNuxtConfig({
   app: {
     head:{
       link:[
-        //{rel:'stylesheet',href:'/st.css'},
-        {rel:'stylesheet',href:'/fo.css'},
-        //{rel:'stylesheet',href:'/sc.css'},
-        //{rel:'stylesheet',href:'/sl.css'},
-        //{rel:'stylesheet',href:'/ct.css'},
+        {rel:'stylesheet',href:'/fo.css'},  //{rel:'stylesheet',href:'/sl.css'},{rel:'stylesheet',href:'/ct.css'},
       ],
       script:[
         {src:'/jq.js'},
