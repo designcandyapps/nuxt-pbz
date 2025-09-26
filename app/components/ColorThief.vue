@@ -32,7 +32,7 @@ onMounted(()=>{
       //imageUrl.value=document.getElementById("i1").firstChild.src;
       imageUrl.value=document.getElementById("ee").src;
       //alert("IM: "+imageUrl.value);
-      generatePalette();
+      //generatePalette();
     },1800);
     setTimeout(function(){
       alert("Y: "+document.getElementById("y").innerHTML);
