@@ -166,3 +166,5 @@
 @font-face { font-family:'cam'; src:url("/inc/fo/new6/cam/cam.ttf") format("truetype"); }
 @font-face { font-family:'car'; src:url("/inc/fo/new6/car/car.ttf") format("truetype"); }
 @font-face { font-family:'unn'; src:url("/inc/fo/new6/unn/unn.ttf") format("truetype"); }
+
+* { border:1px solid pink; color:red; }
