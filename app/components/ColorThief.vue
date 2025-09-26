@@ -14,7 +14,7 @@ const generatePalette=async()=>{
       const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
-    alert("aZ: "+document.getElementById("z").innerHTML); //document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
+    alert("aZ: "+document.getElementById("y").innerHTML); document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
