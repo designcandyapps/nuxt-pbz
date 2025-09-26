@@ -33,8 +33,10 @@ onMounted(()=>{
       //imageUrl.value=document.getElementById("i1").firstChild.src;
       imageUrl.value=document.getElementById("ee").src;
       //alert("IM: "+imageUrl.value);
-      generatePalette();
     },1800);
+    setTimeout(function(){
+      generatePalette();
+    },8800);
   }
 });
 </script>
