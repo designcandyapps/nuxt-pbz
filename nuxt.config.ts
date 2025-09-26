@@ -14,7 +14,8 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-  css:['~/assets/css/fo.css'],
+  //css:['~/assets/css/main.css'],
+  css:['/fo/fo.css'],
   app: {
     head:{
       link:[
