@@ -1,4 +1,18 @@
 <script lang="ts" setup>
+const { t } = useI18n()
+useSeoMeta({
+  title: () => t('home.hero.myName'),
+  description: () => t('seo.description'),
+  author: 'Konkamon Sion',
+  ogTitle: () => `${t('home.hero.myName')} - Portfolio & Blogs Website`,
+  ogDescription: () => t('seo.description'),
+  creator: 'Konkamon Sion',
+  ogImage: '/ogImage-index.webp',
+  ogUrl: 'https://www.bkozii.com/',
+  ogSiteName: 'Konkamon Sion',
+  titleTemplate: '%s - Portfolio & Blogs Website',
+});
+
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
