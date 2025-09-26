@@ -1,18 +1,4 @@
 <script lang="ts" setup>
-const { t } = useI18n()
-useSeoMeta({
-  title: () => t('home.hero.myName'),
-  description: () => t('seo.description'),
-  author: 'Konkamon Sion',
-  ogTitle: () => `${t('home.hero.myName')} - Portfolio & Blogs Website`,
-  ogDescription: () => t('seo.description'),
-  creator: 'Konkamon Sion',
-  ogImage: '/ogImage-index.webp',
-  ogUrl: 'https://www.bkozii.com/',
-  ogSiteName: 'Konkamon Sion',
-  titleTemplate: '%s - Portfolio & Blogs Website',
-});
-
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
@@ -36,18 +22,7 @@ onMounted(()=>{
 </script>
 
 <template>
-  <main>
-    <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">
-    <div class="g">
-      <div id="t" style="border:3px solid red;"></div>
-      <div id="y" style="border:3px solid green;">s</div>
-      <div id="z" style="border:3px solid blue;"><ColorThief /></div>
-      <input id="pr" name="pr" value="hats">
-      <input id="prompt" v-model="prompt">
-      <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
-      <div id="response" v-if="response">{{response}}</div>
-    </div>
-  </main>
+Blah
 </template>
 
 <script lang="ts">
