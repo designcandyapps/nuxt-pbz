@@ -35,7 +35,7 @@ onMounted(()=>{
       //generatePalette();
     },1800);
     setTimeout(function(){
-      alert("Y: "+document.getElementById("y").innerHTML);
+      //alert("Y: "+document.getElementById("y").innerHTML);
     },8800);
   }
 });
