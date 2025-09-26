@@ -1,3 +1,5 @@
+* { border:1px solid black; color:navy; }
+
 .palette-colors {
   display:flex;
   gap:.5rem;
