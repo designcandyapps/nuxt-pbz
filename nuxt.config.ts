@@ -15,11 +15,10 @@ export default defineNuxtConfig({
     }
   },
   //css:['~/assets/css/main.css'],
-  css:['/fo/fo.css'],
   app: {
     head:{
       link:[
-        {rel:'stylesheet',href:'/sc.css'},
+        {rel:'stylesheet',href:'/fo/fo.css'},
         {rel:'stylesheet',href:'/ct.css'},
       ],
       script:[
