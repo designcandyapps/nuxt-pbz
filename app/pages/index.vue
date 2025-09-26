@@ -26,6 +26,7 @@ onMounted(()=>{
     <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">
     <div class="g">
       <div id="t" style="border:3px solid red;"></div>
+      <div id="y" style="border:3px solid green;">s</div>
       <div id="z" style="border:3px solid blue;"><ColorThief /></div>
       <input id="pr" name="pr" value="hats">
       <input id="prompt" v-model="prompt">
