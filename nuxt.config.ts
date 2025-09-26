@@ -14,7 +14,6 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-  css:['~/assets/css/main.css'],
   app: {
     head:{
       link:[{rel:'stylesheet',href:'/ct.css'}],
@@ -25,6 +24,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+  css:['~/assets/css/main.css'],
 
   ssr: false,
   devtools: {enabled:true},
