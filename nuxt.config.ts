@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       link:[{rel:'stylesheet',href:'/ct.css'}],
       script:[
         {src:'https://pinfluents.com/inc/jq.js'},
-        //{src:'/colorthief.js'},
+        {src:'https://pinfluents.com/inc/colorthief.js'},
         {src:'https://pinfluents.com/_BCK/4/jqP2.js'},
       ],
     },
