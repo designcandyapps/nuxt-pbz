@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   app: {
     head:{
       link:[
-        {rel:'stylesheet',href:'/fo/fo.css'},
+        {rel:'stylesheet',href:'https://pinfluents.com/inc/fo/fo.css'},
         {rel:'stylesheet',href:'/sc.css'},
         {rel:'stylesheet',href:'/ct.css'},
       ],
