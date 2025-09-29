@@ -23,31 +23,36 @@ onMounted(()=>{
 });
 </script>
 
-<template>
-  <div class="g">
-    <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">
-    <div id="t" style="border:3px solid red;"></div>
-    <div id="y" style="border:3px solid green;">s</div>
-    <div id="z" style="border:3px solid blue;"><ColorThief /></div>
-    <input id="pr" name="pr" value="Open Source">
-    <input id="prompt" v-model="prompt">
-    <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
-    <div id="response" v-if="response">{{response}}</div>
-  </div>
-</template>
-
 <!--template>
+  <main>
+    <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">
+    <div class="g">
+      <div id="t" style="border:3px solid red;"></div>
+      <div id="y" style="border:3px solid green;">s</div>
+      <div id="z" style="border:3px solid blue;"><CT /></div>
+      <input id="pr" name="pr" value="Open Source">
+      <input id="prompt" v-model="prompt">
+      <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
+      <div id="response" v-if="response">{{response}}</div>
+    </div>
+  </main>
+</template-->
+
+<template>
   <div>
-    <ULandingHero v-if="page.hero" v-bind="page.hero">
+    <!--ULandingHero v-if="page.hero" v-bind="page.hero"-->
       <div class="g">
-        <div id="z"><CT /></div><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
+        <div id="t" style="border:3px solid red;"></div>
+        <div id="y" style="border:3px solid green;">s</div>
+        <div id="z"><CT /></div>
+        <input id="pr" name="pr" value="Open Source">
+        <input id="prompt" v-model="prompt">
+        <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
         <div id="response" v-if="response">{{response}}</div>
       </div>
-      <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
-    </ULandingHero>
-    <ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /><Slider /></UPageGrid></ULandingSection>
+    <!--/ULandingHero-->
   </div>
-</template-->
+</template>
 
 <script lang="ts">
 export default{
