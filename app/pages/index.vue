@@ -25,10 +25,10 @@ onMounted(()=>{
 
 <template>
   <main>
+    <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">
     <!--ULandingHero v-if="page.hero" v-bind="page.hero"-->
       <div class="g">
         <div id="t" style="border:3px solid red;"></div>
-        <div id="y" style="border:3px solid green;">s</div>
         <div id="z"><ColorThief /></div>
         <input id="pr" name="pr" value="Open Source">
         <input id="prompt" v-model="prompt">
