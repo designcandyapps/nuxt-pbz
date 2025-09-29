@@ -23,8 +23,10 @@ provide('navigation',navigation)*/
 <template>
   <NuxtLoadingIndicator />
   <UApp :tooltip="{delayDuration:0}" :locale="locales[locale]">
-    <NuxtLayout>
-      <NuxtPage keepalive />
-    </NuxtLayout>
+    <UMain>
+      <NuxtLayout>
+        <NuxtPage keepalive />
+      </NuxtLayout>
+    </UMain>
   </UApp>
 </template>
