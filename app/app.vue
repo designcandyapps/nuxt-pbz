@@ -32,6 +32,7 @@ provide('navigation',navigation)*/
 <template>
   <div>
     <NuxtLoadingIndicator />
+    <UApp :tooltip="{delayDuration:0}" :locale="locales[locale]">
     <AppHeader />
     <UMain>
       <NuxtLayout>
