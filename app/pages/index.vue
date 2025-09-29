@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+//const {data:page}=await useAsyncData("index",()=>queryContent("/").findOne())
+//useSeoMeta({titleTemplate:"",title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
@@ -22,19 +24,30 @@ onMounted(()=>{
 </script>
 
 <template>
-  <main>
+  <div class="g">
     <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">
-    <div class="g">
-      <div id="t" style="border:3px solid red;"></div>
-      <div id="y" style="border:3px solid green;">s</div>
-      <div id="z" style="border:3px solid blue;"><ColorThief /></div>
-      <input id="pr" name="pr" value="Open Source">
-      <input id="prompt" v-model="prompt">
-      <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
-      <div id="response" v-if="response">{{response}}</div>
-    </div>
-  </main>
+    <div id="t" style="border:3px solid red;"></div>
+    <div id="y" style="border:3px solid green;">s</div>
+    <div id="z" style="border:3px solid blue;"><ColorThief /></div>
+    <input id="pr" name="pr" value="Open Source">
+    <input id="prompt" v-model="prompt">
+    <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
+    <div id="response" v-if="response">{{response}}</div>
+  </div>
 </template>
+
+<!--template>
+  <div>
+    <ULandingHero v-if="page.hero" v-bind="page.hero">
+      <div class="g">
+        <div id="z"><CT /></div><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
+        <div id="response" v-if="response">{{response}}</div>
+      </div>
+      <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
+    </ULandingHero>
+    <ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /><Slider /></UPageGrid></ULandingSection>
+  </div>
+</template-->
 
 <script lang="ts">
 export default{
