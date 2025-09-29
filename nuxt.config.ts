@@ -1,12 +1,12 @@
-//https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
   modules: [
-    '@nuxt/ui',
+    '@nuxt/content',
     '@nuxt/eslint',
+    '@nuxt/fonts',
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@nuxt/content',
+    '@nuxt/ui',
   ],
   hooks: {
     'components:extend':(components)=>{
@@ -33,9 +33,13 @@ export default defineNuxtConfig({
   //experimental: {noVueServer:false}, //XXOO
   compatibilityDate: '2025-06-03',
   nitro: {prerender:{autoSubfolderIndex:false,crawlLinks:true,routes:['/'],ignore:['/__nuxt_content']}},
+  //nitro: {prerender:{routes:['/'],crawlLinks:true}},
   routeRules: {'/api/search.json':{prerender:true}},
+
   //vite: {vue:{features:{optionsAPI:false}}},
   eslint: {config:{stylistic:{jsx:false,braceStyle:'1tbs',arrowParens:true}}},
+  //eslint: {config:{stylistic:{commaDangle:'never',braceStyle:'1tbs'}}
+
   /*fonts: {
     provider:'google',
     families:[
