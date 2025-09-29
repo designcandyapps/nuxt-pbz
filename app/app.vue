@@ -18,13 +18,13 @@ useHead({meta:[{name:'viewport',content:'width=device-width,initial-scale=1'}],h
 
 <template>
   <NuxtLoadingIndicator />
-  <AppHeader />
-  <UApp>
-    <UMain>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-    </UMain>
-  </UApp>
-  <AppFooter />
+  <!--AppHeader /-->
+  <UApp><UMain>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </UMain></UApp>
+  <!--AppFooter />
+  <ClientOnly><LazyUContentSearch :files="files" :navigation="navigation" /></ClientOnly>
+  <UNotifications /-->
 </template>
