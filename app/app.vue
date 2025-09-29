@@ -18,6 +18,7 @@ useHead({meta:[{name:'viewport',content:'width=device-width,initial-scale=1'}],h
 
 <template>
   <NuxtLoadingIndicator />
+  <AppHeader />
   <UApp>
     <UMain>
       <NuxtLayout>
@@ -25,4 +26,5 @@ useHead({meta:[{name:'viewport',content:'width=device-width,initial-scale=1'}],h
       </NuxtLayout>
     </UMain>
   </UApp>
+  <AppFooter />
 </template>
