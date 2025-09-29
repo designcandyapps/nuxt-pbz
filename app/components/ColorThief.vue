@@ -4,8 +4,13 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 
 const generatePalette=async()=>{
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  //alert("PR-URL: "+proxyUrl.value);
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
+  alert("PR-URL: "+proxyUrl.value);
+
+  const img=new Image();
+  alert("IMG: "+img);
+
+  img.crossOrigin="Anonymous";
+  img.src=proxyUrl.value;
   alert("IMG-SRC: "+img.src);
 
   img.onload=()=>{
