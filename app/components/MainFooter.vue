@@ -1,15 +1,7 @@
-<script setup lang="ts">
-const {footer}=useAppConfig()
-</script>
-
 <template>
-  <UFooter>
-    Footer here
-  </UFooter>
-</template>
-
-<!--template>
-  <footer class="bg-default drop-shadow-md dark:drop-shadow-none md:border border-default border-t sm:rounded rounded-none text-toned">
+  <footer
+    class="bg-default drop-shadow-md dark:drop-shadow-none md:border border-default border-t sm:rounded rounded-none text-toned"
+  >
     <UContainer class="flex sm:flex-row flex-col flex-nowrap justify-between items-center gap-5 px-6 py-3 border-default border-x">
       <div class="flex flex-col items-center sm:items-start text-xs">
         <span>© <NuxtTime
@@ -40,4 +32,4 @@ const {footer}=useAppConfig()
       </div>
     </UContainer>
   </footer>
-</template-->
+</template>
