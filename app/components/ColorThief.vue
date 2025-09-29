@@ -7,14 +7,14 @@ const generatePalette=async()=>{
   alert("PR-URL: "+proxyUrl.value);
 
   const img=new Image();
-  alert("IMG: "+img);
+  //alert("IMG: "+img);
 
   img.crossOrigin="Anonymous";
   img.src=proxyUrl.value;
-  alert("IMG-SRC: "+img.src);
+  //alert("IMG-SRC: "+img.src);
 
   img.onload=()=>{
-    alert("IMG: "+img);
+    //alert("IMG: "+img);
 
     const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors);
@@ -26,7 +26,10 @@ const generatePalette=async()=>{
       const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
-    alert("aZ: "+document.getElementById("y").innerHTML); document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
+    //alert("yZ: "+document.getElementById("y").innerHTML);
+    document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
+
+
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
