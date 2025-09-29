@@ -17,12 +17,13 @@ useHead({meta:[{name:'viewport',content:'width=device-width,initial-scale=1'}],h
 
 <template>
   <NuxtLoadingIndicator />
+  <UApp :tooltip="{delayDuration:0}" :locale="locales[locale]">
   <!--AppHeader /-->
-  <UApp><UMain>
+  <!--UApp><UMain>
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-  </UMain></UApp>
+  </UMain></UApp-->
   <!--AppFooter />
   <ClientOnly><LazyUContentSearch :files="files" :navigation="navigation" /></ClientOnly>
   <UNotifications /-->
