@@ -2,6 +2,7 @@
 import type {NavItem} from '@nuxt/content'
 const navigation=inject<NavItem[]>('navigation',[])
 const {header}=useAppConfig()
+defineProps({title:String,description:String})
 </script>
 
 <!--template>
@@ -31,4 +32,3 @@ const {header}=useAppConfig()
     </section>
   </div>
 </template>
-<script lang="ts" setup>defineProps({title:String,description:String})</script>
