@@ -4,13 +4,12 @@ const navigation=inject<NavItem[]>('navigation',[])
 const {header}=useAppConfig()
 </script>
 
-<template>
+<!--template>
   <UHeader>
     <template #logo>
       <template v-if="header?.logo?.dark||header?.logo?.light"><UColorModeImage v-bind="{ class:'h-6 w-auto',...header?.logo }" /></template>
       <template v-else>
         <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp1.png" width="60" height="60">
-        <!--NuxtImg id="nu" src="/public/dc2.png" width="60" height="60" format="png" @load="getCP" /-->
       </template>
     </template>
     <template v-if="header?.search" #center>
@@ -22,14 +21,14 @@ const {header}=useAppConfig()
     </template>
     <template #panel><UNavigationTree :links="mapContentNavigation(navigation)" /></template>
   </UHeader>
-</template>
+</template-->
 
-<!--template>
+<template>
   <div>
     <section class="dark:prose-invert prose-h1:m-0 py-8 sm:py-12 max-w-none lg:text-left text-center prose prose-sm md:prose-base">
-      <h1>{{ $props.title }}</h1>
-      <p class="text-balance">{{ $props.description }}</p>
+      <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp1.png" width="60" height="60">
+      <h1>{{$props.title}}</h1><p class="text-balance">{{$props.description}}</p>
     </section>
   </div>
 </template>
-<script lang="ts" setup>defineProps({title:String,description:String})</script-->
+<script lang="ts" setup>defineProps({title:String,description:String})</script>
