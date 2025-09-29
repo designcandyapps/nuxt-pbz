@@ -38,22 +38,6 @@ onMounted(()=>{
   </main>
 </template>
 
-<!--template>
-  <div>
-    <!--ULandingHero v-if="page.hero" v-bind="page.hero"-->
-      <div class="g">
-        <div id="t" style="border:3px solid red;"></div>
-        <div id="y" style="border:3px solid green;">s</div>
-        <div id="z"><CT /></div>
-        <input id="pr" name="pr" value="Open Source">
-        <input id="prompt" v-model="prompt">
-        <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
-        <div id="response" v-if="response">{{response}}</div>
-      </div>
-    <!--/ULandingHero-->
-  </div>
-</template-->
-
 <script lang="ts">
 export default{
   data(){return{pr:"",response:null}},
