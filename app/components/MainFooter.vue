@@ -1,7 +1,21 @@
+<script setup lang="ts">
+const { footer }=useAppConfig()
+</script>
+
 <template>
-  <footer
-    class="bg-default drop-shadow-md dark:drop-shadow-none md:border border-default border-t sm:rounded rounded-none text-toned"
-  >
+  <UFooter>
+    <template #left>{{ footer.credits }}</template>
+    <template #right>
+      <UColorModeButton v-if="footer?.colorMode" />
+      <template v-if="footer?.links">
+        <UButton v-for="(link,index) of footer?.links" key="index" v-bind="{ color:'gray',variant:'ghost',...link }" />
+      </template>
+    </template>
+  </UFooter>
+</template>
+
+<!--template>
+  <footer class="bg-default drop-shadow-md dark:drop-shadow-none md:border border-default border-t sm:rounded rounded-none text-toned">
     <UContainer class="flex sm:flex-row flex-col flex-nowrap justify-between items-center gap-5 px-6 py-3 border-default border-x">
       <div class="flex flex-col items-center sm:items-start text-xs">
         <span>© <NuxtTime
@@ -32,4 +46,4 @@
       </div>
     </UContainer>
   </footer>
-</template>
+</template-->
