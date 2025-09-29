@@ -18,10 +18,10 @@ useHead({meta:[{name:'viewport',content:'width=device-width,initial-scale=1'}],h
 
 <template>
   <NuxtLoadingIndicator />
-  <UApp :tooltip="{delayDuration:0}" :locale="locales[locale]">
+  <UApp>
     <UMain>
       <NuxtLayout>
-        <NuxtPage keepalive />
+        <NuxtPage />
       </NuxtLayout>
     </UMain>
   </UApp>
