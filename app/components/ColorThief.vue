@@ -7,14 +7,14 @@ const generatePalette=async()=>{
   alert("PR-URL: "+proxyUrl.value);
 
   const img=new Image();
-  //alert("IMG: "+img);
+  alert("IMG: "+img);
 
   img.crossOrigin="Anonymous";
   img.src=proxyUrl.value;
-  //alert("IMG-SRC: "+img.src);
+  alert("IMG-SRC: "+img.src);
 
   img.onload=()=>{
-    //alert("IMG: "+img);
+    alert("IMG: "+img);
 
     const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors);
@@ -40,6 +40,7 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
+  alert("1: "+document.getElementById("y").innerHTML);
   //alert("2: "+document.getElementById("ee").src);
   window.onload=function(){
     setTimeout(function(){
@@ -47,7 +48,7 @@ onMounted(()=>{
       //imageUrl.value=document.getElementById("i1").firstChild.src;
       imageUrl.value=document.getElementById("ee").src;
       //alert("IM: "+imageUrl.value);
-      //generatePalette();
+      generatePalette();
     },1800);
     setTimeout(function(){
       //alert("Y: "+document.getElementById("y").innerHTML);
