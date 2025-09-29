@@ -20,28 +20,26 @@ useHead({meta:[{name:'viewport',content:'width=device-width,initial-scale=1'}],h
 provide('navigation',navigation)*/
 </script>
 
-<!--template>
+<template>
   <NuxtLoadingIndicator />
   <UApp :tooltip="{delayDuration:0}" :locale="locales[locale]">
     <NuxtLayout>
-      <NuxtPage />
+      <NuxtPage keepalive />
     </NuxtLayout>
   </UApp>
-</template-->
+</template>
 
-<template>
+<!--template>
   <div>
     <NuxtLoadingIndicator />
     <UApp :tooltip="{delayDuration:0}" :locale="locales[locale]">
-    <AppHeader />
-    <UMain>
+    <AppHeader /><UMain>
       <NuxtLayout>
-        <NuxtPage />
+        <NuxtPage keepalive />
       </NuxtLayout>
-    </UMain>
-    <AppFooter />
+    </UMain><AppFooter />
   </div>
-</template>
+</template-->
 
 <!--style>
 @media (min-width: 400px) and (prefers-reduced-motion: no-preference) {
