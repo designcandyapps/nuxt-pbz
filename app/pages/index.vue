@@ -24,9 +24,8 @@ onMounted(()=>{
 </script>
 
 <template>
-  <div>
+  <main>
     <!--ULandingHero v-if="page.hero" v-bind="page.hero"-->
-    <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">
       <div class="g">
         <div id="t" style="border:3px solid red;"></div>
         <div id="y" style="border:3px solid green;">s</div>
@@ -37,7 +36,7 @@ onMounted(()=>{
         <div id="response" v-if="response">{{response}}</div>
       </div>
     <!--/ULandingHero-->
-  </div>
+  </main>
 </template>
 
 <script lang="ts">
