@@ -1,11 +1,11 @@
 <script setup>
 import {ref,onMounted} from "vue";
-alert(0);
-//import ColorThief from "colorthief";
+import ColorThief from "colorthief";
 import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
+  alert(0);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; alert("U: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   img.onload=()=>{
