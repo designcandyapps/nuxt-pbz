@@ -37,7 +37,7 @@ onMounted(()=>{
   //alert("URL: "+u);
   window.onload=function(){
     setTimeout(function(){
-      alert("1a: "+document.getElementById("ee").src);
+      //alert("1a: "+document.getElementById("ee").src);
       //imageUrl.value=document.getElementById("i1").firstChild.src;
       imageUrl.value=document.getElementById("ee").src;
       //alert("IM: "+imageUrl.value);
