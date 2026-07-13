@@ -12,7 +12,7 @@ const {header}=useAppConfig()
 
       </template>
       <template v-else>
-        <img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">
+        <img id="ee" src="https://pinfluents.com/_BCK/4/im/hn.png" width="60" height="60">
         <!--NuxtImg id="nu" src="/public/dc2.png" width="60" height="60" format="png" @load="getCP" /-->
       </template>
     </template>
