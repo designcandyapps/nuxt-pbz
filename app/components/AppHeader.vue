@@ -7,12 +7,13 @@ const {header}=useAppConfig()
 <template>
   <UHeader>
     <template #logo>
-      <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp1.png" width="60" height="60">
-      <!--template v-if="header?.logo?.dark||header?.logo?.light"><UColorModeImage v-bind="{class:'h-6 w-auto',...header?.logo}" /></template>
+      <template v-if="header?.logo?.dark||header?.logo?.light"><UColorModeImage v-bind="{class:'h-6 w-auto',...header?.logo}" />
+        <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp1.png" width="60" height="60">
+      </template>
       <template v-else>
         <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp1.png" width="60" height="60">
         <!--NuxtImg id="nu" src="/public/dc2.png" width="60" height="60" format="png" @load="getCP" /-->
-      </template-->
+      </template>
     </template>
 
     <template v-if="header?.search" #center>
