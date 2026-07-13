@@ -5,11 +5,12 @@ import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  alert(0);
-  isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; alert("U: "+proxyUrl.value);
+  //alert(0);
+  isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
+  alert("U: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   img.onload=()=>{
-    //alert("IMG: "+img);
+    alert("IMG: "+img);
     const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("y").innerHTML=`<span class="content"></span>`;
     //alert("Z1: "+document.getElementById("z").innerHTML);
