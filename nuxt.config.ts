@@ -21,11 +21,10 @@ export default defineNuxtConfig({
       script:[
         {src:'https://pinfluents.com/inc/jq.js'},
         {src:'https://pinfluents.com/inc/colorthief.js'},
-        {src:'https://pinfluents.com/_BCK/4/jqP3-d.js'},
+        {src:'https://pinfluents.com/_BCK/4/jqP3-e.js'},
       ],
     },
   },
-
   ssr: false,
   devtools: {enabled:true},
   typescript: {strict:false},
