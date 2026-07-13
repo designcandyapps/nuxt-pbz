@@ -12,13 +12,13 @@ const generatePalette=async()=>{
     //alert("IMG: "+img);
     const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("y").innerHTML=`<span class="content"></span>`;
-    alert("Z1: "+document.getElementById("z").innerHTML);
+    //alert("Z1: "+document.getElementById("z").innerHTML);
 
     var i=0; for(const type of Object.keys(palettesz)){
       const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
-    alert("yZ: "+document.getElementById("y").innerHTML);
+    //alert("yZ: "+document.getElementById("y").innerHTML);
     document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
 
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
