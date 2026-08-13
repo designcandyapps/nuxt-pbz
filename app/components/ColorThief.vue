@@ -5,9 +5,9 @@ import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  //alert("1c: "+document.getElementById("ee").src);
-  //imageUrl.value=document.getElementById("ee").src;
-  //alert("IU1: "+imageUrl.value);
+  alert("1c: "+document.getElementById("ee").src);
+  imageUrl.value=document.getElementById("ee").src;
+  alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   alert("U: "+proxyUrl.value);
@@ -38,15 +38,15 @@ onMounted(()=>{
   //alert("URL: "+u);
   //alert("0: "+document.getElementById("y").innerHTML);
   alert("0: "+document.getElementById("ee").src);
-  window.onload=function(){
-    alert("1: "+document.getElementById("ee").src);
+  //window.onload=function(){
+    //alert("1: "+document.getElementById("ee").src);
     setTimeout(function(){
       alert("1a: "+document.getElementById("ee").src);
       //imageUrl.value=document.getElementById("i1").firstChild.src;
       imageUrl.value=document.getElementById("ee").src;
-      //alert("IM: "+imageUrl.value);
+      alert("IM: "+imageUrl.value);
       generatePalette();
     },1800);
-  }
+  //}
 });
 </script>
