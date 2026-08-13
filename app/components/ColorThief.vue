@@ -34,10 +34,10 @@ var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?$("#ui").va
 onMounted(()=>{
   alert("0: "+document.getElementById("y").innerHTML);
   window.onload=function(){
-    alert("2: "+document.getElementById("ee").src);
+    //alert("2: "+document.getElementById("ee").src);
     //alert("URL: "+u);
     setTimeout(function(){
-      //alert("1a: "+document.getElementById("ee").src);
+      alert("1a: "+document.getElementById("ee").src);
       //imageUrl.value=document.getElementById("i1").firstChild.src;
       imageUrl.value=document.getElementById("ee").src;
       alert("IM: "+imageUrl.value);
