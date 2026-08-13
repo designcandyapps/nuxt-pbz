@@ -21,8 +21,8 @@ const generatePalette=async()=>{
       const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
-    alert("Z: "+document.getElementById("z").innerHTML);
-    //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
+    alert("Y: "+document.getElementById("y").innerHTML);
+    document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
 
     const r0=document.getElementById("dv7").style.backgroundColor; alert("G: "+r0);
     const r2=$("#dv8").css("background-color"); //r2=r2!=""?r2.replace("rgb(","rgba(").replace(")",",.1)"):"#001100"; //a9a9a9
