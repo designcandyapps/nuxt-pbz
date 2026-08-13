@@ -5,7 +5,7 @@ import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  alert("1c: "+document.getElementById("ee").src);
+  alert("1c: "+document.getElementById("ee"));
   imageUrl.value=document.getElementById("ee").src;
   alert("IU1: "+imageUrl.value);
 
@@ -37,14 +37,14 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{
   //alert("URL: "+u);
   //alert("0: "+document.getElementById("y").innerHTML);
-  alert("0: "+document.getElementById("ee").src);
-  //window.onload=function(){
-    //alert("1: "+document.getElementById("ee").src);
+  alert("0: "+document.getElementById("ee"));
+  window.onload=function(){
+    alert("1: "+document.getElementById("ee"));
     setTimeout(function(){
-      alert("1a: "+document.getElementById("ee").src);
+      alert("1a: "+document.getElementById("ee"));
       //imageUrl.value=document.getElementById("i1").firstChild.src;
-      imageUrl.value=document.getElementById("ee").src;
-      alert("IM: "+imageUrl.value);
+      //imageUrl.value=document.getElementById("ee").src;
+      //alert("IM: "+imageUrl.value);
       generatePalette();
     },1800);
   //}
