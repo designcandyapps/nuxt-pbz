@@ -38,7 +38,7 @@ onMounted(()=>{
   //alert("URL: "+u);
   //alert("0: "+document.getElementById("y").innerHTML);
   alert("0: "+document.getElementById("ee"));
-  window.onload=function(){
+  //window.onload=function(){
     alert("1: "+document.getElementById("ee"));
     setTimeout(function(){
       alert("1a: "+document.getElementById("ee"));
@@ -48,6 +48,6 @@ onMounted(()=>{
       //alert("IM: "+imageUrl.value);
       generatePalette();
     },1800);
-  }
+  //}
 });
 </script>
