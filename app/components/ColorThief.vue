@@ -5,8 +5,9 @@ import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  imageUrl.value=document.getElementById("ee").src;
-  alert("IU1: "+imageUrl.value);
+  alert("1c: "+document.getElementById("ee").src);
+  //imageUrl.value=document.getElementById("ee").src;
+  //alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   alert("U: "+proxyUrl.value);
@@ -34,8 +35,9 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?$("#ui").val():"https://www."+u; var s=new URLSearchParams(location.search).get("s"); var t=new URLSearchParams(location.search).get("t");
 onMounted(()=>{
-  alert("URL: "+u);
+  //alert("URL: "+u);
   //alert("0: "+document.getElementById("y").innerHTML);
+  alert("0: "+document.getElementById("ee"));
   alert("1: "+document.getElementById("ee").src);
   window.onload=function(){
     alert("1a: "+document.getElementById("ee").src);
