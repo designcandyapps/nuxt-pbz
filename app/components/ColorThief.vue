@@ -37,9 +37,10 @@ var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?$("#ui").va
 onMounted(()=>{
   //alert("URL: "+u);
   //alert("0: "+document.getElementById("y").innerHTML);
+  window.onload=function(){
   alert("0: "+document.getElementById("ee"));
   alert("1: "+document.getElementById("ee").src);
-  window.onload=function(){
+
     alert("1a: "+document.getElementById("ee").src);
     setTimeout(function(){
       alert("1b: "+document.getElementById("ee").src);
