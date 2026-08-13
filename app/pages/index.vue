@@ -34,7 +34,7 @@ onMounted(()=>{
       <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <div id="response" v-if="response">{{response}}</div>
     </div>
-  <--/main-->
+  <!--/main-->
 </template>
 
 <script lang="ts">
