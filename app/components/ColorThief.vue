@@ -47,6 +47,6 @@ onMounted(()=>{
       //alert("IM: "+imageUrl.value);
       generatePalette();
     },1800);
-  //}
+  }
 });
 </script>
