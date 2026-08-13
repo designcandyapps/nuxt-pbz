@@ -33,22 +33,21 @@ function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
-var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?$("#ui").val():"https://www."+u; var s=new URLSearchParams(location.search).get("s"); var t=new URLSearchParams(location.search).get("t");
+//var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?$("#ui").val():"https://www."+u; var s=new URLSearchParams(location.search).get("s"); var t=new URLSearchParams(location.search).get("t");
 onMounted(()=>{
-  alert("URL: "+u);
+  //alert("URL: "+u);
   //alert("0: "+document.getElementById("y").innerHTML);
-  //window.onload=function(){
-  //alert("0: "+document.getElementById("ee"));
-  //alert("1: "+document.getElementById("ee").src);
-
-    //alert("1a: "+document.getElementById("ee").src);
+  alert("0: "+document.getElementById("ee"));
+  window.onload=function(){
+    alert("1: "+document.getElementById("ee"));
     setTimeout(function(){
+      alert("1a: "+document.getElementById("ee"));
       //alert("1b: "+document.getElementById("ee").src);
       //imageUrl.value=document.getElementById("i1").firstChild.src;
-      imageUrl.value=document.getElementById("ee").src;
-      alert("IM: "+imageUrl.value);
+      //imageUrl.value=document.getElementById("ee").src;
+      //alert("IM: "+imageUrl.value);
       generatePalette();
     },1800);
-  //}
+  }
 });
 </script>
