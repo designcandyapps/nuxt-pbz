@@ -37,8 +37,8 @@ var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?$("#ui").va
 onMounted(()=>{
   //alert("URL: "+u);
   //alert("0: "+document.getElementById("y").innerHTML);
-  window.onload=function(){
-  alert("0: "+document.getElementById("ee"));
+  //window.onload=function(){
+  //alert("0: "+document.getElementById("ee"));
   //alert("1: "+document.getElementById("ee").src);
 
     //alert("1a: "+document.getElementById("ee").src);
@@ -49,6 +49,6 @@ onMounted(()=>{
       alert("IM: "+imageUrl.value);
       generatePalette();
     },1800);
-  }
+  //}
 });
 </script>
