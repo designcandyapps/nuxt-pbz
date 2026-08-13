@@ -38,8 +38,8 @@ onMounted(()=>{
   //alert("URL: "+u);
   //alert("0: "+document.getElementById("y").innerHTML);
 
-  alert(document.querySelector("header"));
-  document.querySelector("header").prepend('<img id="ee" src="'+b+'"lo.png" width="60" height="60">');
+  alert("HD: "+document.querySelector("header"));
+  //document.querySelector("header").prepend('<img id="ee" src="'+b+'"lo.png" width="60" height="60">');
 
   alert("0: "+document.getElementById("ee"));
   window.onload=function(){
