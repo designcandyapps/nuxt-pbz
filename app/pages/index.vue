@@ -23,7 +23,7 @@ onMounted(()=>{
 </script>
 
 <template>
-  <main>
+  <!--main-->
     <!--img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60"-->
     <div class="g" style="position:absolute; top:300; left:99; border:9px solid red;">
       <div id="t" style="border:3px solid red;"></div>
@@ -34,7 +34,7 @@ onMounted(()=>{
       <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <div id="response" v-if="response">{{response}}</div>
     </div>
-  </main>
+  <!--/main-->
 </template>
 
 <script lang="ts">
