@@ -41,7 +41,7 @@ onMounted(()=>{
   //document.querySelector("header").prepend('<img id="ee" src="'+u+'lo.png" width="60" height="60">');
   //alert("HD: "+document.querySelector("header"));
 
-  alert("0: "+document.getElementById("ee"));
+  //alert("0: "+document.getElementById("ee"));
   //window.onload=function(){
     //alert("1: "+document.getElementById("ee"));
     setTimeout(function(){
