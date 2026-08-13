@@ -5,7 +5,7 @@ import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  alert("1c: "+document.getElementById("ee").src);
+  alert("1c: "+document.getElementById("ee"));
   //imageUrl.value=document.getElementById("ee").src;
   //alert("IU1: "+imageUrl.value);
 
@@ -39,11 +39,11 @@ onMounted(()=>{
   //alert("0: "+document.getElementById("y").innerHTML);
   window.onload=function(){
   alert("0: "+document.getElementById("ee"));
-  alert("1: "+document.getElementById("ee").src);
+  //alert("1: "+document.getElementById("ee").src);
 
-    alert("1a: "+document.getElementById("ee").src);
+    //alert("1a: "+document.getElementById("ee").src);
     setTimeout(function(){
-      alert("1b: "+document.getElementById("ee").src);
+      //alert("1b: "+document.getElementById("ee").src);
       //imageUrl.value=document.getElementById("i1").firstChild.src;
       imageUrl.value=document.getElementById("ee").src;
       alert("IM: "+imageUrl.value);
