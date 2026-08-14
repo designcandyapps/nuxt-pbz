@@ -16,10 +16,10 @@ const generatePalette=async()=>{
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
     //alert("Y: "+document.getElementById("y").innerHTML);
-    //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
     const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G: "+r0);
     const r2=document.querySelector("#dv8").style.backgroundColor;
     const r3=document.querySelector("#dv10").style.backgroundColor;
+    document.body.style.backgroundColor=r0; //document.querySelector("#dv7").style.backgroundColor
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
