@@ -4,15 +4,14 @@ import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  alert("1c: "+document.getElementById("ee"));
+  //alert("1c: "+document.getElementById("ee"));
   imageUrl.value=document.getElementById("ee").src;
-  alert("IU1: "+imageUrl.value);
-
+  //alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  alert("U: "+proxyUrl.value);
+  //alert("U: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   img.onload=()=>{
-    alert("IMG: "+img);
+    //alert("IMG: "+img);
     const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("y").innerHTML=`<span class="content"></span>`;
     //alert("Z1: "+document.getElementById("z").innerHTML);
@@ -20,13 +19,11 @@ const generatePalette=async()=>{
       const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
-    alert("Y: "+document.getElementById("y").innerHTML);
+    //alert("Y: "+document.getElementById("y").innerHTML);
     document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
-
     const r0=document.querySelector("#dv7").style.backgroundColor; alert("G: "+r0);
     const r2=document.querySelector("#dv8").style.backgroundColor; //r2=r2!=""?r2.replace("rgb(","rgba(").replace(")",",.1)"):"#001100"; //a9a9a9
     const r3=document.querySelector("#dv10").style.backgroundColor; //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
-    
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
