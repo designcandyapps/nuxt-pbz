@@ -19,12 +19,10 @@ const generatePalette=async()=>{
     document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
     /*const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G: "+document.body.style.backgroundColor);
     const r2=document.querySelector("#dv8").style.backgroundColor; //r2=r2!=""?r2.replace("rgb(","rgba(").replace(")",",.1)"):"#001100"; //a9a9a9
-    const r3=document.querySelector("#dv10").style.backgroundColor; //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
-    */
-    const r0=document.querySelector("#dv7").style.backgroundColor; alert("G: "+r0); //r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0; //const r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)";
+    const r3=document.querySelector("#dv10").style.backgroundColor;*/ //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
+    /*const r0=document.querySelector("#dv7").style.backgroundColor; alert("G: "+r0); //r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0; //const r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)";
     const r1a="rgba(255,255,255,1)"; const r2=document.querySelector("#dv8").style.backgroundColor; r2=r2&&r2=="rgb(0, 0, 0)"?"#0c152d":"#0c152d";
-    const r3=document.querySelector("#dv10").style.backgroundColor; r3="rgba("+r2.replace("rgb(","").replace(")","")+",.75)";
-
+    const r3=document.querySelector("#dv10").style.backgroundColor; r3="rgba("+r2.replace("rgb(","").replace(")","")+",.75)";*/
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
