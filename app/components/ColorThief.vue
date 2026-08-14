@@ -23,9 +23,9 @@ const generatePalette=async()=>{
     alert("Y: "+document.getElementById("y").innerHTML);
     document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
 
-    const r0=document.getElementById("dv7").style.backgroundColor; //alert("G: "+r0);
-    const r2=$("#dv8").css("background-color"); //r2=r2!=""?r2.replace("rgb(","rgba(").replace(")",",.1)"):"#001100"; //a9a9a9
-    const r3=$("#dv10").css("background-color"); //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
+    const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G: "+r0);
+    const r2=document.querySelector("#dv8").style.backgroundColor; //r2=r2!=""?r2.replace("rgb(","rgba(").replace(")",",.1)"):"#001100"; //a9a9a9
+    const r3=document.querySelector("#dv10").style.backgroundColor; //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
     
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
