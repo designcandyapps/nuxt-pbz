@@ -23,6 +23,7 @@ const generatePalette=async()=>{
     }
     alert("Y: "+document.getElementById("y").innerHTML);
     document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
+
     const r0=document.getElementById("dv7").style.backgroundColor; //alert("G: "+r0);
     const r2=$("#dv8").css("background-color"); //r2=r2!=""?r2.replace("rgb(","rgba(").replace(")",",.1)"):"#001100"; //a9a9a9
     const r3=$("#dv10").css("background-color"); //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
@@ -50,8 +51,8 @@ onMounted(()=>{
     setTimeout(function(){
       alert("1a: "+document.getElementById("ee"));
       //imageUrl.value=document.getElementById("i1").firstChild.src;
-      //imageUrl.value=document.getElementById("ee").src;
-      //alert("IM: "+imageUrl.value);
+      imageUrl.value=document.getElementById("ee").src;
+      alert("IM: "+imageUrl.value);
       generatePalette();
     },1800);
   //}
