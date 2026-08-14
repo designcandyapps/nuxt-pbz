@@ -16,7 +16,7 @@ const generatePalette=async()=>{
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
     //alert("Y: "+document.getElementById("y").innerHTML);
-    document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
+    //--document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
     /*const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G: "+document.body.style.backgroundColor);
     const r2=document.querySelector("#dv8").style.backgroundColor; //r2=r2!=""?r2.replace("rgb(","rgba(").replace(")",",.1)"):"#001100"; //a9a9a9
     const r3=document.querySelector("#dv10").style.backgroundColor;*/ //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
