@@ -23,9 +23,9 @@ onMounted(()=>{
 </script>
 
 <template>
-  <div class="g" style="position:absolute; top:399; left:99; border:0px solid red;">
-    <div id="t" style="border:0px solid red;"></div><div id="y" style="border:0px solid green;">s</div>
-    <div id="z" style="border:0px solid blue;"><ColorThief /></div>
+  <div class="g">
+    <div id="t"></div><div id="y">s</div>
+    <div id="z"><ColorThief /></div>
     <input id="pr" name="pr" value="Open Source"><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2"><div id="response" v-if="response">{{response}}</div>
   </div>
 </template>
