@@ -39,21 +39,21 @@ onMounted(()=>{
 
 
   setTimeout(function(){
+    alert("ET1: "+document.querySelector("#prompt").value);
+    alert("PR1: "+pr); alert("PROMPT1: "+prompt);
+    alert("PRO1: "+document.querySelector("#prompt").value);
+  
     fetchU(document.getElementById("et").innerText); //document.getElementById("prompt").value
     //uUrl.value=document.getElementById("et").innerText;
     //fetchImgU(uUrl.value);
-
-    alert("ET1: "+document.querySelector("#prompt").value);
-    alert("PR: "+pr); alert("PROMPT: "+prompt);
-    alert("PRO1: "+document.querySelector("#prompt").value);
-
+  
     fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-  },600);
+  },2600);
 
-  setTimeout(function(){
+  //setTimeout(function(){
     //document.getElementById("prompt").value
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-  },7800);
+  //},7800);
 });
 </script>
 
