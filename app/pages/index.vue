@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
@@ -29,9 +28,7 @@ export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
     this.send();
-    //setTimeout(()=>{
-      //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-    //},1300)
+    //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   },
   methods:{
     async send(){
