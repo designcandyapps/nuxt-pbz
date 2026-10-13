@@ -8,7 +8,7 @@ onMounted(()=>{
   //setTimeout(function(){
     document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
     const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
-    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});  
+    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //},600)
 });
 </script>
@@ -27,7 +27,7 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    this.send();
+    this.send3();
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   },
   methods:{
@@ -36,6 +36,16 @@ export default{
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
       const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
       document.querySelector("#t").innerText=this.response;
+    },
+    async send3(){
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); console.log(data.message.content);
+      document.querySelector("#t").innerText=this.response;
+    },
+    async send2(){
+      const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
+      const data=await response.json(); alert("RES1Pb: "+JSON.stringify(data));
+      return data.results;
     },
   },
 }
