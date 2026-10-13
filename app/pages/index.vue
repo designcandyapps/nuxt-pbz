@@ -23,6 +23,8 @@ const fetchU=async(query)=>{
   prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   document.getElementById("pho2").value=h1;
 
+  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+
   return data.results;
 };
 const fetchImgU=async(query)=>{
@@ -48,7 +50,7 @@ onMounted(()=>{
   fetchU(document.getElementById("et").innerText); //document.getElementById("prompt").value
   //uUrl.value=document.getElementById("et").innerText;
   //fetchImgU(uUrl.value);
-  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  //--------//fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
 /*
   setTimeout(function(){
