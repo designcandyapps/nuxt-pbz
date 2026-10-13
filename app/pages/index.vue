@@ -15,8 +15,8 @@ async function fetchGetty(query){
 onMounted(()=>{
   setTimeout(function(){ //00
     const pr=document.querySelector("#pr").value;
-    //alert("PR: "+pr);
-    //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    alert("PR: "+pr);
+    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
   },600)
 });
@@ -24,27 +24,36 @@ onMounted(()=>{
 
 <template>
   <div class="g">
-    <div id="t"></div><div id="y">s</div>
+    <div id="t"></div>
+    <div id="y">s</div>
     <div id="z"><!--ColorThief /--></div>
-    <input id="pr" name="pr" value="Open Source"><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2"><div id="response" v-if="response">{{response}}</div>
+    <input id="pr" name="pr" v-model="pr" value="Open Source">
+    <input id="prompt" v-model="prompt">
+    <input id="pho" v-model="pho">
+    <input id="pho2" v-model="pho2">
+    <div id="response" v-if="response">{{response}}</div>
   </div>
 </template>
 
 <script lang="ts">
 export default{
   data(){return{prompt:"",pr:"",response:null}},
-  mounted(){setTimeout(()=>{this.send()},300)},
+  mounted(){
+    setTimeout(()=>{
+      this.send()
+    },300)
+  },
   methods:{
-    async send(){
+    async sendX(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
       const data=await response.json(); this.response=data.reply;
       alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
-    async send2(){
+    async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply;
-      alert("RES02: "+JSON.stringify(data)); alert("RES03: "+this.response);
+      alert("RES02: "+JSON.stringify(data)); //alert("RES03: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
   },
