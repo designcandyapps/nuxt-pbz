@@ -67,7 +67,7 @@ const fetchU=async(query)=>{
   return data.results;
 
   //document.querySelector("#t").innerText=this.response;
-  chtGPT(h1);
+  //chtGPT(h1);
 };
 const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
@@ -89,7 +89,14 @@ onMounted(()=>{
   //const pr=document.querySelector("#pr").value;
   //const prompt=document.querySelector("#prompt").value;
 
-  fetchU(document.getElementById("et").innerText); //document.getElementById("prompt").value
+
+
+  
+        //fetchU(document.getElementById("et").innerText); //document.getElementById("prompt").value
+
+
+
+  
   //uUrl.value=document.getElementById("et").innerText;
   //fetchImgU(uUrl.value);
   //--------//fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
@@ -125,17 +132,17 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    setTimeout(function(){
+    //setTimeout(function(){
       this.send();
-    },7800);
+    //},7800);
   },
   methods:{
-    async send1(){
+    async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
       const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
-    async send(){
+    async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pho2").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); console.log(data.message.content);
       document.querySelector("#t").innerText=this.response;
