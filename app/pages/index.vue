@@ -31,13 +31,18 @@ const fetchImgU=async(query)=>{
 
 
 onMounted(()=>{
+  var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?"designcandy.com":u; alert("U: "+u);
+
+  document.getElementById("et").innerText=u; alert("ET: "+document.getElementById("et").innerText);
+  document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
+
+  const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
+
   fetchU(document.getElementById("et").innerText);
   //uUrl.value=document.getElementById("et").innerText;
   //fetchImgU(uUrl.value);
 
   setTimeout(function(){
-    document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
-    const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
     fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   },600);
 });
