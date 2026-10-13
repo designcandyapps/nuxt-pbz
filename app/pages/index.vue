@@ -13,7 +13,7 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
-  setTimeout(function(){
+  setTimeout(function(){ //00
     const pr=document.querySelector("#pr").value;
     //alert("PR: "+pr);
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
