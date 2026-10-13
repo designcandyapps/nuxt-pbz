@@ -14,6 +14,7 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const chGPT=async(query)=>{
+/*
   const body=await readBody(event);
   const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
     method:"POST",
@@ -28,24 +29,27 @@ const chGPT=async(query)=>{
   });
   const data=await apiResponse.json();
   return{reply:data.choices[0].message.content};
+*/
 
+
+  //const response=await fetch(`https://api.openai.com/v1/chat/completions`); //${encodeURIComponent(query)}`);
+  //const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
+
+  const response=await fetch("https://api.openai.com/v1/chat/completions",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pho2").value})});
+  const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); console.log(data.message.content);
+  document.querySelector("#t").innerText=this.response;
 
 
 /*
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0];
-
   document.getElementById("tr").innerText=h1;
   
   prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   document.getElementById("pho2").value=h1;
 
-  fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  //fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
   return data.results;
-
-  document.querySelector("#t").innerText=this.response;
 */
 };
 const fetchU=async(query)=>{
