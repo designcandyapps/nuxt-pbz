@@ -23,7 +23,7 @@ const fetchU=async(query)=>{
   prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   document.getElementById("pho2").value=h1;
 
-  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
   return data.results;
 };
