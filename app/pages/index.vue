@@ -77,8 +77,8 @@ const fetchImgU=async(query)=>{
 
 
 onMounted(()=>{
-  var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?"designcandy.com":u; alert("U: "+u);
-  document.getElementById("et").innerText=u; //alert("ET: "+document.getElementById("et").innerText);
+  var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?document.getElementById("et").innerText:u; alert("U: "+u);
+  document.getElementById("et").innerText=u; alert("ET: "+document.getElementById("et").innerText);
 
   //document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
   //const pr=document.querySelector("#et").innerText; 
