@@ -17,9 +17,12 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0];
+
+  document.getElementById("tr").innerText=h1;
   
-  document.getElementById("tr").innerText=h1; prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
-  
+  prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
+  document.getElementById("pho2").value=h1;
+
   return data.results;
 };
 const fetchImgU=async(query)=>{
