@@ -32,13 +32,19 @@ onMounted(()=>{
 
 <script lang="ts">
 export default{
-  data(){return{pr:"",response:null}},
+  data(){return{prompt:"",pr:"",response:null}},
   mounted(){setTimeout(()=>{this.send()},300)},
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
       const data=await response.json(); this.response=data.reply;
       alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
+      document.querySelector("#t").innerText=this.response;
+    },
+    async send2(){
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
+      const data=await response.json(); this.response=data.reply;
+      alert("RES02: "+JSON.stringify(data)); alert("RES03: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
   },
