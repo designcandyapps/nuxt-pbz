@@ -122,7 +122,7 @@ export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
     setTimeout(function(){
-      this.send3();
+      this.send();
     },7800);
   },
   methods:{
@@ -131,12 +131,12 @@ export default{
       const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
-    async send3(){
+    async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pho2").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); console.log(data.message.content);
       document.querySelector("#t").innerText=this.response;
     },
-    async send(){
+    async send3(){
       const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
       const data=await response.json(); alert("RES1Pb: "+JSON.stringify(data));
       return data.results;
