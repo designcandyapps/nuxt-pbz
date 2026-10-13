@@ -31,6 +31,9 @@ const fetchImgU=async(query)=>{
 
 
 onMounted(()=>{
+
+
+  setTimeout(function(){
   var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?"designcandy.com":u; alert("U: "+u);
   document.getElementById("et").innerText=u; //alert("ET: "+document.getElementById("et").innerText);
 
@@ -41,9 +44,8 @@ onMounted(()=>{
   //uUrl.value=document.getElementById("et").innerText;
   //fetchImgU(uUrl.value);
 
-  //setTimeout(function(){
     fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-  //},600);
+  },600);
 });
 </script>
 
