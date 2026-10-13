@@ -37,29 +37,30 @@ const fetchImgU=async(query)=>{
 
 
 onMounted(()=>{
-  var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?"designcandy.com":u; ////00//alert("U: "+u);
+  var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?"designcandy.com":u; alert("U: "+u);
   document.getElementById("et").innerText=u; //alert("ET: "+document.getElementById("et").innerText);
 
   //document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
+  //const pr=document.querySelector("#et").innerText; 
   //const pr=document.querySelector("#pr").value;
-  const pr=document.querySelector("#et").innerText;
-  
-  const prompt=document.querySelector("#prompt").value;
+  //const prompt=document.querySelector("#prompt").value;
 
   fetchU(document.getElementById("et").innerText); //document.getElementById("prompt").value
   //uUrl.value=document.getElementById("et").innerText;
   //fetchImgU(uUrl.value);
-  fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
+/*
   setTimeout(function(){
     alert("ET: "+document.querySelector("#et").innerText); alert("ET1: "+document.querySelector("#prompt").value);
     alert("PR1: "+pr); alert("PROMPT1: "+prompt); alert("PRO1: "+document.querySelector("#prompt").value);
   },2600);
+*/
 
   //setTimeout(function(){
     //document.getElementById("prompt").value
     //pr
-    fetchPh(document.querySelector("#et").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    //fetchPh(document.querySelector("#et").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //},7800);
 });
 </script>
@@ -71,7 +72,7 @@ onMounted(()=>{
     <input id="pr" name="pr" v-model="pr" value="Open Source" style="border:2px solid yellow;">
     <input id="prompt" v-model="prompt" style="border:2px solid red;">
     <input id="pho" v-model="pho" style="border:2px solid blue;"><input id="pho2" v-model="pho2" style="border:2px solid purple;">
-    <h1>Heading here</h1>
+    <h1 id="tr">Heading here</h1>
     <span id="response" v-if="response">{{response}}</span>
   </span>
 </template>
