@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
   return data.results;
 };
 async function fetchGetty(query){
@@ -14,11 +14,9 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   setTimeout(function(){
-    document.querySelector("#pr").value="Princes";
-    document.querySelector("#prompt").value="Caves";
+    document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
     const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
-    alert("PR: "+pr);
-    alert("PROMPT: "+prompt);
+    alert("PR: "+pr); alert("PROMPT: "+prompt);
     fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
   },600)
