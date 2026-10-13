@@ -15,9 +15,9 @@ async function fetchGetty(query){
 onMounted(()=>{
   setTimeout(function(){
     document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
-    const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; //alert("PR: "+pr); alert("PROMPT: "+prompt);
+    const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-    fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
+    //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
   },600)
 });
 </script>
@@ -44,13 +44,19 @@ export default{
     async sendX(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
       const data=await response.json(); this.response=data.reply;
-      alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
+      alert("RES01: "+JSON.stringify(data)); alert("RES01b: "+this.response);
+      document.querySelector("#t").innerText=this.response;
+    },
+    async sendY(){
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+      const data=await response.json(); this.response=data.reply;
+      alert("RES02: "+JSON.stringify(data)); //alert("RES02b: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
     async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply;
-      alert("RES02: "+JSON.stringify(data)); //alert("RES03: "+this.response);
+      alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
   },
