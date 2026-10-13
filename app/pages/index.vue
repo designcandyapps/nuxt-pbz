@@ -16,7 +16,7 @@ onMounted(()=>{
 <template>
   <div class="g">
     <div id="t"></div><div id="y">s</div><div id="z"><!--ColorThief /--></div>
-    <input id="pr" name="pr" v-model="pr" value="Open Source">
+    <input id="pr" name="pr" v-model="pr" value="Open Source" style="border:2px solid yellow;">
     <input id="prompt" v-model="prompt" style="border:2px solid red;">
     <input id="pho" v-model="pho" style="border:2px solid blue;"><input id="pho2" v-model="pho2" style="border:2px solid purple;">
     <div id="response" v-if="response">{{response}}</div>
