@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 function fetchPhh(query){
+  //alert("QU: "+query);
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1: "+JSON.stringify(data));
   return data.results;
@@ -11,15 +12,9 @@ const fetchPh=async(query)=>{
 };
 onMounted(()=>{
   //setTimeout(function(){
-
-
-
-
-
-
-
-
-  
+    document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
+    const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
+    fetchPhh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});  
   //},600)
 });
 </script>
@@ -38,16 +33,8 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-
-
-    document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
-    const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
-    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-
-    
     this.send();
     setTimeout(()=>{
-      //alert("THIS-PR: "+pr);
       //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     },1300)
   },
