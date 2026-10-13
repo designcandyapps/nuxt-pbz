@@ -41,7 +41,10 @@ onMounted(()=>{
   document.getElementById("et").innerText=u; //alert("ET: "+document.getElementById("et").innerText);
 
   //document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
-  const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
+  //const pr=document.querySelector("#pr").value;
+  const pr=document.querySelector("#et").innerText;
+  
+  const prompt=document.querySelector("#prompt").value;
 
   fetchU(document.getElementById("et").innerText); //document.getElementById("prompt").value
   //uUrl.value=document.getElementById("et").innerText;
@@ -55,7 +58,8 @@ onMounted(()=>{
 
   //setTimeout(function(){
     //document.getElementById("prompt").value
-    //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    //pr
+    fetchPh(document.querySelector("#et").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //},7800);
 });
 </script>
