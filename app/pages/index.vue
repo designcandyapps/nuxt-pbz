@@ -55,6 +55,7 @@ onMounted(()=>{
     <input id="pr" name="pr" v-model="pr" value="Open Source" style="border:2px solid yellow;">
     <input id="prompt" v-model="prompt" style="border:2px solid red;">
     <input id="pho" v-model="pho" style="border:2px solid blue;"><input id="pho2" v-model="pho2" style="border:2px solid purple;">
+    <h1>Heading here</h1>
     <span id="response" v-if="response">{{response}}</span>
   </span>
 </template>
