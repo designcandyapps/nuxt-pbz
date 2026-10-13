@@ -36,7 +36,7 @@ export default{
     this.send();
     setTimeout(()=>{
       alert("THIS-PR: "+pr);
-      fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+      //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     },1300)
   },
   methods:{
