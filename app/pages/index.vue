@@ -5,11 +5,11 @@ const fetchPh=async(query)=>{
   return data.results;
 };
 onMounted(()=>{
-  //setTimeout(function(){
+  setTimeout(function(){
     document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
     const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
     fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-  //},600)
+  },600)
 });
 </script>
 
@@ -27,7 +27,7 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    this.send3();
+    this.send2();
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   },
   methods:{
