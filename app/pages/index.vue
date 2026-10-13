@@ -16,7 +16,10 @@ async function fetchGetty(query){
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
-  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
+  const h1=data.result.h1[0];
+  
+  document.getElementById("tr").innerText=h1; prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
+  
   return data.results;
 };
 const fetchImgU=async(query)=>{
@@ -37,18 +40,14 @@ onMounted(()=>{
   //document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
   const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
-
-
   fetchU(document.getElementById("et").innerText); //document.getElementById("prompt").value
   //uUrl.value=document.getElementById("et").innerText;
   //fetchImgU(uUrl.value);
-
   fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
   setTimeout(function(){
-    alert("ET1: "+document.querySelector("#prompt").value);
-    alert("PR1: "+pr); alert("PROMPT1: "+prompt);
-    alert("PRO1: "+document.querySelector("#prompt").value);
+    alert("ET: "+document.querySelector("#et").innerText); alert("ET1: "+document.querySelector("#prompt").value);
+    alert("PR1: "+pr); alert("PROMPT1: "+prompt); alert("PRO1: "+document.querySelector("#prompt").value);
   },2600);
 
   //setTimeout(function(){
