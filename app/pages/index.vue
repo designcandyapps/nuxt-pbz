@@ -35,10 +35,7 @@ onMounted(()=>{
   document.getElementById("et").innerText=u; //alert("ET: "+document.getElementById("et").innerText);
 
   //document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
-  //.//const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
-  //.//alert("PR: "+pr); alert("PROMPT: "+prompt);
-
-
+  const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
 
   setTimeout(function(){
@@ -46,13 +43,16 @@ onMounted(()=>{
     //uUrl.value=document.getElementById("et").innerText;
     //fetchImgU(uUrl.value);
 
+    alert("ET1: "+document.querySelector("#prompt").value);
+    alert("PR: "+pr); alert("PROMPT: "+prompt);
     alert("PRO1: "+document.querySelector("#prompt").value);
-  
-  },800);
+
+    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  },600);
 
   setTimeout(function(){
-    //pr
-    fetchPh(document.getElementById("prompt").value).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    //document.getElementById("prompt").value
+    //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   },7800);
 });
 </script>
