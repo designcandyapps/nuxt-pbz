@@ -38,16 +38,17 @@ onMounted(()=>{
   const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
 
+
+  fetchU(document.getElementById("et").innerText); //document.getElementById("prompt").value
+  //uUrl.value=document.getElementById("et").innerText;
+  //fetchImgU(uUrl.value);
+
+  fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+
   setTimeout(function(){
     alert("ET1: "+document.querySelector("#prompt").value);
     alert("PR1: "+pr); alert("PROMPT1: "+prompt);
     alert("PRO1: "+document.querySelector("#prompt").value);
-  
-    fetchU(document.getElementById("et").innerText); //document.getElementById("prompt").value
-    //uUrl.value=document.getElementById("et").innerText;
-    //fetchImgU(uUrl.value);
-  
-    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   },2600);
 
   //setTimeout(function(){
