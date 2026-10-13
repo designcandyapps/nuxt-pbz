@@ -51,7 +51,7 @@ export default{
       document.querySelector("#t").innerText=this.response;
     },
     async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
       const data=await response.json(); this.response=data.reply;
       alert("RES02: "+JSON.stringify(data)); //alert("RES03: "+this.response);
       document.querySelector("#t").innerText=this.response;
