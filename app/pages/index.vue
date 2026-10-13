@@ -33,22 +33,9 @@ export default{
     //},1300)
   },
   methods:{
-    async sendX(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
-      const data=await response.json(); this.response=data.reply;
-      alert("RES01: "+JSON.stringify(data)); alert("RES01b: "+this.response);
-      document.querySelector("#t").innerText=this.response;
-    },
-    async sendY(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
-      const data=await response.json(); this.response=data.reply;
-      alert("RES02: "+JSON.stringify(data)); //alert("RES02b: "+this.response);
-      document.querySelector("#t").innerText=this.response;
-    },
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
-      const data=await response.json(); this.response=data.reply;
-      alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
+      const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
   },
