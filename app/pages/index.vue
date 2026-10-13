@@ -14,7 +14,7 @@ onMounted(()=>{
   //setTimeout(function(){
     document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
     const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
-    fetchPhh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});  
+    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});  
   //},600)
 });
 </script>
