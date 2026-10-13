@@ -38,11 +38,14 @@ onMounted(()=>{
   const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
 
   setTimeout(function(){
-    fetchU(prompt); //document.getElementById("et").innerText
+    fetchU(document.getElementById("et").innerText); //document.getElementById("prompt").value
     //uUrl.value=document.getElementById("et").innerText;
     //fetchImgU(uUrl.value);
+  },800);
 
-    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  setTimeout(function(){
+    //pr
+    fetchPh(document.getElementById("prompt").value).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   },7800);
 });
 </script>
