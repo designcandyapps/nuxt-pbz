@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
+  const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
   return data.results;
 };
 async function fetchGetty(query){
@@ -13,9 +13,12 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
-  setTimeout(function(){ //00
-    const pr=document.querySelector("#pr").value;
+  setTimeout(function(){
+    document.querySelector("#pr").value="Princes";
+    document.querySelector("#prompt").value="Caves";
+    const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
     alert("PR: "+pr);
+    alert("PROMPT: "+prompt);
     fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
   },600)
@@ -24,13 +27,10 @@ onMounted(()=>{
 
 <template>
   <div class="g">
-    <div id="t"></div>
-    <div id="y">s</div>
-    <div id="z"><!--ColorThief /--></div>
+    <div id="t"></div><div id="y">s</div><div id="z"><!--ColorThief /--></div>
     <input id="pr" name="pr" v-model="pr" value="Open Source">
     <input id="prompt" v-model="prompt">
-    <input id="pho" v-model="pho">
-    <input id="pho2" v-model="pho2">
+    <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
     <div id="response" v-if="response">{{response}}</div>
   </div>
 </template>
