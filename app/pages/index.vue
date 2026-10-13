@@ -37,8 +37,9 @@ export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
     setTimeout(()=>{
+      fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
       this.send()
-    },300)
+    },1300)
   },
   methods:{
     async sendX(){
