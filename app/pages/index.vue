@@ -39,13 +39,13 @@ onMounted(()=>{
     document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
     const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
     fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-  },600)
+  },600);
 });
 </script>
 
 <template>
   <span class="g">
-    <span id="et"></span><img id="ee" class="ff" src="https://pinfluents.com/_BCK/4/im/cl.png" width="60" height="60"><span id="ei"></span>
+    <span id="et" style="border:2px solid green;"></span><img id="ee" class="ff" src="https://pinfluents.com/_BCK/4/im/cl.png" width="60" height="60"><span id="ei"></span>
     <span id="t"></span><span id="y">s</span><span id="z"><!--ColorThief /--></span>
     <input id="pr" name="pr" v-model="pr" value="Open Source" style="border:2px solid yellow;">
     <input id="prompt" v-model="prompt" style="border:2px solid red;">
@@ -58,8 +58,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    
-    this.send();
+    //setTimeout(function(){
+      this.send();
+    //},7800);
   },
   methods:{
     async send1(){
