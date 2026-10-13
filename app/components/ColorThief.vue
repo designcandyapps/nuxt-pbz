@@ -5,7 +5,7 @@ const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref
 const generatePalette=async()=>{
   //alert("1c: "+document.getElementById("ee"));
   imageUrl.value=document.getElementById("ee").src; //alert("IM: "+imageUrl.value);
-  isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; //alert("U: "+proxyUrl.value);
+  isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; alert("U: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   img.onload=()=>{//alert("IMG: "+img);
     const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
