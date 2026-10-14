@@ -22,7 +22,8 @@ const fetchU=async(query)=>{
   //44//alert("H1one: "+h1);
 
   document.getElementById("tr").innerText=h1;
-  document.getElementById("prompt").value=query;
+  document.getElementById("et").innerText=query;
+  alert(document.getElementById("et").innerText);
 
   //pr.value=h1;
   //prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
