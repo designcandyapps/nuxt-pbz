@@ -44,7 +44,7 @@ onMounted(()=>{
   setTimeout(function(){
     //pr //document.getElementById("prompt").value
     fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-  },600);
+  },300);
 });
 </script>
 
