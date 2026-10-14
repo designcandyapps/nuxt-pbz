@@ -67,6 +67,9 @@ onMounted(()=>{
   uUrl.value=document.getElementById("et").innerText; alert("uUrl2: "+uUrl.value);
   fetchImgU(uUrl.value);
 
+  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  generatePalette();
+
   setTimeout(function(){
     //pr //document.getElementById("prompt").value
     fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
