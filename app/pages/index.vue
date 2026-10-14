@@ -2,14 +2,14 @@
 const uUrl=ref("");
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); //alert("RES1Pxxx: "+JSON.stringify(data));
+  const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
   return data.results;
   //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
   //fetchImgU(uUrl.value);
 };
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  const data=await response.json(); //alert("RESPy4: "+JSON.stringify(data));
+  const data=await response.json(); alert("RESPy4: "+JSON.stringify(data));
   const h1=data.result.h1[0];
   document.getElementById("tr").innerText=h1;
 };
@@ -17,7 +17,7 @@ const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); //alert("RESPx: "+JSON.stringify(data));
+  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
   const im=data.result; document.getElementById("ee").src=im;
   return data.results;
 };
@@ -67,6 +67,7 @@ onMounted(()=>{
   setTimeout(function(){
     //pr //document.getElementById("prompt").value
     fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    generatePalette();
   },300);
 });
 </script>
