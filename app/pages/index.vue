@@ -76,7 +76,7 @@ onMounted(()=>{
 
 
   
-        fetchU(u); //document.getElementById("et").innerText; //document.getElementById("prompt").value;
+        fetchU(document.getElementById("et").innerText); //document.getElementById("et").innerText; //document.getElementById("prompt").value;
 
 
 
