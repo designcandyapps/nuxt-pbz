@@ -2,7 +2,7 @@
 const uUrl=ref("");
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
+  const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
   return data.results;
 };
 async function sendQ(query){
@@ -41,7 +41,7 @@ const chGPT=async(query)=>{
   //const response=await fetch(`https://api.openai.com/v1/chat/completions`); //${encodeURIComponent(query)}`);
   //const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
 
-  const response=await fetch("https://api.openai.com/v1/chat/completions",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pho2").value})});
+  const response=await fetch("https://api.openai.com/v1/chat/completions",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pho").value})});
   const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); console.log(data.message.content);
   document.querySelector("#t").innerText=this.response;
 
@@ -66,6 +66,7 @@ const fetchU=async(query)=>{
 
   document.getElementById("tr").innerText=h1;
 
+  pr.value=h1;
   prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   //  //document.getElementById("prompt").value=h1;
 
@@ -156,7 +157,7 @@ export default{
   mounted(){
     setTimeout(function(){
       //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
-      this.send();
+      //this.send();
     },7800);
   },
   methods:{
