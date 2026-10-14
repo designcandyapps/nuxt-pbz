@@ -36,19 +36,15 @@ onMounted(()=>{
 
 
   //44//document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
-  const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
+  //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
   fetchU(document.getElementById("et").innerText); //document.getElementById("et").innerText; //document.getElementById("prompt").value;
   uUrl.value=document.getElementById("et").innerText; //44//alert("uUrl2: "+uUrl.value);
   fetchImgU(uUrl.value);
 
-  //document.getElementById("tr").innerText
-  fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-
-
-  //setTimeout(function(){
+  setTimeout(function(){
     //pr //document.getElementById("prompt").value
-    //fetchPh(document.querySelector("#tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-  //},2800);
+    fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  },600);
 });
 </script>
 
