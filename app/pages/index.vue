@@ -157,7 +157,7 @@ export default{
   mounted(){
     setTimeout(function(){
       //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
-      //this.send();
+      this.send();
     },7800);
   },
   methods:{
