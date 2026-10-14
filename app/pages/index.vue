@@ -119,8 +119,8 @@ onMounted(()=>{
 
 
   
-  //uUrl.value=document.getElementById("et").innerText;
-  //fetchImgU(uUrl.value);
+  uUrl.value=document.getElementById("et").innerText; alert("uUrl2: "+uUrl.value);
+  fetchImgU(uUrl.value);
   //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
 /*
@@ -130,11 +130,11 @@ onMounted(()=>{
   },2600);
 */
 
-  //setTimeout(function(){
+  setTimeout(function(){
     //document.getElementById("prompt").value
     //pr
-    //fetchPh(document.querySelector("#et").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-  //},7800);
+    fetchPh(document.querySelector("#tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  },2800);
 });
 </script>
 
@@ -155,12 +155,22 @@ export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
     setTimeout(function(){
-      const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
-      this.send(pr);
+      //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
+      this.send();
     },7800);
   },
   methods:{
-    async send(pr){
+      async send(){
+      //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
+      //const response=await fetch("https://api.openai.com/v1/chat/completions",{
+      const response=await fetch(
+        //`${encodeURIComponent(pr)}`,
+        "/api/chat",
+        {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+      const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
+      document.querySelector("#t").innerText=this.response;
+    },
+    async send1(pr){
       //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
       //const response=await fetch("https://api.openai.com/v1/chat/completions",{
       const response=await fetch(
