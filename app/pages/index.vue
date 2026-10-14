@@ -68,13 +68,13 @@ onMounted(()=>{
   fetchImgU(uUrl.value);
 
   fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-  generatePalette();
+  //generatePalette();
 
   setTimeout(function(){
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     generatePalette();
-  },300);
+  },15300);
 });
 </script>
 
