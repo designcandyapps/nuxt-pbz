@@ -64,7 +64,7 @@ onMounted(()=>{
   //44//document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
   //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
   fetchU(document.getElementById("et").innerText); //document.getElementById("et").innerText; //document.getElementById("prompt").value;
-  uUrl.value=document.getElementById("et").innerText; alert("uUrl2: "+uUrl.value);
+  uUrl.value=document.getElementById("et").innerText; //alert("uUrl2: "+uUrl.value);
   fetchImgU(uUrl.value);
 
   fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
