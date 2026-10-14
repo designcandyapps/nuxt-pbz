@@ -57,9 +57,9 @@ const fetchU=async(query)=>{
   const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0];
   alert(h1);
-  
+
   document.getElementById("tr").innerText=h1;
-  
+
   prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   document.getElementById("prompt").value=h1;
 
@@ -71,6 +71,11 @@ const fetchU=async(query)=>{
   document.querySelector("#t").innerText=h1;
   h1=!h1||h1==""?$("#pho2").val():h1;
   document.getElementById("et").innerText=h1;
+
+  document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
+  const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
+  fetchPh(document.getElementById("et").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+
   //chtGPT(h1);
 };
 const fetchImgU=async(query)=>{
@@ -93,8 +98,8 @@ onMounted(()=>{
 
   
   //document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
-  //const pr=document.querySelector("#et").innerText; 
-  const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
+  ////const pr=document.querySelector("#et").innerText; 
+  //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
 
 
@@ -139,9 +144,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    //setTimeout(function(){
+    setTimeout(function(){
       this.send();
-    //},7800);
+    },7800);
   },
   methods:{
     async send(){
