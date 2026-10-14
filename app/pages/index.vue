@@ -89,7 +89,7 @@ onMounted(()=>{
     <h1 id="tr">Heading here</h1>
     <span id="response" v-if="response">{{response}}</span>
   </span>
-  <div><div><Slider2 /></div></div>
+  <Slider2 />
   </main>
 
   <!--ULandingHero v-if="page.hero" v-bind="page.hero">
