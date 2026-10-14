@@ -24,6 +24,7 @@ const fetchImgU=async(query)=>{
 
 
 onMounted(()=>{
+/*
         var u=new URLSearchParams(location.search).get("u");
         u=!u||u=="null"?"dzesigncandy.com":u;
         document.getElementById("et").innerText=u;
@@ -33,7 +34,7 @@ onMounted(()=>{
         //44//alert("UU: "+u);
   
         //document.getElementById("et").innerText=u; //44//alert("ET: "+document.getElementById("et").innerText);
-
+*/
 
   //44//document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
   //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
