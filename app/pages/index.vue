@@ -24,14 +24,13 @@ const fetchImgU=async(query)=>{
 
 
 onMounted(()=>{
-        var u=new URLSearchParams(location.search).get("u");
-        //u=!u||u=="null"?"dzesigncandy.com":u;
+    var u=new URLSearchParams(location.search).get("u");
+    //u=!u||u=="null"?"dzesigncandy.com":u;
 
 
-  
     //document.getElementById("et").innerText=u;
     u=!u||u=="null"?document.getElementById("et").innerText:u;
-        //44//alert("U: "+u);
+    //44//alert("U: "+u);
 
     document.getElementById("et").innerText=u; //44//alert("ET: "+document.getElementById("et").innerText);
 
