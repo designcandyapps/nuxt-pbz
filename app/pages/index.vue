@@ -46,7 +46,7 @@ const fetchU=async(query)=>{
 
 
   //alert(h1);
-                    fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+                    //77//fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //chtGPT(h1);
   //sendQ(h1);
 };
@@ -80,7 +80,7 @@ onMounted(()=>{
   
   uUrl.value=document.getElementById("et").innerText; alert("uUrl2: "+uUrl.value);
   fetchImgU(uUrl.value);
-  //55//fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
 
 
