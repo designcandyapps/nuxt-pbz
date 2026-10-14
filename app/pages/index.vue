@@ -154,13 +154,19 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    //setTimeout(function(){
-      this.send()
-    //},7800);
+    setTimeout(function(){
+      const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
+      this.send(pr);
+    },7800);
   },
   methods:{
-    async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+    async send(pr){
+      //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
+      //const response=await fetch("https://api.openai.com/v1/chat/completions",{
+      const response=await fetch(
+        `${encodeURIComponent(pr)}`,
+        //"/api/chat",
+        {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
       const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
