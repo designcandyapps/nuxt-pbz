@@ -60,7 +60,7 @@ const chGPT=async(query)=>{
 };
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
+  const data=await response.json(); alert("RESPy4: "+JSON.stringify(data));
   const h1=data.result.h1[0];
   //alert(h1);
 
@@ -75,7 +75,8 @@ const fetchU=async(query)=>{
 
 
   document.querySelector("#t").innerText=h1;
-  h1=!h1||h1==""?$("#pho2").val():h1;
+  document.getElementById("et").innerText=h1;
+  h1=!h1||h1==""?document.getElementById("et").innerText:h1; //prompt.value
   document.getElementById("et").innerText=h1;
 
   document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
