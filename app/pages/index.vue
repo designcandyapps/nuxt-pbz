@@ -6,6 +6,7 @@ const fetchPh=async(query)=>{
   return data.results;
 };
 async function sendQ(query){
+  alert(query);
   const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
   const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
   document.querySelector("#t").innerText=this.response;
@@ -104,7 +105,7 @@ onMounted(()=>{
   
   //document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
   ////const pr=document.querySelector("#et").innerText; 
-  //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
+  const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
 
 
@@ -150,7 +151,7 @@ export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      //this.send()
+      this.send()
     //},7800);
   },
   methods:{
