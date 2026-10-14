@@ -22,6 +22,7 @@ const fetchU=async(query)=>{
   //44//alert("H1one: "+h1);
 
   document.getElementById("tr").innerText=h1;
+  alert(query);
   document.getElementById("et").innerText=query;
   //44//alert(document.getElementById("et").innerText);
 
