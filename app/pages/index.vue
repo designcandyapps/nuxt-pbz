@@ -56,17 +56,21 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0];
-
+  alert(h1);
+  
   document.getElementById("tr").innerText=h1;
   
   prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
-  document.getElementById("pho2").value=h1;
+  document.getElementById("prompt").value=h1;
 
   fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
   return data.results;
 
+
   document.querySelector("#t").innerText=h1;
+  h1=!h1||h1==""?$("#pho2").val():h1;
+  document.getElementById("et").innerText=h1;
   //chtGPT(h1);
 };
 const fetchImgU=async(query)=>{
@@ -87,12 +91,10 @@ onMounted(()=>{
 
 
 
-
   
   //document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
   //const pr=document.querySelector("#et").innerText; 
-  //const pr=document.querySelector("#pr").value;
-  //const prompt=document.querySelector("#prompt").value;
+  const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
 
 
