@@ -159,10 +159,10 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    setTimeout(function(){
+    //setTimeout(function(){
       //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
-      //this.send();
-    },7800);
+      this.send()
+    //},7800)
   },
   methods:{
       async send(){
