@@ -57,7 +57,9 @@ const fetchU=async(query)=>{
 
 
 onMounted(()=>{
+/*
         var u=new URLSearchParams(location.search).get("u");
+        //u=!u||u=="null"?"designcandy.com":u;
         document.getElementById("et").innerText=u;
         //u=!u||u=="null"?document.getElementById("et").innerText:u;
         //44//alert("U: "+u);
@@ -65,7 +67,7 @@ onMounted(()=>{
         //44//alert("UU: "+u);
   
         //document.getElementById("et").innerText=u; //44//alert("ET: "+document.getElementById("et").innerText);
-
+*/
 
 
 
