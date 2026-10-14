@@ -79,6 +79,7 @@ onMounted(()=>{
 </script>
 
 <template>
+  <main>
   <span class="g">
     <span id="et" style="border:2px solid green;"></span><img id="ee" class="ff" src="/im/cl.png" width="60" height="60"><span id="ei"></span>
     <span id="t"></span><span id="y">s</span><span id="z"><!--ColorThief /--></span>
@@ -88,6 +89,8 @@ onMounted(()=>{
     <h1 id="tr">Heading here</h1>
     <span id="response" v-if="response">{{response}}</span>
   </span>
+  <div><div><Slider2 /></div></div>
+  </main>
 
   <!--ULandingHero v-if="page.hero" v-bind="page.hero">
     <span class="g"><span id="et"></span><img id="ee" class="ff" src="https://pinfluents.com/_BCK/4/im/cl.png" width="60" height="60"><span id="ei"></span><span id="z"></span>
