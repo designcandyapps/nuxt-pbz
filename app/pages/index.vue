@@ -5,6 +5,11 @@ const fetchPh=async(query)=>{
   const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
   return data.results;
 };
+async function sendQ(query){
+  const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+  const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
+  document.querySelector("#t").innerText=this.response;
+}
 async function fetchGetty(query){
   try{
     const response=await fetch(`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":"ep3mq3jxr4u99m7hy3gzzp3g"}});
@@ -56,14 +61,14 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0];
-  alert(h1);
+  //alert(h1);
 
   document.getElementById("tr").innerText=h1;
 
   prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
-  document.getElementById("prompt").value=h1;
+  //  //document.getElementById("prompt").value=h1;
 
-  fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  //  //fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
   return data.results;
 
@@ -74,9 +79,9 @@ const fetchU=async(query)=>{
 
   document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
   const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
-  fetchPh(document.getElementById("et").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-
+  fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //chtGPT(h1);
+  sendQ(h1);
 };
 const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
@@ -144,9 +149,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    setTimeout(function(){
-      this.send3()
-    },7800);
+    //setTimeout(function(){
+      //this.send()
+    //},7800);
   },
   methods:{
     async send(){
