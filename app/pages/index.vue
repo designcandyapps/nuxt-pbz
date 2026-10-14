@@ -107,7 +107,7 @@ onMounted(()=>{
 
 
   
-  document.querySelector("#p").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
+  document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
   const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
 
