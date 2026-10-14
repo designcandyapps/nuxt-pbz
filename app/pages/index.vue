@@ -64,7 +64,7 @@ onMounted(()=>{
         u=!u||u=="null"?document.getElementById("et").innerText:u;
         //44//alert("UU: "+u);
   
-        document.getElementById("et").innerText=u; //44//alert("ET: "+document.getElementById("et").innerText);
+        //document.getElementById("et").innerText=u; //44//alert("ET: "+document.getElementById("et").innerText);
 
 
 
