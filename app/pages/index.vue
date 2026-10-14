@@ -12,8 +12,8 @@ const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
   return data.results;
-  uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
-  fetchImgU(uUrl.value);
+  //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
+  //fetchImgU(uUrl.value);
 };
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
