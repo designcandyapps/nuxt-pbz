@@ -1,9 +1,19 @@
 <script lang="ts" setup>
 const uUrl=ref("");
+const fetchImgU=async(query)=>{
+  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
+  //const response=await fetch(`${encodeURIComponent(query)}`);
+  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
+  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
+  const im=data.result; document.getElementById("ee").src=im;
+  return data.results;
+};
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
   return data.results;
+  uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
+  fetchImgU(uUrl.value);
 };
 async function sendQ(query){
   alert(query);
@@ -77,26 +87,20 @@ const fetchU=async(query)=>{
 
   document.querySelector("#t").innerText=h1;
   document.getElementById("et").innerText=h1;
-  h1=!h1||h1==""?document.getElementById("et").innerText:h1; //prompt.value
-  document.getElementById("et").innerText=h1;
+  //h1=!h1||h1==""?document.getElementById("et").innerText:h1; //prompt.value
+  //document.getElementById("et").innerText=h1;
+
+
 
   document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
   const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
-  uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
-  fetchImgU(uUrl.value);
 
-  fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+
+  alert(h1);
+  fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //chtGPT(h1);
-  sendQ(h1);
-};
-const fetchImgU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
-  //const response=await fetch(`${encodeURIComponent(query)}`);
-  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  const im=data.result; document.getElementById("ee").src=im;
-  return data.results;
+  //sendQ(h1);
 };
 
 
