@@ -5,14 +5,14 @@ const uUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RES1Pxxx: "+JSON.stringify(data));
   return data.results;
   //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
   //fetchImgU(uUrl.value);
 };
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  const data=await response.json(); alert("RESPy4: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RESPy4: "+JSON.stringify(data));
   const h1=data.result.h1[0];
   document.getElementById("tr").innerText=h1;
 };
@@ -20,14 +20,14 @@ const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RESPx: "+JSON.stringify(data));
   const im=data.result; document.getElementById("ee").src=im;
   return data.results;
 };
-const generatePalette=async()=>{alert(1);
-  imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
+const generatePalette=async()=>{//alert(1);
+  imageUrl.value=document.getElementById("ee").src; //alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; alert("PU2: "+proxyUrl.value);
+  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span id="y" class="content"></span>`;
     var i=0; for(const type of Object.keys(palettesz)){
