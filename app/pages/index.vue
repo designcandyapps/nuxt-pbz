@@ -22,6 +22,7 @@ const fetchU=async(query)=>{
   //44//alert("H1one: "+h1);
 
   document.getElementById("tr").innerText=h1;
+  document.getElementById("prompt").value=query;
 
   //pr.value=h1;
   //prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
@@ -61,7 +62,7 @@ onMounted(()=>{
         u=!u||u=="null"?document.getElementById("et").innerText:u;
         //44//alert("UU: "+u);
   
-        document.getElementById("et").innerText=u; alert("ET: "+document.getElementById("et").innerText);
+        document.getElementById("et").innerText=u; //44//alert("ET: "+document.getElementById("et").innerText);
 
 
 
@@ -78,7 +79,7 @@ onMounted(()=>{
 
 
   
-  uUrl.value=document.getElementById("et").innerText; alert("uUrl2: "+uUrl.value);
+  uUrl.value=document.getElementById("et").innerText; //44//alert("uUrl2: "+uUrl.value);
   fetchImgU(uUrl.value);
   fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
