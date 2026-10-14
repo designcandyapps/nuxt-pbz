@@ -74,7 +74,7 @@ onMounted(()=>{
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     generatePalette();
-  },15300);
+  },10300);
 });
 </script>
 
