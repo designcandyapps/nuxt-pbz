@@ -107,8 +107,7 @@ onMounted(()=>{
 
 
   
-  //document.querySelector("#pr").value="Princes"; document.querySelector("#prompt").value="Caves";
-  ////const pr=document.querySelector("#et").innerText; 
+  document.querySelector("#pr").value=document.querySelector("#et").innerTexr; document.querySelector("#prompt").value=document.querySelector("#et").innerTexr;
   const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
 
