@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-//const uUrl=ref("");
+const uUrl=ref("");
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
@@ -115,9 +115,9 @@ onMounted(()=>{
 
 
   
-  //uUrl.value=document.getElementById("et").innerText;
-  //fetchImgU(uUrl.value);
-  //--------//fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  uUrl.value=document.getElementById("et").innerText;
+  fetchImgU(uUrl.value);
+  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
 /*
   setTimeout(function(){
