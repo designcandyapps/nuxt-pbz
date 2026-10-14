@@ -81,7 +81,7 @@ const fetchU=async(query)=>{
   document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
   const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
-  uUrl.value=document.getElementById("et").innerText;
+  uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
   fetchImgU(uUrl.value);
 
   fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
