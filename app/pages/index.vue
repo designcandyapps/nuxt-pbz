@@ -81,17 +81,12 @@ onMounted(()=>{
   fetchImgU(uUrl.value);
   fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
-/*
-  setTimeout(function(){
-    alert("ET: "+document.querySelector("#et").innerText); alert("ET1: "+document.querySelector("#prompt").value);
-    alert("PR1: "+pr); alert("PROMPT1: "+prompt); alert("PRO1: "+document.querySelector("#prompt").value);
-  },2600);
-*/
+
 
   setTimeout(function(){
     //document.getElementById("prompt").value
     //pr
-    fetchPh(document.querySelector("#tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    //fetchPh(document.querySelector("#tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   },2800);
 });
 </script>
