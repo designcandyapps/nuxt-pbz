@@ -19,7 +19,7 @@ async function fetchGetty(query){
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
-const chGPT=async(query)=>{
+const chtGPT=async(query)=>{
 /*
   const body=await readBody(event);
   const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
@@ -80,6 +80,10 @@ const fetchU=async(query)=>{
 
   document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
   const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
+
+  uUrl.value=document.getElementById("et").innerText;
+  fetchImgU(uUrl.value);
+
   fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //chtGPT(h1);
   sendQ(h1);
@@ -115,9 +119,9 @@ onMounted(()=>{
 
 
   
-  uUrl.value=document.getElementById("et").innerText;
-  fetchImgU(uUrl.value);
-  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  //uUrl.value=document.getElementById("et").innerText;
+  //fetchImgU(uUrl.value);
+  //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
 /*
   setTimeout(function(){
