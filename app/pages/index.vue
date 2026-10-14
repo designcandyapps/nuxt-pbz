@@ -106,7 +106,13 @@ const fetchU=async(query)=>{
 
 
 onMounted(()=>{
-        var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?document.getElementById("et").innerText:u; alert("U: "+u);
+        var u=new URLSearchParams(location.search).get("u");
+        document.getElementById("et").innerText=u;
+        //u=!u||u=="null"?document.getElementById("et").innerText:u;
+        alert("U: "+u);
+        u=!u||u=="null"?document.getElementById("et").innerText:u;
+        alert("UU: "+u);
+  
         document.getElementById("et").innerText=u; alert("ET: "+document.getElementById("et").innerText);
 
 
