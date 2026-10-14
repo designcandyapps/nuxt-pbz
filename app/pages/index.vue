@@ -39,14 +39,14 @@ const fetchU=async(query)=>{
 
 
 
-  //55//document.querySelector("#pr").value=document.getElementById("et").innerText;
-  document.querySelector("#prompt").value=document.getElementById("et").innerText;
-  const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
+  //document.querySelector("#pr").value=h1;
+  //document.querySelector("#prompt").value=document.getElementById("et").innerText;
+  //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
 
 
 
   //alert(h1);
-                    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+                    fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //chtGPT(h1);
   //sendQ(h1);
 };
