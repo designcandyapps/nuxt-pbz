@@ -19,7 +19,7 @@ async function fetchGetty(query){
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
-const chtGPT=async(query)=>{
+const chGPT=async(query)=>{
 /*
   const body=await readBody(event);
   const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
