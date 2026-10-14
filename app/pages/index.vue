@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 //import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const uUrl=ref("");
-const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
+//const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
@@ -63,13 +63,13 @@ onMounted(()=>{
   //44//document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
   //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
   fetchU(document.getElementById("et").innerText); //document.getElementById("et").innerText; //document.getElementById("prompt").value;
-  uUrl.value=document.getElementById("et").innerText; //44//alert("uUrl2: "+uUrl.value);
+  uUrl.value=document.getElementById("et").innerText; alert("uUrl2: "+uUrl.value);
   fetchImgU(uUrl.value);
 
   setTimeout(function(){
     //pr //document.getElementById("prompt").value
     fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-    generatePalette();
+    //generatePalette();
   },300);
 });
 </script>
