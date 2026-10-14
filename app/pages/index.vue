@@ -72,7 +72,7 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); alert("RESPy4: "+JSON.stringify(data));
   const h1=data.result.h1[0];
-  alert(h1);
+  alert("H1one: "+h1);
 
   document.getElementById("tr").innerText=h1;
 
@@ -98,7 +98,7 @@ const fetchU=async(query)=>{
 
 
   //alert(h1);
-  fetchPh(h1+".com").then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+                    //fetchPh(h1+".com").then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //chtGPT(h1);
   //sendQ(h1);
 };
@@ -141,11 +141,11 @@ onMounted(()=>{
   },2600);
 */
 
-  //setTimeout(function(){
+  setTimeout(function(){
     //document.getElementById("prompt").value
     //pr
-    //fetchPh(document.querySelector("#tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-  //},2800);
+    fetchPh(document.querySelector("#tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  },2800);
 });
 </script>
 
