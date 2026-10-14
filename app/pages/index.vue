@@ -106,8 +106,8 @@ const fetchU=async(query)=>{
 
 
 onMounted(()=>{
-        //var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?document.getElementById("et").innerText:u; alert("U: "+u);
-        //document.getElementById("et").innerText=u; alert("ET: "+document.getElementById("et").innerText);
+        var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?document.getElementById("et").innerText:u; alert("U: "+u);
+        document.getElementById("et").innerText=u; alert("ET: "+document.getElementById("et").innerText);
 
 
 
@@ -124,8 +124,8 @@ onMounted(()=>{
 
 
   
-  uUrl.value=document.getElementById("et").innerText; alert("uUrl2: "+uUrl.value);
-  fetchImgU(uUrl.value);
+  //uUrl.value=document.getElementById("et").innerText; alert("uUrl2: "+uUrl.value);
+  //fetchImgU(uUrl.value);
   //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
 /*
