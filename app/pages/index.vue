@@ -15,59 +15,6 @@ const fetchPh=async(query)=>{
   uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
   fetchImgU(uUrl.value);
 };
-async function sendQ(query){
-  alert(query);
-  const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
-  const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
-  document.querySelector("#t").innerText=this.response;
-}
-async function fetchGetty(query){
-  try{
-    const response=await fetch(`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":"ep3mq3jxr4u99m7hy3gzzp3g"}});
-    if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
-    const data=await response.json(); //alert("RES2P: "+JSON.stringify(data));
-    if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
-  }catch(error){console.error("Error2:",error)}
-}
-const chGPT=async(query)=>{
-/*
-  const body=await readBody(event);
-  const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
-    method:"POST",
-    headers:{
-      "Content-Type":"application/json",
-      "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
-    },
-    body:JSON.stringify({
-      model:"gpt-3.5-turbo",
-      messages:[{role:"user",content:body.message}],
-    }),
-  });
-  const data=await apiResponse.json();
-  return{reply:data.choices[0].message.content};
-*/
-
-
-  //const response=await fetch(`https://api.openai.com/v1/chat/completions`); //${encodeURIComponent(query)}`);
-  //const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
-
-  const response=await fetch("https://api.openai.com/v1/chat/completions",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pho").value})});
-  const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); console.log(data.message.content);
-  document.querySelector("#t").innerText=this.response;
-
-
-/*
-  const h1=data.result.h1[0];
-  document.getElementById("tr").innerText=h1;
-  
-  prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
-  document.getElementById("pho2").value=h1;
-
-  //fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-
-  return data.results;
-*/
-};
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); alert("RESPy4: "+JSON.stringify(data));
@@ -82,7 +29,7 @@ const fetchU=async(query)=>{
 
   //  //fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
-  return data.results;
+                                                  //return data.results;
 
 
       //document.querySelector("#t").innerText=h1;
@@ -130,9 +77,9 @@ onMounted(()=>{
 
 
   
-  //uUrl.value=document.getElementById("et").innerText; alert("uUrl2: "+uUrl.value);
-  //fetchImgU(uUrl.value);
-  //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  uUrl.value=document.getElementById("et").innerText; alert("uUrl2: "+uUrl.value);
+  fetchImgU(uUrl.value);
+  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
 
 /*
   setTimeout(function(){
