@@ -145,7 +145,7 @@ export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
     setTimeout(function(){
-      this.send();
+      this.send3()
     },7800);
   },
   methods:{
