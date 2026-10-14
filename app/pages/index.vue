@@ -66,7 +66,7 @@ const fetchU=async(query)=>{
 
   return data.results;
 
-  //document.querySelector("#t").innerText=this.response;
+  document.querySelector("#t").innerText=h1;
   //chtGPT(h1);
 };
 const fetchImgU=async(query)=>{
