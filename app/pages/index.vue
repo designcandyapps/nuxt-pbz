@@ -72,12 +72,12 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); alert("RESPy4: "+JSON.stringify(data));
   const h1=data.result.h1[0];
-  //alert(h1);
+  alert(h1);
 
   document.getElementById("tr").innerText=h1;
 
-  pr.value=h1;
-  prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
+  //pr.value=h1;
+  //prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   //  //document.getElementById("prompt").value=h1;
 
   //  //fetchPh(h1).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
@@ -85,8 +85,8 @@ const fetchU=async(query)=>{
   return data.results;
 
 
-  document.querySelector("#t").innerText=h1;
-  document.getElementById("et").innerText=h1;
+      //document.querySelector("#t").innerText=h1;
+      //document.getElementById("et").innerText=h1;
   //h1=!h1||h1==""?document.getElementById("et").innerText:h1; //prompt.value
   //document.getElementById("et").innerText=h1;
 
@@ -97,8 +97,8 @@ const fetchU=async(query)=>{
 
 
 
-  alert(h1);
-  fetchPh(h1+"com").then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  //alert(h1);
+  fetchPh(h1+".com").then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //chtGPT(h1);
   //sendQ(h1);
 };
