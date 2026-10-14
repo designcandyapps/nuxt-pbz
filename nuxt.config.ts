@@ -14,13 +14,13 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-  css: ['~/assets/css/main.css'],
+  //css: ['~/assets/css/main.css'],
   app: {
     head:{
       //link:[{rel:'stylesheet',href:'https://pinfluents.com/_BCK/4/inc/ct.css'}],
       script:[
         {src:'https://pinfluents.com/inc/jq.js'},
-        //zz{src:'https://pinfluents.com/inc/colorthief.js'},
+        //{src:'https://pinfluents.com/inc/colorthief.js'},
         {src:'https://pinfluents.com/_BCK/4/jzP5-e.js'},
 
         //{src:'https://js.stripe.com/v3/'},
