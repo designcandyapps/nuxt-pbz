@@ -302,20 +302,34 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    setTimeout(function(){
-      this.snd()
-    },17800)
+    //setTimeout(function(){
+      this.sndQry()
+    //},17800)
   },
   methods:{
     async snd(){
       //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
       //const response=await fetch("https://api.openai.com/v1/chat/completions",{
-      const response=await fetch(
-        //`${encodeURIComponent(pr)}`,
+      const response=await fetch(//`${encodeURIComponent(pr)}`,
         "/api/chat",
         {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
       const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
       document.querySelector("#t").innerText=this.response;
+    },
+    async sndQry(){
+      const body=await readBody(event);
+      const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+          "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+        },
+        body:JSON.stringify({
+          model:"gpt-3.5-turbo",
+          messages:[{role:"user",content:body.message}],
+        }),
+      });
+      const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
     },
   },
 }
