@@ -304,7 +304,7 @@ export default{
   mounted(){
     setTimeout(function(){
       this.snd()
-    },7800)
+    },17800)
   },
   methods:{
     async snd(){
