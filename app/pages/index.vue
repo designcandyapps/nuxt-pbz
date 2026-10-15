@@ -300,11 +300,11 @@ onMounted(()=>{
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",pr:"Blah",response:null}},
+  data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    //setTimeout(function(){
+    setTimeout(function(){
       this.snd()
-    //},7800)
+    },7800)
   },
   methods:{
     async snd(){
