@@ -125,214 +125,7 @@ onMounted(()=>{
     <h1 id="tr">Heading here</h1>
     <span id="response" v-if="response">{{response}}</span>
   </span>
-  <span><span><ImageGenerator /></span></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <main class="min-h-[calc(100vh-var(--header-height))]">
-<div class="py-24 sm:py-32 md:py-40 relative">
-<div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl gap-16 sm:gap-y-24 grid lg:grid-cols-2 lg:items-center">
-
-<div>
-  <h1 class="text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl"><div><p>Innovation</p></div></h1>
-  <div class="mt-6 text-lg tracking-tight text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnatis aliqua ut enim ad minim veniam.</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-</div>
-</div>
-
-<div class="py-24 sm:py-32">
-<div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl gap-16 sm:gap-y-24 flex flex-col">
-<div class="text-center flex flex-col items-center">
-<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">Lorem ipsum</h2></div>
-<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
-
-<div style="--x:0px;--y:0px;--a3ecdd52:rgb(var(--color-primary-DEFAULT));--v0ddb8715:rgb(var(--color-primary-DEFAULT));" class="relative group isolate rounded-xl background-gradient ring-1 ring-gray-200 dark:ring-gray-800 before:hidden before:lg:block before:absolute before:-inset-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:z-[-1] before:rounded-[13px] flex-1 flex flex-col shadow">
-<div class="flex-1 flex flex-col overflow-hidden rounded-xl divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900 hover:bg-opacity-90 dark:hover:bg-opacity-90 transition-[background-opacity]">
-<div class="gap-x-8 gap-y-4 rounded-xl flex-1 flex flex-col px-4 py-5 sm:p-6">
-  <div>
-    <p class="text-gray-900 dark:text-white text-base font-bold truncate">Lorem ipsum</p>
-    <div class="text-[15px] text-gray-500 dark:text-gray-400 mt-1">Crashum smashum lorem ipsum.</div>
-  </div>
-</div>
-</div>
-</div>
-
-<div style="--x:0px;--y:0px;--a3ecdd52:rgb(var(--color-primary-DEFAULT));--v0ddb8715:rgb(var(--color-primary-DEFAULT));" class="relative group isolate rounded-xl background-gradient ring-1 ring-gray-200 dark:ring-gray-800 before:hidden before:lg:block before:absolute before:-inset-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:z-[-1] before:rounded-[13px] flex-1 flex flex-col shadow">
-<div class="flex-1 flex flex-col overflow-hidden rounded-xl divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900 hover:bg-opacity-90 dark:hover:bg-opacity-90 transition-[background-opacity]">
-<div class="gap-x-8 gap-y-4 rounded-xl flex-1 flex flex-col px-4 py-5 sm:p-6">
-  <div>
-    <p class="text-gray-900 dark:text-white text-base font-bold truncate">Crashum smashum</p>
-    <div class="text-[15px] text-gray-500 dark:text-gray-400 mt-1">Lorem ipsum crashum smashum.</div>
-  </div>
-</div>
-</div>
-</div>
-
-<div style="--x:0px;--y:0px;--a3ecdd52:rgb(var(--color-primary-DEFAULT));--v0ddb8715:rgb(var(--color-primary-DEFAULT));" class="relative group isolate rounded-xl background-gradient ring-1 ring-gray-200 dark:ring-gray-800 before:hidden before:lg:block before:absolute before:-inset-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:z-[-1] before:rounded-[13px] flex-1 flex flex-col shadow">
-<div class="flex-1 flex flex-col overflow-hidden rounded-xl divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900 hover:bg-opacity-90 dark:hover:bg-opacity-90 transition-[background-opacity]">
-<div class="gap-x-8 gap-y-4 rounded-xl flex-1 flex flex-col px-4 py-5 sm:p-6">
-  <div>
-    <p class="text-gray-900 dark:text-white text-base font-bold truncate">Lorem ipsum</p>
-    <div class="text-[15px] text-gray-500 dark:text-gray-400 mt-1">Crashum smashum lorem ipsum.</div>
-  </div>
-</div>
-</div>
-</div>
-
-<div style="--x:0px;--y:0px;--a3ecdd52:rgb(var(--color-primary-DEFAULT));--v0ddb8715:rgb(var(--color-primary-DEFAULT));" class="relative group isolate rounded-xl background-gradient ring-1 ring-gray-200 dark:ring-gray-800 before:hidden before:lg:block before:absolute before:-inset-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:z-[-1] before:rounded-[13px] flex-1 flex flex-col shadow">
-<div class="flex-1 flex flex-col overflow-hidden rounded-xl divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900 hover:bg-opacity-90 dark:hover:bg-opacity-90 transition-[background-opacity]">
-<div class="gap-x-8 gap-y-4 rounded-xl flex-1 flex flex-col px-4 py-5 sm:p-6">
-  <div>
-    <p class="text-gray-900 dark:text-white text-base font-bold truncate">Crashum smashum</p>
-    <div class="text-[15px] text-gray-500 dark:text-gray-400 mt-1">Lorem ipsum crashum smashum.</div>
-  </div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="py-24 sm:py-32">
-  <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl gap-16 sm:gap-y-24 flex flex-col">
-    <div class="text-center flex flex-col items-center">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">Crashum smashum</h2>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
-      <div class="news-slider ey">
-	<div>
-          <h2>About Us</h2><p>Scale as you go with unmetered bandwidth on all plans. Zero downtime. No limits.</p>
-	</div>
-	<div>
-          <h2>Our Services</h2><p>Firewalls, encryption, brute force, and DDoS protection. Security’s all taken care of.</p>
-	</div>
-	<div>
-          <h2>Our Products</h2><p>Fast data transfer and performance come as standard with our global CDN—wherever your site visitors are.</p>
-	</div>
-	<div>
-          <h2>Contact Us</h2><p>You’ll never run out of storage with WordPress.com’s plans. Photos. Audio. 4K videos. All in one place.</p>
-	</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="py-24 sm:py-32">
-<div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl gap-16 sm:gap-y-24 flex flex-col">
-<div class="text-center flex flex-col items-center">
-  <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">Lorem ipsum</h2>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8"></div>
-</div>
-</div>
-
-<div class="py-24 sm:py-32">
-<div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl gap-16 sm:gap-y-24 flex flex-col">
-<div class="text-center flex flex-col items-center">
-  <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">Crashum smashum</h2>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8"></div>
-</div>
-</div>
-
-<div class="py-24 sm:py-32">
-  <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl gap-16 sm:gap-y-24 flex flex-col">
-    <div class="text-center flex flex-col items-center">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">Lorem ipsum</h2>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8"></div>
-  </div>
-</div>
-</main>
-
-
-<footer class="relative">
-<div class="-border-t -border-gray-200 -dark:border--gray-800">
-<div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8 lg:py-4 lg:flex lg:items-center lg:justify-between lg:gap-x-3">
-<div class="lg:flex-1 flex items-center justify-center lg:justify-end gap-x-1.5 lg:order-3">
-  <button type="button" class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 p-1.5 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center">
-    <span class="iconify i-simple-icons:nuxtdotjs flex-shrink-0 h-5 w-5" aria-hidden="true"></span>
-  </button>
-  <button type="button" class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 p-1.5 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center">
-    <span class="iconify i-simple-icons:github flex-shrink-0 h-5 w-5" aria-hidden="true"></span>
-  </button>
-</div>
-
-<div class="mt-3 lg:mt-0 lg:order-2 flex items-center justify-center"></div>
-<div class="flex items-center justify-center lg:justify-start lg:flex-1 gap-x-1.5 mt-3 lg:mt-0 lg:order-1 text-sm text-gray-500 dark:text-gray-400"></div>
-</div>
-</div>
-</footer>
+  <span><span><!--ImageGenerator /--></span></span>
 </template>
 
 <script lang="ts">
@@ -340,11 +133,11 @@ export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      this.sndQry()
+      this.sndQryy()
     //},17800)
   },
   methods:{
-    async snd(){
+    async sndQryy(){
       //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
       //const response=await fetch("https://api.openai.com/v1/chat/completions",{
       const response=await fetch(//`${encodeURIComponent(pr)}`,
@@ -353,7 +146,6 @@ export default{
       const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
-
   },
 }
 </script>
