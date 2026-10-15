@@ -3,6 +3,43 @@
 import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const uUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
+const sndQry=async(query)=>{
+  const body=await readBody(event);
+  const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json",
+      "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+    },
+    body:JSON.stringify({
+      model:"gpt-3.5-turbo",
+      messages:[{role:"user",content:body.message}],
+    }),
+  });
+  const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
+};
+async function sndQry2(query){
+  //try{
+    const response=await fetch("api/chat",
+      {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+      const data=await response.json(); this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
+      //document.querySelector("#t").innerText=this.response;
+
+
+
+
+
+
+
+
+      //{method:"GET",headers:{"Api-Key":"ep3mq3jxr4u99m7hy3gzzp3g"}});
+      //if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
+      //const data=await response.json(); alert("RES2: "+JSON.stringify(data));
+      //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
+
+  //}catch(error){console.error("Error2:",error)}
+}
+
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1Pxxx: "+JSON.stringify(data));
@@ -316,21 +353,7 @@ export default{
       const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
-    async sndQry(){
-      const body=await readBody(event);
-      const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json",
-          "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
-        },
-        body:JSON.stringify({
-          model:"gpt-3.5-turbo",
-          messages:[{role:"user",content:body.message}],
-        }),
-      });
-      const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
-    },
+
   },
 }
 </script>
