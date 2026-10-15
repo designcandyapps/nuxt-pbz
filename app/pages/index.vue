@@ -303,11 +303,11 @@ export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      //this.send()
+      this.snd()
     //},7800)
   },
   methods:{
-    async send(){
+    async snd(){
       //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
       //const response=await fetch("https://api.openai.com/v1/chat/completions",{
       const response=await fetch(
