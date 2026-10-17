@@ -11,6 +11,11 @@ export default defineEventHandler(async(event)=>{
       messages:[{role:"user",content:body.message}],
     }),
   });
-  const data=await apiResponse.json();
-  return{reply:data.choices[0].message.content};
+  const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
+
+
+  alert(data.reply);
+
+  //const data=await apiResponse.json(); //this.response=data.reply;
+  alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
 });
