@@ -3,7 +3,35 @@
 import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const uUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
-const sndQry=async(query)=>{
+
+const sndQry3=async(query)=>{
+  const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
+  const data=await response.json(); //alert("RES1Pxxx: "+JSON.stringify(data));
+  return data.results;
+  //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
+  //fetchImgU(uUrl.value);
+};
+async function sndQry2(query){
+  try{
+    const response=await fetch("api/chat",
+      {method:"GET",headers:{"Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`}});
+      if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
+      const data=await response.json(); alert("RES2: "+JSON.stringify(data));
+      //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
+  }catch(error){console.error("Error2:",error)}
+}
+const sndQry1=async(query)=>{
+  try{
+    const response=await fetch("api/chat",
+      //{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+      {method:"GET",headers:{"Content-Type":"application/json","Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`},body:JSON.stringify({message:document.querySelector("#pr").value})});
+      if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
+      const data=await response.json(); this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
+      //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
+      //document.querySelector("#t").innerText=this.response;
+  }catch(error){console.error("Error2:",error)}
+}
+const sndQry0=async(query)=>{
   const body=await readBody(event);
   const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
     method:"POST",
@@ -18,12 +46,6 @@ const sndQry=async(query)=>{
   });
   const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
 };
-async function sndQry2(query){
-  //try{
-    const response=await fetch("api/chat",
-      {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
-      const data=await response.json(); this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
-      //document.querySelector("#t").innerText=this.response;
 
 
 
@@ -31,15 +53,7 @@ async function sndQry2(query){
 
 
 
-
-      //{method:"GET",headers:{"Api-Key":"ep3mq3jxr4u99m7hy3gzzp3g"}});
-      //if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
-      //const data=await response.json(); alert("RES2: "+JSON.stringify(data));
-      //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
-
-  //}catch(error){console.error("Error2:",error)}
-}
-
+  
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1Pxxx: "+JSON.stringify(data));
@@ -111,7 +125,7 @@ onMounted(()=>{
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
-    sndQry2(document.getElementById("tr").innerText);
+    sndQry(document.getElementById("tr").innerText);
   },7800);
 });
 </script>
