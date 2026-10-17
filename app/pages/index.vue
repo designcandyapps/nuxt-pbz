@@ -126,7 +126,7 @@ onMounted(()=>{
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
     sndQry3(document.getElementById("tr").innerText);
-  },7800);
+  },800);
 });
 </script>
 
