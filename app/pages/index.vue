@@ -147,9 +147,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
-    setTimeout(function(){
-      this.sndQryy()
-    },17800)
+    //setTimeout(function(){
+      //this.sndQryy()
+    //},17800)
   },
   methods:{
     async sndQryy(){
