@@ -18,11 +18,9 @@ async function sndQry2(query){
       if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
       const data=await response.json(); alert("RES2: "+JSON.stringify(data));
 
-      console.log(response.choices[0].message.content);
-      console.log(return completion.choices[0].message);
+  
+      //const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
 
-      const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
-    
       //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
@@ -35,10 +33,11 @@ const sndQry1=async(query)=>{
       const data=await response.json(); return{reply:data.choices[0].message.content}; alert(data.reply); //this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
       console.log(data.message.content);
 
-      //const data=await apiResponse.json(); //this.response=data.reply;
-      alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
-
+      //console.log(response.choices[0].message.content);
+      //console.log(return completion.choices[0].message);
     
+      //const data=await apiResponse.json(); //this.response=data.reply;
+      //alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);    
       //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
       //document.querySelector("#t").innerText=this.response;
   }catch(error){console.error("Error2:",error)}
