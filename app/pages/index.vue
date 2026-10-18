@@ -18,7 +18,6 @@ async function sndQry2(query){
       {method:"POST",headers:{"Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`}});
       if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
       const data=await response.json(); alert("RES2: "+JSON.stringify(data));
-
   
       //const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
 
@@ -32,7 +31,7 @@ const sndQry1=async(query)=>{
       {method:"POST",headers:{"Content-Type":"application/json","Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`},body:JSON.stringify({model:"gpt-3.5-turbo",messages:[{role:"user",content:body.document.querySelector("#pr").value}]})});
       if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
       const data=await response.json(); return{reply:data.choices[0].message.content}; alert(data.reply); //this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
-      console.log(data.message.content);
+      console.log(data.message.content); alert(data.message.content);
 
       //console.log(response.choices[0].message.content);
       //console.log(return completion.choices[0].message);
