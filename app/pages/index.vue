@@ -17,7 +17,8 @@ async function sndQry2(query){
       {method:"POST",headers:{"Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`}});
       if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
       const data=await response.json(); alert("RES2: "+JSON.stringify(data));
-  
+
+
       //const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
 
       //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
