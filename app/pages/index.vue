@@ -13,8 +13,8 @@ const sndQry3=async(query)=>{
 };
 async function sndQry2(query){
   try{
-    const response=await fetch("api/chat",
-      {method:"GET",headers:{"Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`}});
+    const response=await fetch("https://api.openai.com/v1/chat/completions", //"api/chat",
+      {method:"POST",headers:{"Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`}});
       if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
       const data=await response.json(); alert("RES2: "+JSON.stringify(data));
       //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
@@ -22,11 +22,18 @@ async function sndQry2(query){
 }
 const sndQry1=async(query)=>{
   try{
-    const response=await fetch("api/chat",
+    const response=await fetch("https://api.openai.com/v1/chat/completions", //"api/chat",
       //{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
-      {method:"GET",headers:{"Content-Type":"application/json","Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`},body:JSON.stringify({message:document.querySelector("#pr").value})});
+      {method:"POST",headers:{"Content-Type":"application/json","Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`},body:JSON.stringify({model:"gpt-3.5-turbo",messages:[{role:"user",content:body.document.querySelector("#pr").value}]})});
       if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
-      const data=await response.json(); this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
+      const data=await response.json(); return{reply:data.choices[0].message.content}; alert(data.reply); //this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
+
+
+
+      //const data=await apiResponse.json(); //this.response=data.reply;
+      alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
+
+    
       //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
       //document.querySelector("#t").innerText=this.response;
   }catch(error){console.error("Error2:",error)}
