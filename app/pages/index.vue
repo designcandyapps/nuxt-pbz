@@ -192,9 +192,7 @@ onMounted(()=>{
   uUrl.value=document.getElementById("et").innerText; //alert("uUrl2: "+uUrl.value);
   fetchImgU(uUrl.value);
 
-  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{
-    pho.value=photo.urls.small
-  })});
+  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //generatePalette();
 
   pr.value=document.getElementById("et").innerText;
@@ -204,8 +202,8 @@ onMounted(()=>{
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
     //const et=document.getElementById("pr").innerText;
-    
-    //sndQry(u,pr.value);
+
+    sndQry(u,pr.value);
   },800);
 });
 </script>
@@ -228,7 +226,7 @@ export default{
   data(){return{prompt:"",pr:"",pho:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      this.sndQ()
+      //this.sndQ()
     //},7800)
   },
   methods:{
