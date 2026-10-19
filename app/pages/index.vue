@@ -201,7 +201,7 @@ onMounted(()=>{
     //generatePalette();
     //const et=document.getElementById("pr").innerText;
     
-    sndQry(u,pr.value);
+    //sndQry(u,pr.value);
   },800);
 });
 </script>
@@ -232,8 +232,8 @@ export default{
       //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
       //const response=await fetch("https://api.openai.com/v1/chat/completions",{
       const response=await fetch("/api/chat",      //`${encodeURIComponent(pr)}`,
-        {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); console.log(data.message.content); alert("RES03b: "+this.response); this.response=data.reply; alert("RES: "+JSON.stringify(data));
+        {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:"Jrkses"})});
+      const data=await response.json(); alert("RES: "+JSON.stringify(data)); alert("RES03b: "+this.response); this.response=data.reply; //console.log(data.message.content);
       document.querySelector("#t").innerText=this.response;
     },
   },
