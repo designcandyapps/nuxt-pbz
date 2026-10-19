@@ -11,17 +11,48 @@ const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palett
     body:JSON.stringify({
     model:"gpt-3.5-turbo",
     messages:[
-      //{role:"system",content:"Grapes"},
-      {role:"user",content:body.message},
+      {role:"user",data:body.message},    //content
     ],
   }),
-});
-const data=await response.json(); console.log(data.message.content); alert("RES: "+JSON.stringify(data));*/
+  const data=await response.json(); console.log(data.message.content); alert("RES: "+JSON.stringify(data));
+});*/
 
 
+const gen=async()=>{
+  pr.value=""; const res=await fetch("https://api.openai.com/v1/chat/completions",{
+    method:"POST",headers:{"Content-Type":"application/json",
+    "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+  },
+  body:JSON.stringify({pr:document.querySelector("#pr").value})
+  });
+  const data=await res.json(); alert("RES: "+JSON.stringify(data));
+  if(data&&data.data&&data.data.length>0){
+    pr.value=data.data[0].url;
+    document.querySelector("#tr").value=pr.value;
+    var ad=document.querySelector("#tr").value;
+    alert("AD: "+ad);
+  }
+}
+return{pr,gen};
 
+
+const sndQry=async(query)=>{
+  alert(0);
+  pr.value=""; const response=await fetch(
+    //`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`
+    "https://api.openai.com/v1/chat/completions",{
+      method:"POST",headers:{"Content-Type":"application/json",
+      "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+    },
+    body:JSON.stringify({pr:document.querySelector("#pr").value})
+  });
+  const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
+  return data.results;
+  //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
+  //fetchImgU(uUrl.value);
+};
 async function sndQryy(query){
-   alert(query);
+  //alert(query);
   //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
   //const response=await fetch("https://api.openai.com/v1/chat/completions",{
   const response=await fetch(//`${encodeURIComponent(pr)}`,
