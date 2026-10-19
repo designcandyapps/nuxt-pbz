@@ -3,7 +3,7 @@
 import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
-  const gen=async()=>{
+  const gen=async()=>{alert(0);
     pr.value=""; const res=await fetch("https://api.openai.com/v1/chat/completions",{
       method:"POST",headers:{"Content-Type":"application/json",
       "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
