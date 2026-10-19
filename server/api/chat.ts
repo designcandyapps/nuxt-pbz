@@ -1,11 +1,10 @@
 export default defineEventHandler(async(event)=>{
-  alert(0);
   const body=await readBody(event);
   const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
     method:"POST",
     headers:{
       "Content-Type":"application/json",
-      "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+      "Authorization":`Bearer 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` //${process.env.OPENAI_API_KEY}
     },
     body:JSON.stringify({
       model:"gpt-3.5-turbo",
