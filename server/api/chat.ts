@@ -1,6 +1,6 @@
 export default defineEventHandler(async(event)=>{
   const body=await readBody(event);
-  const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
+  const response=await fetch("https://api.openai.com/v1/chat/completions",{
     method:"POST",
     headers:{
       "Content-Type":"application/json",
@@ -11,11 +11,11 @@ export default defineEventHandler(async(event)=>{
       messages:[{role:"user",content:body.message}],
     }),
   });
-  const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
+  const data=await response.json(); return{reply:data.choices[0].message.content};
 
 
   //alert(data.reply);
 
-  //const data=await apiResponse.json(); //this.response=data.reply;
-  //alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
+  const data=await response.json(); this.response=data.reply;
+  alert("RES: "+JSON.stringify(data)); alert("RESb: "+this.response);
 });
