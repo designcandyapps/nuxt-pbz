@@ -36,7 +36,7 @@ const pr=ref(""); const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref
 return{pr,gen};*/
 
 
-const sndQryy=async(u,pr)=>{
+const sndQry=async(u,pr)=>{
   alert("U: "+u); alert("Q: "+pr);
   const response=await fetch(
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&apiKey=sk-proj`
@@ -52,7 +52,7 @@ const sndQryy=async(u,pr)=>{
     const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
     return data.results;
 };
-async function sndQry(u,pr){
+async function sndQryy(u,pr){
   alert("U: "+u); alert("Q: "+pr);
   //const response=await fetch(`https://api.openai.com/v1/chat/completions?apiKey=${encodeURIComponent(query)}`,{
   const response=await fetch(//`${encodeURIComponent(pr)}`,
@@ -228,7 +228,7 @@ export default{
       //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
       //const response=await fetch("https://api.openai.com/v1/chat/completions",{
       const response=await fetch("/api/chat",      //`${encodeURIComponent(pr)}`,
-        {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+        {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:pr.value})});
       const data=await response.json(); console.log(data.message.content); alert("RES03b: "+this.response); this.response=data.reply; alert("RES: "+JSON.stringify(data));
       document.querySelector("#t").innerText=this.response;
     },
