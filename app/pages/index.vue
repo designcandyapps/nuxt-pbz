@@ -40,7 +40,7 @@ const sndQry=async(u,query)=>{
   alert("U: "+u); alert("Q: "+document.querySelector("#pr").value);
   const pr=document.querySelector("#pr").value;
   pr.value=pr; const response=await fetch(
-    `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`
+    `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&cid=OOBNDpH2xNShX6T9wWV`
     //"https://api.openai.com/v1/chat/completions",{
       method:"POST",headers:{"Content-Type":"application/json",
       "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
@@ -183,13 +183,13 @@ onMounted(()=>{
   fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //generatePalette();
 
-  setTimeout(function(){
+  //setTimeout(function(){
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
     const et=document.getElementById("pr").innerText;
     sndQry(u,et);
-  },800);
+  //},800);
 });
 </script>
 
