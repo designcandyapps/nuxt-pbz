@@ -57,12 +57,6 @@ const sndQry0=async(query)=>{
   const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
 };
 
-
-
-
-
-
-
   
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
