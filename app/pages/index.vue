@@ -43,7 +43,7 @@ const sndQry=async(u,pr)=>{//alert("U: "+u); alert("Q: "+pr);
       method:"POST",
       headers:{
         "Content-Type":"application/json",
-        Authorization:`Bearer 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` //${process.env.OPENAI_API_KEY}
+        Authorization:`Bearer ${process.env.OPENAI_API_KEY}`
         //apiKey:process.env.OPENAI_API_KEY
       },
       data:JSON.stringify({pr:pr.value})
