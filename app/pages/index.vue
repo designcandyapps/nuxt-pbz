@@ -42,19 +42,25 @@ const sndQry=async(u,pr)=>{//alert("U: "+u); alert("Q: "+pr);
     //"https://api.openai.com/v1/chat/completions",{
       method:"POST",headers:{"Content-Type":"application/json",
       "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+      //apiKey:process.env.OPENAI_API_KEY
     },
     data:JSON.stringify({pr:pr.value})
   });
   const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
   return data.results;
 };
-async function sndQryy(query){
-  //alert(query);
+async function sndQryy(u,pr){
+  //alert(pr);
   //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
-  //const response=await fetch("https://api.openai.com/v1/chat/completions",{
   const response=await fetch(//`${encodeURIComponent(pr)}`,
-    "/api/chat",
-    {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+    `https://api.openai.com/v1/chat/completions`,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+        //apiKey:process.env.OPENAI_API_KEY
+      },
+      data:JSON.stringify({message:pr.value})});
   const data=await response.json(); this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
   document.querySelector("#t").innerText=this.response;
 }
