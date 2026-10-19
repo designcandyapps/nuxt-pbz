@@ -21,7 +21,6 @@ const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palett
 
 
 
-  
 const openai=new OpenAI({
   //apiKey:apiKey.value
   apiKey:document.querySelector("#apiKey").value
@@ -31,7 +30,7 @@ const response=openai.responses.create({
   input:"write a haiku",
   store:true,
 });
-response.then((result)=>console.log(result.output_text));
+//response.then((result)=>console.log(result.output_text));
 
 
   
