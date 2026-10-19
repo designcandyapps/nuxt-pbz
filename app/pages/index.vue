@@ -142,7 +142,7 @@ onMounted(()=>{
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     generatePalette();
-    sndQry3(document.getElementById("tr").innerText);
+    sndQry2(document.getElementById("tr").innerText);
   },800);
 });
 </script>
