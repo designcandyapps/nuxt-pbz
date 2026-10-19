@@ -20,7 +20,7 @@ const data=await response.json(); console.log(data.message.content); alert("RES:
 
 
 
-async sndQryy(query){
+async function sndQryy(query){
   //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
   //const response=await fetch("https://api.openai.com/v1/chat/completions",{
   const response=await fetch(//`${encodeURIComponent(pr)}`,
@@ -28,7 +28,8 @@ async sndQryy(query){
     {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
   const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
   document.querySelector("#t").innerText=this.response;
-};
+}
+
 
 const sndQry0=async(query)=>{
   const body=await readBody(event);
@@ -45,8 +46,6 @@ const sndQry0=async(query)=>{
   });
   const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
 };
-
-
 const sndQry3=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
