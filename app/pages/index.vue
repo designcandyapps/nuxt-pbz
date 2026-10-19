@@ -202,7 +202,7 @@ onMounted(()=>{
     //generatePalette();
     //const et=document.getElementById("pr").innerText;
 
-    //sndQry(u,pr.value);
+    sndQry(u,pr.value);
   },800);
 });
 </script>
@@ -225,7 +225,7 @@ export default{
   data(){return{prompt:"",pr:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      this.sndQ()
+      //this.sndQ()
     //},7800)
   },
   methods:{
