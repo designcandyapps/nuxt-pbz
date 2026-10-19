@@ -2,37 +2,6 @@
 //import {ref,onMounted} from "vue";
 import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
-
-/*
-const gen=async()=>{alert(0);
-  pr.value=""; const res=await fetch("https://api.openai.com/v1/chat/completions",{
-    method:"POST",headers:{"Content-Type":"application/json",
-    "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
-  },
-  body:JSON.stringify({pr:document.querySelector("#pr").value})});
-  const data=await res.json(); alert("RES: "+JSON.stringify(data));
-  if(data&&data.data&&data.data.length>0){
-    pr.value=data.data[0].url;
-    document.querySelector("#tr").value=pr.value;
-    var ad=document.querySelector("#tr").value;
-    alert("AD: "+ad);
-  }
-return{pr};
-}
-const openai=new OpenAI({
-  //apiKey:apiKey.value
-  apiKey:document.querySelector("#apiKey").value
-});
-const response=openai.responses.create({
-  model:"gpt-3.5-turbo",
-  input:"write a haiku",
-  store:true,
-});
-response.then((result)=>console.log(result.output_text));
-*/
-
-  
-
 const sndQry3=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
@@ -86,11 +55,6 @@ const sndQry0=async(query)=>{
 
 
 
-
-
-
-
-  
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1Pxxx: "+JSON.stringify(data));
