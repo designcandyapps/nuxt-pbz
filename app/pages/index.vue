@@ -37,7 +37,7 @@ return{pr,gen};*/
 
 
 const sndQry=async(u,query)=>{
-  alert("U: "+u); alert("Q: "+document.querySelector("#et").value);
+  alert("U: "+u); alert("Q: "+document.querySelector("#pr").value);
   const pr="";
   pr.value=""; const response=await fetch(
     //`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`
@@ -187,7 +187,7 @@ onMounted(()=>{
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
-    const et=document.getElementById("et").innerText;
+    const et=document.getElementById("pr").innerText;
     sndQry(u,et);
   },800);
 });
@@ -197,7 +197,7 @@ onMounted(()=>{
   <span class="g">
     <span id="et" style="border:2px solid green;"></span><img id="ee" class="ff" src="/im/cl.png" width="60" height="60"><span id="ei"></span>
     <span id="t"></span><span id="y">s</span><span id="z"><!--ColorThief /--></span>
-    <input id="pr" name="pr" v-model="pr" value="Open Source" style="border:2px solid yellow;">
+    <input id="pr" name="pr" v-model="pr" value="Harses" style="border:2px solid yellow;">
     <input id="prompt" v-model="prompt" style="border:2px solid red;">
     <input id="pho" v-model="pho" style="border:2px solid blue;"><input id="pho2" v-model="pho2" style="border:2px solid purple;">
     <h1 id="tr">Heading here</h1>
