@@ -4,7 +4,7 @@ export default defineEventHandler(async(event)=>{
     method:"POST",
     headers:{
       "Content-Type":"application/json",
-      "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+      "Authorization":`Bearer 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` //${process.env.OPENAI_API_KEY}
     },
     body:JSON.stringify({
       model:"gpt-3.5-turbo",
