@@ -36,7 +36,8 @@ const pr=ref(""); const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref
 return{pr,gen};*/
 
 
-const sndQry=async(u,pr)=>{//alert("U: "+u); alert("Q: "+pr);
+const sndQry=async(u,pr)=>{
+  alert("U: "+u); alert("Q: "+pr);
   const response=await fetch(
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&apiKey=sk-proj`
     //"https://api.openai.com/v1/chat/completions",{
@@ -52,7 +53,7 @@ const sndQry=async(u,pr)=>{//alert("U: "+u); alert("Q: "+pr);
     return data.results;
 };
 async function sndQryy(u,pr){
-  //alert(pr);
+  alert("U: "+u); alert("Q: "+pr);
   //const response=await fetch(`https://api.openai.com/v1/chat/completions?apiKey=${encodeURIComponent(query)}`,{
   const response=await fetch(//`${encodeURIComponent(pr)}`,
     `https://api.openai.com/v1/chat/completions`,{
@@ -65,12 +66,13 @@ async function sndQryy(u,pr){
       data:JSON.stringify({message:pr.value})});
   const data=await response.json(); this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
   document.querySelector("#t").innerText=this.response;
+  //return data.results;
 }
 
 
 const sndQry3=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
   return data.results; alert(data.results);
   document.querySelector("#t").innerText=this.response; alert(0);
 
@@ -82,7 +84,7 @@ async function sndQry2(query){
     const response=await fetch("https://api.openai.com/v1/chat/completions", //"api/chat",
       {method:"POST",headers:{"Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`}});
       if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
-      const data=await response.json(); alert("RES2: "+JSON.stringify(data));
+      const data=await response.json(); //alert("RES2: "+JSON.stringify(data));
 
       //const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
       //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
@@ -95,7 +97,7 @@ const sndQry1=async(query)=>{
       {method:"POST",headers:{"Content-Type":"application/json","Api-Key":`Bearer ${process.env.OPENAI_API_KEY}`},body:JSON.stringify({model:"gpt-3.5-turbo",messages:[{role:"user",content:body.document.querySelector("#pr").value}]})});
       if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
       const data=await response.json(); return{reply:data.choices[0].message.content}; alert(data.reply); //this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RESb: "+this.response);
-      console.log(data.message.content); alert(data.message.content);
+      console.log(data.message.content); //alert(data.message.content);
 
       //console.log(response.choices[0].message.content);
       //console.log(return completion.choices[0].message);
@@ -125,7 +127,7 @@ const sndQry0=async(query)=>{
 
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); //alert("RES1Pxxx: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
   return data.results;
   //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
   //fetchImgU(uUrl.value);
