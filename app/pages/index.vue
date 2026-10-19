@@ -38,7 +38,7 @@ return{pr,gen};*/
 
 const sndQry=async(u,pr)=>{//alert("U: "+u); alert("Q: "+pr);
   const response=await fetch(
-    `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&cid=OOBNDpH2xNShX6T9wWV`
+    `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&apiKey=sk-proj`
     //"https://api.openai.com/v1/chat/completions",{
       method:"POST",headers:{"Content-Type":"application/json",
       Authorization:`Bearer ${process.env.OPENAI_API_KEY}`
@@ -51,7 +51,7 @@ const sndQry=async(u,pr)=>{//alert("U: "+u); alert("Q: "+pr);
 };
 async function sndQryy(u,pr){
   //alert(pr);
-  //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
+  //const response=await fetch(`https://api.openai.com/v1/chat/completions?apiKey=${encodeURIComponent(query)}`,{
   const response=await fetch(//`${encodeURIComponent(pr)}`,
     `https://api.openai.com/v1/chat/completions`,{
       method:"POST",
