@@ -37,14 +37,14 @@ return{pr,gen};*/
 
 
 const sndQry=async(query)=>{
-  alert(0);
-  data(){return{pr:"",response:null}},
+  alert(query);
+  //data(){return{pr:"",response:null}},
   pr.value=""; const response=await fetch(
     //`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`
     "https://api.openai.com/v1/chat/completions",{
       method:"POST",headers:{"Content-Type":"application/json",
       "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
-    };
+    },
     data:JSON.stringify({pr:document.querySelector("#pr").value})
   });
   const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
