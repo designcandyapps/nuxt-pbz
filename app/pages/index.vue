@@ -36,18 +36,20 @@ const pr=ref(""); const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref
 return{pr,gen};*/
 
 
-const sndQry=async(u,pr)=>{alert("U: "+u); alert("Q: "+pr);
+const sndQry=async(u,pr)=>{//alert("U: "+u); alert("Q: "+pr);
   const response=await fetch(
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&apiKey=sk-proj`
     //"https://api.openai.com/v1/chat/completions",{
-      method:"POST",headers:{"Content-Type":"application/json",
-      Authorization:`Bearer ${process.env.OPENAI_API_KEY}`
-      //apiKey:process.env.OPENAI_API_KEY
-    },
-    data:JSON.stringify({pr:pr.value})
-  });
-  const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
-  return data.results;
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        Authorization:`Bearer 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` //${process.env.OPENAI_API_KEY}
+        //apiKey:process.env.OPENAI_API_KEY
+      },
+      data:JSON.stringify({pr:pr.value})
+    });
+    const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
+    return data.results;
 };
 async function sndQryy(u,pr){
   //alert(pr);
