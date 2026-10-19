@@ -222,7 +222,7 @@ onMounted(()=>{
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",pr:"",pho:"",response:null}},
+  data(){return{prompt:"",pr:"",response:null}},
   mounted(){
     //setTimeout(function(){
       this.sndQ()
@@ -233,9 +233,9 @@ export default{
       //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
       //const response=await fetch("https://api.openai.com/v1/chat/completions",{
       const response=await fetch("/api/chat",      //`${encodeURIComponent(pr)}`,
-        {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
+        {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
       const data=await response.json(); this.response=data.reply; alert("RES: "+JSON.stringify(data)); alert("RES03b: "+this.response); //console.log(data.messages.content);
-      //document.querySelector("#t").innerText=this.response;
+      document.querySelector("#t").innerText=this.response;
     },
   },
 }
