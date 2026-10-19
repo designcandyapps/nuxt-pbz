@@ -36,10 +36,10 @@ const pr=ref(""); const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref
 return{pr,gen};*/
 
 
-const sndQry=async(u,query)=>{
-  alert("U: "+u); alert("Q: "+document.querySelector("#pr").value);
-  const pr=document.querySelector("#pr").value;
-  //pr=pr.value; pr.value=pr;
+const sndQry=async(u,pr)=>{
+  alert("U: "+u); alert("Q: "+pr);
+  //const pr=document.querySelector("#pr").value;
+  //pr.value="";
   const response=await fetch(
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&cid=OOBNDpH2xNShX6T9wWV`
     //"https://api.openai.com/v1/chat/completions",{
