@@ -194,13 +194,14 @@ onMounted(()=>{
   })});
   //generatePalette();
 
+  pr.value=document.getElementById("et").innerText;
   setTimeout(function(){
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
     //const et=document.getElementById("pr").innerText;
-    pr.value=document.getElementById("et").innerText;
-    //sndQry(u,pr.value);
+    
+    sndQry(u,pr.value);
   },800);
 });
 </script>
