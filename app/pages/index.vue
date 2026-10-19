@@ -18,7 +18,7 @@ const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palett
 });*/
 
 
-const gen=async()=>{
+/*const sndQry=async()=>{
   pr.value=""; const res=await fetch("https://api.openai.com/v1/chat/completions",{
     method:"POST",headers:{"Content-Type":"application/json",
     "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
@@ -33,18 +33,19 @@ const gen=async()=>{
     alert("AD: "+ad);
   }
 }
-return{pr,gen};
+return{pr,gen};*/
 
 
 const sndQry=async(query)=>{
   alert(0);
+  data(){return{pr:"",response:null}},
   pr.value=""; const response=await fetch(
     //`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`
     "https://api.openai.com/v1/chat/completions",{
       method:"POST",headers:{"Content-Type":"application/json",
       "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
     },
-    body:JSON.stringify({pr:document.querySelector("#pr").value})
+    data:JSON.stringify({pr:document.querySelector("#pr").value})
   });
   const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
   return data.results;
@@ -186,7 +187,7 @@ onMounted(()=>{
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
-    sndQryy("Horses"); //document.getElementById("tr").innerText
+    sndQry("Horses"); //document.getElementById("tr").innerText
   },800);
 });
 </script>
