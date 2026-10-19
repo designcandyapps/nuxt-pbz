@@ -36,7 +36,7 @@ const pr=ref(""); const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref
 return{pr,gen};*/
 
 
-const sndQry=async(u,pr)=>{//alert("U: "+u); alert("Q: "+pr);
+const sndQry=async(u,pr)=>{alert("U: "+u); alert("Q: "+pr.value);
   const response=await fetch(
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&apiKey=sk-proj`
     //"https://api.openai.com/v1/chat/completions",{
