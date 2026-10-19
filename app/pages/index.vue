@@ -38,7 +38,7 @@ const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palett
 return{pr,gen};*/
 
 
-const sndQry=async(u,pr)=>{
+const sndQryy=async(u,pr)=>{
   alert("U: "+u); alert("Q: "+pr);
   const response=await fetch(
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&apiKey=sk-proj`
@@ -54,7 +54,7 @@ const sndQry=async(u,pr)=>{
     const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
     return data.results;
 };
-async function sndQryy(u,pr){
+async function sndQry(u,pr){
   alert("U: "+u); alert("Q: "+pr);
   //const response=await fetch(`https://api.openai.com/v1/chat/completions?apiKey=${encodeURIComponent(query)}`,{
   const response=await fetch(//`${encodeURIComponent(pr)}`,
@@ -196,7 +196,6 @@ onMounted(()=>{
   //generatePalette();
 
   pr.value=document.getElementById("et").innerText;
-  alert(document.querySelector("#prompt").value);
   setTimeout(function(){
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
@@ -218,7 +217,7 @@ onMounted(()=>{
     <h1 id="tr">Heading here</h1>
     <span id="response" v-if="response">{{response}}</span>
   </span>
-  <span><span><!--ImageGenerator /--></span></span>
+  <span><span><ImageGenerator /></span></span>
 </template>
 
 <script lang="ts">
@@ -226,7 +225,7 @@ export default{
   data(){return{prompt:"",pr:"",pho:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      //this.sndQ()
+      this.sndQ()
     //},7800)
   },
   methods:{
