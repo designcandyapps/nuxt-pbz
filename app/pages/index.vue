@@ -38,8 +38,8 @@ return{pr,gen};*/
 
 const sndQry=async(u,query)=>{
   alert("U: "+u); alert("Q: "+document.querySelector("#pr").value);
-  const pr="";
-  pr.value=""; const response=await fetch(
+  const pr=document.querySelector("#pr").value;
+  pr.value=pr; const response=await fetch(
     //`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`
     "https://api.openai.com/v1/chat/completions",{
       method:"POST",headers:{"Content-Type":"application/json",
