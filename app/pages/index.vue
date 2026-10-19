@@ -49,8 +49,6 @@ const sndQry=async(query)=>{
   });
   const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
   return data.results;
-  //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
-  //fetchImgU(uUrl.value);
 };
 async function sndQryy(query){
   //alert(query);
