@@ -217,7 +217,7 @@ onMounted(()=>{
     <h1 id="tr">Heading here</h1>
     <span id="response" v-if="response">{{response}}</span>
   </span>
-  <span><span><ImageGenerator /></span></span>
+  <span><span><!--ImageGenerator /--></span></span>
 </template>
 
 <script lang="ts">
