@@ -39,7 +39,7 @@ return{pr,gen};*/
 const sndQry=async(u,query)=>{
   alert("U: "+u); alert("Q: "+document.querySelector("#pr").value);
   const pr=document.querySelector("#pr").value;
-  pr=pr.value; pr.value=pr;
+  //pr=pr.value; pr.value=pr;
   const response=await fetch(
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&cid=OOBNDpH2xNShX6T9wWV`
     //"https://api.openai.com/v1/chat/completions",{
@@ -188,8 +188,9 @@ onMounted(()=>{
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
-    const et=document.getElementById("pr").innerText;
-    sndQry(u,et);
+    //const et=document.getElementById("pr").innerText;
+    pr.value=document.getElementById("et").innerText;
+    sndQry(u,pr.value);
   },800);
 });
 </script>
