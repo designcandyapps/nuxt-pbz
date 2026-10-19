@@ -37,7 +37,7 @@ return{pr,gen};*/
 
 
 const sndQry=async(u,query)=>{
-  alert("U: "+u); alert("Q: "+document.querySelector("#tr").value);
+  alert("U: "+u); alert("Q: "+document.querySelector("#et").value);
   const pr="";
   pr.value=""; const response=await fetch(
     //`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`
@@ -187,9 +187,8 @@ onMounted(()=>{
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
-    document.getElementById("tr").innerText=h1;
-    const tr=document.getElementById("tr").innerText;
-    sndQry(u,tr);
+    const et=document.getElementById("et").innerText;
+    sndQry(u,et);
   },800);
 });
 </script>
