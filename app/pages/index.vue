@@ -3,25 +3,22 @@
 import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
-  const gen=async()=>{alert(0);
-    pr.value=""; const res=await fetch("https://api.openai.com/v1/chat/completions",{
-      method:"POST",headers:{"Content-Type":"application/json",
-      "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
-    },
-    body:JSON.stringify({pr:document.querySelector("#pr").value})});
-    const data=await res.json(); alert("RES: "+JSON.stringify(data));
-    if(data&&data.data&&data.data.length>0){
-      pr.value=data.data[0].url;
-      document.querySelector("#tr").value=pr.value;
-      var ad=document.querySelector("#tr").value;
-      alert("AD: "+ad);
-    }
-  return{pr};
+/*
+const gen=async()=>{alert(0);
+  pr.value=""; const res=await fetch("https://api.openai.com/v1/chat/completions",{
+    method:"POST",headers:{"Content-Type":"application/json",
+    "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+  },
+  body:JSON.stringify({pr:document.querySelector("#pr").value})});
+  const data=await res.json(); alert("RES: "+JSON.stringify(data));
+  if(data&&data.data&&data.data.length>0){
+    pr.value=data.data[0].url;
+    document.querySelector("#tr").value=pr.value;
+    var ad=document.querySelector("#tr").value;
+    alert("AD: "+ad);
   }
-
-
-
-
+return{pr};
+}
 const openai=new OpenAI({
   //apiKey:apiKey.value
   apiKey:document.querySelector("#apiKey").value
@@ -31,8 +28,8 @@ const response=openai.responses.create({
   input:"write a haiku",
   store:true,
 });
-//response.then((result)=>console.log(result.output_text));
-
+response.then((result)=>console.log(result.output_text));
+*/
 
   
 
