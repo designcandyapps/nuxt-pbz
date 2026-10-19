@@ -1,9 +1,6 @@
 <script lang="ts" setup>
 //import {ref,onMounted} from "vue";
-import {converter,differenceEuclidean,formatHex,nearest} from "culori";
-//const prompt=ref("");
-const pr=ref("");
-const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
+import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const pr=ref(""); const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 /*const response=await fetch("https://api.openai.com/v1/chat/completions",{
   method:"POST",
@@ -38,7 +35,7 @@ const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palett
 return{pr,gen};*/
 
 
-const sndQryy=async(u,pr)=>{
+const sndQry=async(u,pr)=>{
   alert("U: "+u); alert("Q: "+pr);
   const response=await fetch(
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&apiKey=sk-proj`
@@ -54,7 +51,7 @@ const sndQryy=async(u,pr)=>{
     const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
     return data.results;
 };
-async function sndQry(u,pr){
+async function sndQryy(u,pr){
   alert("U: "+u); alert("Q: "+pr);
   //const response=await fetch(`https://api.openai.com/v1/chat/completions?apiKey=${encodeURIComponent(query)}`,{
   const response=await fetch(//`${encodeURIComponent(pr)}`,
@@ -211,7 +208,7 @@ onMounted(()=>{
   <span class="g">
     <span id="et" style="border:2px solid green;"></span><img id="ee" class="ff" src="/im/cl.png" width="60" height="60"><span id="ei"></span>
     <span id="t"></span><span id="y">s</span><span id="z"><!--ColorThief /--></span>
-    <input id="pr" name="pr" v-model="pr" value="Harses" style="border:2px solid yellow;">
+    <input id="pr" name="pr" v-model="pr" style="border:2px solid yellow;">
     <input id="prompt" v-model="prompt" style="border:2px solid red;">
     <input id="pho" v-model="pho" style="border:2px solid blue;"><input id="pho2" v-model="pho2" style="border:2px solid purple;">
     <h1 id="tr">Heading here</h1>
