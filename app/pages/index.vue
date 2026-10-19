@@ -232,13 +232,12 @@ export default{
   },
   methods:{
     async sndQ(){
+      alert(pr.value);
       //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
       //const response=await fetch("https://api.openai.com/v1/chat/completions",{
       const response=await fetch("/api/chat",      //`${encodeURIComponent(pr)}`,
         {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); this.response=data.reply; alert(document.querySelector("#prompt").value); alert(this.response);
-      //alert(data.message.content); this.response=data.reply; alert(data.message.content); //alert("RES: "+JSON.stringify(data));
-      //alert("RES03b: "+this.response); this.response=data.reply; alert("RES: "+JSON.stringify(data)); console.log(data.messages.content);
+      const data=await response.json(); this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RES03b: "+this.response); //console.log(data.messages.content);
       //document.querySelector("#t").innerText=this.response;
     },
   },
