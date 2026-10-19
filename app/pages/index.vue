@@ -36,7 +36,7 @@ const pr=ref(""); const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref
 return{pr,gen};*/
 
 
-const sndQry=async(u,pr)=>{
+const sndQryy=async(u,pr)=>{
   alert("U: "+u); alert("Q: "+pr);
   const response=await fetch(
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&apiKey=sk-proj`
@@ -52,7 +52,7 @@ const sndQry=async(u,pr)=>{
     const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
     return data.results;
 };
-async function sndQryy(u,pr){
+async function sndQry(u,pr){
   alert("U: "+u); alert("Q: "+pr);
   //const response=await fetch(`https://api.openai.com/v1/chat/completions?apiKey=${encodeURIComponent(query)}`,{
   const response=await fetch(//`${encodeURIComponent(pr)}`,
