@@ -173,6 +173,8 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 
 onMounted(()=>{
+    const prompt=document.getElementById("prompt").value; const pr=document.getElementById("pr").value;
+
     var u=new URLSearchParams(location.search).get("u");
     //u=!u||u=="null"?"dzesigncandy.com":u;
 
