@@ -16,6 +16,6 @@ export default defineEventHandler(async(event)=>{
 
   //alert(data.reply);
 
-  const data=await response.json(); this.response=data.reply;
-  alert("RES: "+JSON.stringify(data)); alert("RESb: "+this.response);
+  //const data=await response.json(); this.response=data.reply;
+  //alert("RES: "+JSON.stringify(data)); alert("RESb: "+this.response);
 });
