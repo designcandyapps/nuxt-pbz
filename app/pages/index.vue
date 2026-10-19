@@ -200,7 +200,7 @@ onMounted(()=>{
     //generatePalette();
     //const et=document.getElementById("pr").innerText;
     pr.value=document.getElementById("et").innerText;
-    sndQry(u,pr.value);
+    //sndQry(u,pr.value);
   },800);
 });
 </script>
@@ -220,7 +220,7 @@ onMounted(()=>{
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",pr:"",response:null}},
+  data(){return{prompt:"",pr:"",pho:"",response:null}},
   mounted(){
     //setTimeout(function(){
       this.sndQ()
