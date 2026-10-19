@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 //import {ref,onMounted} from "vue";
 import {converter,differenceEuclidean,formatHex,nearest} from "culori";
-const pr=ref(""); const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
+const prompt=ref(""); const pr=ref(""); const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 /*const response=await fetch("https://api.openai.com/v1/chat/completions",{
   method:"POST",
