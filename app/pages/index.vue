@@ -45,7 +45,7 @@ const sndQry=async(u,query)=>{
       method:"POST",headers:{"Content-Type":"application/json",
       "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
     },
-    data:JSON.stringify({pr:document.querySelector("#pr").value})
+    data:JSON.stringify({pr:pr.value})
   });
   const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
   return data.results;
