@@ -189,8 +189,8 @@ onMounted(()=>{
   fetchImgU(uUrl.value);
 
   fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{
-    //pho.value=photo.urls.small;
-    pr.value="Hwrses"
+    pho.value=photo.urls.small;
+    //pr.value="Hwrses"
   })});
   //generatePalette();
 
@@ -231,7 +231,7 @@ export default{
       //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
       //const response=await fetch("https://api.openai.com/v1/chat/completions",{
       const response=await fetch("/api/chat",      //`${encodeURIComponent(pr)}`,
-        {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:pr.value})});
+        {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pho").value})});
       const data=await response.json(); console.log(data.message.content); alert("RES03b: "+this.response); this.response=data.reply; alert("RES: "+JSON.stringify(data));
       document.querySelector("#t").innerText=this.response;
     },
