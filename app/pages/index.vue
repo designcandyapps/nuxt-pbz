@@ -19,6 +19,17 @@ const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palett
 const data=await response.json(); console.log(data.message.content); alert("RES: "+JSON.stringify(data));*/
 
 
+
+async sndQryy(query){
+  //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
+  //const response=await fetch("https://api.openai.com/v1/chat/completions",{
+  const response=await fetch(//`${encodeURIComponent(pr)}`,
+    "/api/chat",
+    {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+  const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
+  document.querySelector("#t").innerText=this.response;
+};
+
 const sndQry0=async(query)=>{
   const body=await readBody(event);
   const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
@@ -144,7 +155,7 @@ onMounted(()=>{
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     generatePalette();
-    sndQry0(document.getElementById("tr").innerText);
+    sndQryy(document.getElementById("tr").innerText);
   },800);
 });
 </script>
