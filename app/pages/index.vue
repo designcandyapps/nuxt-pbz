@@ -44,13 +44,13 @@ const sndQry0=async(query)=>{
       messages:[{role:"user",content:body.message}],
     }),
   });
-  const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
+  const data=await apiResponse.json(); return{reply:data.choices[0].message.content}; alert(1);
 };
 const sndQry3=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
   return data.results; alert(data.results);
-  document.querySelector("#t").innerText=this.response; alert(1);
+  document.querySelector("#t").innerText=this.response; alert(0);
 
   //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
   //fetchImgU(uUrl.value);
@@ -154,7 +154,7 @@ onMounted(()=>{
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
-    sndQryy(document.getElementById("tr").innerText);
+    sndQryy("Horses"); //document.getElementById("tr").innerText
   },800);
 });
 </script>
