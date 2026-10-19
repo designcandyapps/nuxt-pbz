@@ -21,34 +21,20 @@ const data=await response.json(); console.log(data.message.content); alert("RES:
 
 
 async function sndQryy(query){
+   alert(query);
   //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`,{
   //const response=await fetch("https://api.openai.com/v1/chat/completions",{
   const response=await fetch(//`${encodeURIComponent(pr)}`,
     "/api/chat",
     {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
-  const data=await response.json(); this.response=data.reply; alert("RES03: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
+  const data=await response.json(); this.response=data.reply; alert("RES: "+JSON.stringify(data)); //alert("RES03b: "+this.response);
   document.querySelector("#t").innerText=this.response;
 }
 
 
-const sndQry0=async(query)=>{
-  const body=await readBody(event);
-  const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
-    method:"POST",
-    headers:{
-      "Content-Type":"application/json",
-      "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
-    },
-    body:JSON.stringify({
-      model:"gpt-3.5-turbo",
-      messages:[{role:"user",content:body.message}],
-    }),
-  });
-  const data=await apiResponse.json(); return{reply:data.choices[0].message.content}; alert(1);
-};
 const sndQry3=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
+  const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
   return data.results; alert(data.results);
   document.querySelector("#t").innerText=this.response; alert(0);
 
@@ -84,6 +70,21 @@ const sndQry1=async(query)=>{
       //document.querySelector("#t").innerText=this.response;
   }catch(error){console.error("Error2:",error)}
 }
+const sndQry0=async(query)=>{
+  const body=await readBody(event);
+  const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json",
+      "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+    },
+    body:JSON.stringify({
+      model:"gpt-3.5-turbo",
+      messages:[{role:"user",content:body.message}],
+    }),
+  });
+  const data=await apiResponse.json(); return{reply:data.choices[0].message.content}; alert(1);
+};
 
 
 const fetchPh=async(query)=>{
