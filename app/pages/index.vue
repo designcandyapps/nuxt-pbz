@@ -193,8 +193,7 @@ onMounted(()=>{
   fetchImgU(uUrl.value);
 
   fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{
-    pho.value=photo.urls.small;
-    //pr.value="Hwrses"
+    pho.value=photo.urls.small
   })});
   //generatePalette();
 
@@ -237,8 +236,9 @@ export default{
       //const response=await fetch("https://api.openai.com/v1/chat/completions",{
       const response=await fetch("/api/chat",      //`${encodeURIComponent(pr)}`,
         {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); alert("RES03b: "+this.response); this.response=data.reply; alert("RES: "+JSON.stringify(data)); //console.log(data.message.content);
-      document.querySelector("#t").innerText=this.response;
+      const data=await response.json(); alert(data.message.content); this.response=data.reply; alert(data.message.content); //alert("RES: "+JSON.stringify(data));
+      //alert("RES03b: "+this.response); this.response=data.reply; alert("RES: "+JSON.stringify(data)); console.log(data.messages.content);
+      //document.querySelector("#t").innerText=this.response;
     },
   },
 }
