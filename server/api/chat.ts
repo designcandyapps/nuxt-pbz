@@ -14,8 +14,9 @@ export default defineEventHandler(async(event)=>{
   const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
 
 
-  //alert(data.reply);
+  alert(data.reply);
 
-  //const data=await response.json(); this.response=data.reply;
+  //const data=await response.json();
+  this.response=data.reply;
   alert("RES: "+JSON.stringify(data)); alert("RESb: "+this.response);
 });
