@@ -1,4 +1,17 @@
+//import {OpenAI} from 'openai'
 export default defineEventHandler(async(event)=>{
+  const body=await readBody(event)
+  const client=new OpenAI({apiKey:process.env.OPENAI_API_KEY})
+  const completion=await client.chat.completions.create({
+    model:'gpt-4o',
+    messages:body.messages,
+  })
+  return completion.choices[0].message
+})
+
+
+
+/*export default defineEventHandler(async(event)=>{
   const body=await readBody(event);
   const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
     method:"POST",
@@ -20,3 +33,4 @@ export default defineEventHandler(async(event)=>{
   this.response=data.reply;
   alert("RES: "+JSON.stringify(data)); alert("RESb: "+this.response);
 });
+*/
