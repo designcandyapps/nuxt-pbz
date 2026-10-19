@@ -183,13 +183,13 @@ onMounted(()=>{
   fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
   //generatePalette();
 
-  //setTimeout(function(){
+  setTimeout(function(){
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
     const et=document.getElementById("pr").innerText;
     sndQry(u,et);
-  //},800);
+  },800);
 });
 </script>
 
