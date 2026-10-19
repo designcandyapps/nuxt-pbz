@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 //import {ref,onMounted} from "vue";
 import {converter,differenceEuclidean,formatHex,nearest} from "culori";
-const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
+const pr=ref(""); const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 /*const response=await fetch("https://api.openai.com/v1/chat/completions",{
   method:"POST",
@@ -39,13 +39,14 @@ return{pr,gen};*/
 const sndQry=async(u,query)=>{
   alert("U: "+u); alert("Q: "+document.querySelector("#pr").value);
   const pr=document.querySelector("#pr").value;
-  pr.value=pr; const response=await fetch(
+  pr=pr.value; pr.value=pr;
+  const response=await fetch(
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&cid=OOBNDpH2xNShX6T9wWV`
     //"https://api.openai.com/v1/chat/completions",{
       method:"POST",headers:{"Content-Type":"application/json",
       "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
     },
-    data:JSON.stringify({pr:pr})
+    data:JSON.stringify({pr:pr.value})
   });
   const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
   return data.results;
