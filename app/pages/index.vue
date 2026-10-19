@@ -17,7 +17,7 @@ const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palett
       alert("AD: "+ad);
     }
   }
-  return{pr,gen};
+  return{pr};
 
 
 
