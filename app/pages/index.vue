@@ -16,8 +16,9 @@ const uUrl=ref(""); const imageUrl=ref(""); const proxyUrl=ref(""); const palett
       var ad=document.querySelector("#tr").value;
       alert("AD: "+ad);
     }
-  }
   return{pr};
+  }
+
 
 
 
