@@ -37,8 +37,7 @@ return{pr,gen};*/
 
 
 const sndQry=async(query)=>{
-  alert(query);
-  //data(){return{pr:"",response:null}},
+  alert("Q: "+document.querySelector("#et").value);
   pr.value=""; const response=await fetch(
     //`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`
     "https://api.openai.com/v1/chat/completions",{
