@@ -188,7 +188,10 @@ onMounted(()=>{
   uUrl.value=document.getElementById("et").innerText; //alert("uUrl2: "+uUrl.value);
   fetchImgU(uUrl.value);
 
-  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+  fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{
+    pho.value=photo.urls.small;
+    pr.value="Hwrses";
+  })});
   //generatePalette();
 
   setTimeout(function(){
