@@ -223,9 +223,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr:"",pho:"",response:null}},
   mounted(){
-    setTimeout(function(){
+    //setTimeout(function(){
       this.sndQ()
-    },7800)
+    //},7800)
   },
   methods:{
     async sndQ(){
