@@ -41,7 +41,7 @@ const sndQry=async(u,pr)=>{//alert("U: "+u); alert("Q: "+pr);
     `https://api.openai.com/v1/chat/completions`,{    //?query=${encodeURIComponent(query)}&cid=OOBNDpH2xNShX6T9wWV`
     //"https://api.openai.com/v1/chat/completions",{
       method:"POST",headers:{"Content-Type":"application/json",
-      "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
+      Authorization:`Bearer ${process.env.OPENAI_API_KEY}`
       //apiKey:process.env.OPENAI_API_KEY
     },
     data:JSON.stringify({pr:pr.value})
