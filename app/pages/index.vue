@@ -7,7 +7,8 @@ const sndQry3=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1Pxxx: "+JSON.stringify(data));
   return data.results; alert(data.results);
-  document.querySelector("#t").innerText=this.response;
+  document.querySelector("#t").innerText=this.response; alert(1);
+
   //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
   //fetchImgU(uUrl.value);
 };
@@ -18,9 +19,7 @@ async function sndQry2(query){
       if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
       const data=await response.json(); alert("RES2: "+JSON.stringify(data));
 
-
       //const data=await apiResponse.json(); return{reply:data.choices[0].message.content};
-
       //if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
