@@ -202,7 +202,7 @@ onMounted(()=>{
     //generatePalette();
     //const et=document.getElementById("pr").innerText;
 
-    sndQry(u,pr.value);
+    //sndQry(u,pr.value);
   },800);
 });
 </script>
