@@ -189,8 +189,8 @@ onMounted(()=>{
   fetchImgU(uUrl.value);
 
   fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{
-    pho.value=photo.urls.small;
-    pr.value="Hwrses";
+    //pho.value=photo.urls.small;
+    pr.value="Hwrses"
   })});
   //generatePalette();
 
