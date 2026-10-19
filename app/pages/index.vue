@@ -124,11 +124,13 @@ const fetchPh=async(query)=>{
   //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value);
   //fetchImgU(uUrl.value);
 };
-const fetchU=async(query)=>{
+const fetchU=async(u,query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); //alert("RESPy4: "+JSON.stringify(data));
   const h1=data.result.h1[0];
   document.getElementById("tr").innerText=h1;
+  const tr=document.getElementById("tr").innerText;
+  sndQry(u,tr);
 };
 const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
@@ -174,7 +176,7 @@ onMounted(()=>{
 
   //44//document.querySelector("#pr").value=document.getElementById("et").innerText; document.querySelector("#prompt").value=document.getElementById("et").innerText;
   //const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value;
-  fetchU(document.getElementById("et").innerText); //document.getElementById("et").innerText; //document.getElementById("prompt").value;
+  fetchU(u,document.getElementById("et").innerText); //document.getElementById("et").innerText; //document.getElementById("prompt").value;
   uUrl.value=document.getElementById("et").innerText; //alert("uUrl2: "+uUrl.value);
   fetchImgU(uUrl.value);
 
@@ -185,7 +187,7 @@ onMounted(()=>{
     //pr //document.getElementById("prompt").value
     //fetchPh(document.getElementById("tr").innerText).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //generatePalette();
-    sndQry(u,document.getElementById("tr").innerText);
+    //sndQry(u,document.getElementById("tr").innerText);
   },800);
 });
 </script>
