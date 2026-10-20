@@ -13,9 +13,10 @@ const sndQry=async(u,pr)=>{
       },
       data:JSON.stringify({pr:pr.value})
     });
-    const data=await response.json(); alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
+    const data=await response.json(); //alert("RES: "+JSON.stringify(data)); //alert("R: "+data.results);
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
     return data.results;
+    alert("Images "+images);
 };
 async function sndQryy(u,pr){
   alert("U: "+u); alert("Q: "+pr);
