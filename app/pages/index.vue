@@ -35,7 +35,7 @@ async function sndQryy(u,pr){
 }
 const fetchGp=async(query)=>{
   const response=await fetch(`https://api.openai.com/v1/chat/completions?apiKey=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
   return data.results; //uUrl.value=document.getElementById("et").innerText; alert("uUrl: "+uUrl.value); fetchImgU(uUrl.value);
 };
 const fetchPh=async(query)=>{
