@@ -1,5 +1,5 @@
 <template>
-  <NuxtLoadingIndicator color="#3892a2" />
+  <!--NuxtLoadingIndicator color="#3892a2" /==>
   <UApp
     :tooltip="{ delayDuration: 0 }"
     :locale="locales[locale]"
@@ -12,7 +12,6 @@
 
 <script setup lang="ts">
 import { en, th } from '@nuxt/ui/locale'
-
 const locales = { en, th }
 const { locale, localeProperties } = useI18n()
 const lang = computed(() => locales[locale.value].code)
